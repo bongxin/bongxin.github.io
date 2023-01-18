@@ -7,14 +7,14 @@ export default function sidebar() {
       items: [
         {
           text: 'TOGAF',
-          link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
+          link: '/system/togaf/什么是TOGAF？',
         },
         {
           text: 'Contributing',
           items: [
             {
               text: 'TOGAF',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
+              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md', 
             },
             {
               text: 'Contributing',

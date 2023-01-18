@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress';
-import sidebar from './config/sidebar';
+// import sidebar from './config/sidebar';
 import nav from './config/nav';
+
+import { getSidebar } from 'vitepress-plugin-auto-sidebar'
 
 export default defineConfig({
   lang: 'zh-CN', // en-US
@@ -26,7 +28,8 @@ export default defineConfig({
 
   themeConfig: {
     logo: '/logo.svg',
-    sidebar: sidebar(),
+    // sidebar: sidebar(),
+    sidebar: getSidebar({ contentRoot: '/', contentDirs: ['/config/'], collapsible: true, collapsed: true }),
     nav: nav(),
 
     socialLinks: [
