@@ -3,7 +3,7 @@ import { generateSidebar } from 'vitepress-sidebar';
 export default function sidebar() {
   return {
     '/guide/': generateSidebar({
-      root: './docs/guide',
+      root: '/docs/guide',
       // rootGroupText: 'Contents',
       // useTitleFromFileHeading: true,
       hyphenToSpace: true,
@@ -16,7 +16,7 @@ export default function sidebar() {
       // includeEmptyGroup: false
     }),
     '/config/': generateSidebar({
-      root: './docs/config',
+      root: '/docs/config',
       // rootGroupText: 'Contents',
       // useTitleFromFileHeading: true,
       hyphenToSpace: true,

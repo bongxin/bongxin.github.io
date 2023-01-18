@@ -1,11 +1,11 @@
 import { defineConfig } from 'vitepress';
 import sidebar from './config/sidebar';
+import nav from './config/nav';
 
 export default defineConfig({
   lang: 'zh-CN', // en-US
   title: 'Bongxin',
   description: '个人的知识库',
-
   lastUpdated: true,
   cleanUrls: 'without-subfolders',
 
@@ -25,19 +25,21 @@ export default defineConfig({
   },
 
   themeConfig: {
-    nav: nav(),
     logo: '/logo.svg',
-
     sidebar: sidebar(),
-
-    editLink: {
-      pattern: 'https://gitee.com/bongxin/bongxin/edit/master/docs/:path',
-      text: 'Edit this page on GitHub',
-    },
+    nav: nav(),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ],
+
+    editLink: {
+      pattern: 'https://github.com/bongxin/bongxin/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页',
+    },
+
+    docFooter: { prev: '上一篇', next: '下一篇' },
+    lastUpdatedText: '最近更新时间',
 
     footer: {
       message: 'Released under the MIT License.',
@@ -56,107 +58,3 @@ export default defineConfig({
     },
   },
 });
-
-function nav() {
-  return [
-    { text: '指南', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
-    { text: '配置', link: '/config/introduction', activeMatch: '/config/' },
-    {
-      text: '体系',
-      items: [
-        {
-          text: 'TOGAF',
-          link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-        },
-        {
-          text: 'Contributing',
-          items: [
-            {
-              text: 'TOGAF',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Contributing',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      text: '技能',
-      items: [
-        {
-          text: '前端',
-          items: [
-            {
-              text: 'Vue',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Contributing',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
-            },
-          ],
-        },
-        {
-          text: '后端',
-          items: [
-            {
-              text: 'PHP',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Nest.js',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
-            },
-          ],
-        },
-        {
-          text: '设计',
-          items: [
-            {
-              text: 'Figma',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Nest.js',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
-            },
-          ],
-        },
-        {
-          text: '管理',
-          items: [
-            {
-              text: 'PHP',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Nest.js',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
-            },
-          ],
-        },
-        {
-          text: '剪辑',
-          items: [
-            {
-              text: 'Pr',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Ps',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      text: '伯恩西因',
-      link: '/guide/what-is-vitepress',
-      activeMatch: '/bernsine/',
-    },
-  ];
-}
