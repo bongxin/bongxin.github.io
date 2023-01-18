@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a,a as o}from"./app.07a412ab.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"config/app-configs.md","lastUpdated":null}'),s={name:"config/app-configs.md"},n=o("p",null,"asd",-1),c=[n];function p(r,i,d,_,l,f){return a(),t("div",null,c)}const g=e(s,[["render",p]]);export{u as __pageData,g as default};
