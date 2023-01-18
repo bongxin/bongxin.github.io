@@ -1,27 +1,12 @@
 export default function sidebar() {
   return [
-    { text: '指南', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
-    { text: '配置', link: '/config/introduction', activeMatch: '/config/' },
     {
       text: '体系',
       items: [
         {
           text: 'TOGAF',
           link: '/system/togaf/什么是TOGAF？',
-        },
-        {
-          text: 'Contributing',
-          items: [
-            {
-              text: 'TOGAF',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md', 
-            },
-            {
-              text: 'Contributing',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
-            },
-          ],
-        },
+        }
       ],
     },
     {
@@ -32,11 +17,7 @@ export default function sidebar() {
           items: [
             {
               text: 'Vue',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Contributing',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
+              link: '/skill/development/vue/VitePress/为什么用TOGAF',
             },
           ],
         },
@@ -45,11 +26,11 @@ export default function sidebar() {
           items: [
             {
               text: 'PHP',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
+              link: '/skill/development/php/PHP/认识PHP',
             },
             {
               text: 'Nest.js',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
+              link: '/skill/development/nestjs/NestJS/认识NestJS',
             },
           ],
         },
@@ -58,11 +39,11 @@ export default function sidebar() {
           items: [
             {
               text: 'Figma',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
+              link: '/skill/design/figma/Figma/认识Figma',
             },
             {
-              text: 'Nest.js',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
+              text: 'PS',
+              link: '/skill/design/ps/PhotoShop/认识PS',
             },
           ],
         },
@@ -70,12 +51,8 @@ export default function sidebar() {
           text: '管理',
           items: [
             {
-              text: 'PHP',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Nest.js',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
+              text: 'PMP',
+              link: '/skill/management/pmp/PMP/认识PMP',
             },
           ],
         },
@@ -83,12 +60,8 @@ export default function sidebar() {
           text: '剪辑',
           items: [
             {
-              text: 'Pr',
-              link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
-            },
-            {
-              text: 'Ps',
-              link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md',
+              text: 'PR',
+              link: '/skill/editing/pr/认识Premiere Pro',
             },
           ],
         },

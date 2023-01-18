@@ -1,12 +1,10 @@
 import { defineConfig } from 'vitepress';
-// import sidebar from './config/sidebar';
+import sidebar from './config/sidebar';
 import nav from './config/nav';
 
-import { getSidebar } from 'vitepress-plugin-auto-sidebar'
-
 export default defineConfig({
-  lang: 'zh-CN', // en-US
-  title: 'Bongxin',
+  lang: 'zh-CN',
+  title: 'BongXin',
   description: '个人的知识库',
   lastUpdated: true,
   cleanUrls: 'without-subfolders',
@@ -28,8 +26,7 @@ export default defineConfig({
 
   themeConfig: {
     logo: '/logo.svg',
-    // sidebar: sidebar(),
-    sidebar: getSidebar({ contentRoot: '/', contentDirs: ['/config/'], collapsible: true, collapsed: true }),
+    sidebar: sidebar(),
     nav: nav(),
 
     socialLinks: [
