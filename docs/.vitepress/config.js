@@ -30,11 +30,11 @@ export default defineConfig({
     nav: nav(),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/bongxin/bongxin.github.io' },
     ],
 
     editLink: {
-      pattern: 'https://github.com/bongxin/bongxin/edit/main/docs/:path',
+      pattern: 'https://github.com/bongxin/bongxin.github.io/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页',
     },
 
