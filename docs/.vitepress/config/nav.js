@@ -93,7 +93,7 @@ export default function sidebar() {
         },
         {
           text: '城镇数字化',
-          link: '/bernsine/acappella/认识城镇数字化',
+          link: '/bernsine/guanghzhou/认识城镇数字化',
         },
       ],
     },
