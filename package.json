@@ -10,10 +10,8 @@
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.38",
+    "vitepress-sidebar": "^1.1.5",
     "vue": "^3.2.45"
   },
-  "dependencies": {
-    "vitepress-plugin-auto-sidebar": "^1.0.5",
-    "vitepress-sidebar": "^1.1.5"
-  }
+  "dependencies": {}
 }

@@ -575,14 +575,9 @@ vite@^4.0.4:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitepress-plugin-auto-sidebar@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.npmmirror.com/vitepress-plugin-auto-sidebar/-/vitepress-plugin-auto-sidebar-1.0.5.tgz#e7e92133309cad429d8bd805c3d21feb0cb4918c"
-  integrity sha512-xG66yfuxqKdF3+hIyHO/EozEAZmNp1MCM6sMD3XQh8151rSaKM8Clu+vHlcdncLLJFn2zXYwrfJKnAZieJezgw==
-
 vitepress-sidebar@^1.1.5:
   version "1.1.5"
-  resolved "https://registry.npmmirror.com/vitepress-sidebar/-/vitepress-sidebar-1.1.5.tgz#fdee0107e31224af38daed010acf4e5872add524"
+  resolved "https://registry.yarnpkg.com/vitepress-sidebar/-/vitepress-sidebar-1.1.5.tgz#fdee0107e31224af38daed010acf4e5872add524"
   integrity sha512-qkLj/uvyHFCLZ+WQV0pQALL/gv7yZanF3gjtNrp/6XClZSIJJvjwHMhrbIALeQuN0F8jgC7AmBjvLK3Vqb3XFg==
 
 vitepress@^1.0.0-alpha.38:
