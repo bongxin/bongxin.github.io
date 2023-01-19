@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.376631a0.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/development/vue/Vue/认识Vue.md","lastUpdated":1674120508000}'),o={name:"skill/development/vue/Vue/认识Vue.md"};function s(r,n,c,p,d,l){return a(),t("div")}const u=e(o,[["render",s]]);export{i as __pageData,u as default};

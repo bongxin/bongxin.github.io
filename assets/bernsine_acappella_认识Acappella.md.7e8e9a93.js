@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t}from"./app.376631a0.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"bernsine/acappella/认识Acappella.md","lastUpdated":1674120508000}'),p={name:"bernsine/acappella/认识Acappella.md"};function c(r,n,s,l,o,_){return t(),a("div")}const m=e(p,[["render",c]]);export{i as __pageData,m as default};

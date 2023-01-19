@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a,a as s}from"./app.6fc5a4d8.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"crack/软件/破解的目的.md","lastUpdated":1674106457000}'),c={name:"crack/软件/破解的目的.md"},o=s("p",null,"adads",-1),r=[o];function _(n,d,p,i,l,m){return a(),t("div",null,r)}const h=e(c,[["render",_]]);export{u as __pageData,h as default};
