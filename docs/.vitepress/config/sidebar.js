@@ -1,11 +1,18 @@
 export default function sidebar() {
   const rootDir = './docs'
   return {
+    '/skill/development/framework/': [
+      walk(rootDir + '/skill/development/framework/', '前后端框架'),
+    ],
     '/skill/development/vue/': [
+      walk(rootDir + '/skill/development/vue/', 'Vue'),
+      walk(rootDir + '/skill/development/vue/', 'Element Plus'),
+      walk(rootDir + '/skill/development/vue/', 'Vant'),
       walk(rootDir + '/skill/development/vue/', 'VitePress'),
     ],
     '/skill/development/php/': [
       walk(rootDir + '/skill/development/php/', 'PHP'),
+      walk(rootDir + '/skill/development/php/', 'WordPress'),
     ],
     '/skill/development/nestjs/': [
       walk(rootDir + '/skill/development/nestjs/', 'NestJS'),
@@ -16,11 +23,26 @@ export default function sidebar() {
     '/skill/design/ps/': [
       walk(rootDir + '/skill/design/ps/', 'PhotoShop'),
     ],
+    '/skill/operation/bt/': [
+      walk(rootDir + '/skill/operation/bt/', '宝塔面板'),
+    ],
     '/skill/editing/pr/': [
       walk(rootDir + '/skill/editing/pr/', 'Premiere Pro'),
     ],
     '/skill/management/pmp/': [
       walk(rootDir + '/skill/management/pmp/', 'PMP'),
+    ],
+    '/bernsine/acappella/': [
+      walk(rootDir + '/bernsine/acappella/', ''),
+    ],
+    '/bernsine/guangzhou/': [
+      walk(rootDir + '/bernsine/guangzhou/', ''),
+    ],
+    '/crack/': [
+      walk(rootDir + '/crack/','软件'),
+    ],
+    '/knowledge/': [
+      walk(rootDir + '/knowledge/','简述'),
     ],
   };
 }
