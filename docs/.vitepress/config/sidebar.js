@@ -4,11 +4,17 @@ export default function sidebar() {
     '/skill/development/framework/': [
       walk(rootDir + '/skill/development/framework/', '前后端框架'),
     ],
+    '/skill/development/npm/': [
+      walk(rootDir + '/skill/development/npm/', 'npm'),
+      walk(rootDir + '/skill/development/npm/', 'Yarn'),
+      walk(rootDir + '/skill/development/npm/', 'cnpm'),
+    ],
     '/skill/development/vue/': [
       walk(rootDir + '/skill/development/vue/', 'Vue'),
       walk(rootDir + '/skill/development/vue/', 'Element Plus'),
       walk(rootDir + '/skill/development/vue/', 'Vant'),
       walk(rootDir + '/skill/development/vue/', 'VitePress'),
+      walk(rootDir + '/skill/development/vue/', 'VueUse'),
     ],
     '/skill/development/php/': [
       walk(rootDir + '/skill/development/php/', 'PHP'),

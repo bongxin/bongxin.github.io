@@ -1,7 +1,3 @@
----
-layout: doc
----
-
 # FastGithub
 github加速神器，解决github打不开、用户头像无法加载、releases无法上传下载、git-clone、git-pull、git-push失败等问题。
 

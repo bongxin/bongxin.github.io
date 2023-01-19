@@ -13,21 +13,20 @@ export default function sidebar() {
       text: '技能',
       items: [
         {
-          text: '框架',
-          link: '/skill/development/framework/前后端框架/若依',
-        },
-        {
-          text: '前端',
+          text: '开发',
           items: [
+            {
+              text: '框架',
+              link: '/skill/development/framework/前后端框架/若依',
+            },
+            {
+              text: 'npm',
+              link: '/skill/development/npm/npm/0.简介',
+            },
             {
               text: 'Vue',
               link: '/skill/development/vue/VitePress/为什么用TOGAF',
             },
-          ],
-        },
-        {
-          text: '后端',
-          items: [
             {
               text: 'PHP',
               link: '/skill/development/php/PHP/认识PHP',
