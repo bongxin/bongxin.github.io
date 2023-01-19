@@ -67,6 +67,10 @@ export default function sidebar() {
               text: '宝塔面板',
               link: '/skill/operation/bt/宝塔面板/认识宝塔面板',
             },
+            {
+              text: 'GitHub',
+              link: '/skill/operation/github/GitHub/Fast GitHub',
+            },
           ],
         },
         {

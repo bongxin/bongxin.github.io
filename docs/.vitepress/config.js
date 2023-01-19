@@ -40,6 +40,7 @@ export default defineConfig({
 
     docFooter: { prev: '上一篇', next: '下一篇' },
     lastUpdatedText: '最近更新时间',
+    outlineHeading: '目录',
 
     footer: {
       message: 'Released under the MIT License.',

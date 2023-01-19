@@ -26,6 +26,9 @@ export default function sidebar() {
     '/skill/operation/bt/': [
       walk(rootDir + '/skill/operation/bt/', '宝塔面板'),
     ],
+    '/skill/operation/github/': [
+      walk(rootDir + '/skill/operation/github/', 'GitHub'),
+    ],
     '/skill/editing/pr/': [
       walk(rootDir + '/skill/editing/pr/', 'Premiere Pro'),
     ],
