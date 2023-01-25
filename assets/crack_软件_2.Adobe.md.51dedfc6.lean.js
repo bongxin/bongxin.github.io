@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,b as r}from"./app.5daf74bc.js";const f=JSON.parse('{"title":"Adobe","description":"","frontmatter":{},"headers":[],"relativePath":"crack/软件/2.Adobe.md","lastUpdated":1674659241000}'),o={name:"crack/软件/2.Adobe.md"},d=r("",3),_=[d];function c(s,n,i,h,p,l){return t(),a("div",null,_)}const u=e(o,[["render",c]]);export{f as __pageData,u as default};

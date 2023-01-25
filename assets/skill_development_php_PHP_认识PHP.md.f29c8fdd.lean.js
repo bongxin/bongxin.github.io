@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.5daf74bc.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/development/php/PHP/认识PHP.md","lastUpdated":1674659241000}'),o={name:"skill/development/php/PHP/认识PHP.md"};function s(p,r,n,c,d,l){return a(),t("div")}const P=e(o,[["render",s]]);export{i as __pageData,P as default};

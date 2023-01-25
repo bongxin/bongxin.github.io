@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as n}from"./app.376631a0.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/development/npm/npm/2.什么是nrm.md","lastUpdated":1674120508000}'),a={name:"skill/development/npm/npm/2.什么是nrm.md"};function r(o,s,p,m,_,c){return n(),t("div")}const i=e(a,[["render",r]]);export{l as __pageData,i as default};
