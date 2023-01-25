@@ -53,6 +53,9 @@ export default function sidebar() {
     '/knowledge/': [
       walk(rootDir + '/knowledge/','简述'),
     ],
+    '/resource/': [
+      walk(rootDir + '/resource/','副业网站'),
+    ],
   };
 }
 

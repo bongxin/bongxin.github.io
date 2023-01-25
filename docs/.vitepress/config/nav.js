@@ -16,25 +16,25 @@ export default function sidebar() {
           text: '开发',
           items: [
             {
-              text: '框架',
-              link: '/skill/development/framework/前后端框架/若依',
-            },
-            {
               text: 'npm',
               link: '/skill/development/npm/npm/0.简介',
             },
             {
               text: 'Vue',
-              link: '/skill/development/vue/VitePress/为什么用TOGAF',
+              link: '/skill/development/vue/Vue/简介',
             },
             {
               text: 'PHP',
               link: '/skill/development/php/PHP/认识PHP',
             },
-            {
-              text: 'Nest.js',
-              link: '/skill/development/nestjs/NestJS/认识NestJS',
-            },
+            // {
+            //   text: 'Nest.js',
+            //   link: '/skill/development/nestjs/NestJS/认识NestJS',
+            // },
+            // {
+            //   text: '框架',
+            //   link: '/skill/development/framework/前后端框架/若依',
+            // },
           ],
         },
         {
@@ -92,17 +92,21 @@ export default function sidebar() {
         },
         {
           text: '城镇数字化',
-          link: '/bernsine/guanghzhou/认识城镇数字化',
+          link: '/bernsine/guangzhou/认识城镇数字化',
         },
       ],
     },
     {
       text: '破解',
-      link: '/crack/软件/破解的目的'
+      link: '/crack/软件/0.简介'
     },
     {
       text: '知识',
       link: '/knowledge/简述/简述'
+    },
+    {
+      text: '资源',
+      link: '/resource/副业网站/技能类'
     },
   ];
 }
