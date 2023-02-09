@@ -35,6 +35,14 @@ export default function sidebar() {
     '/skill/operation/github/': [
       walk(rootDir + '/skill/operation/github/', 'GitHub'),
     ],
+    '/skill/operation/openwrt/': [
+      walk(rootDir + '/skill/operation/', 'openwrt'),
+    ],
+    '/skill/operation/ubuntu/': [
+      walk(rootDir + '/skill/operation/ubuntu/', '基本配置'),
+      walk(rootDir + '/skill/operation/ubuntu/', '常见操作'),
+      walk(rootDir + '/skill/operation/ubuntu/', '常见问题'),
+    ],
     '/skill/editing/pr/': [
       walk(rootDir + '/skill/editing/pr/', 'Premiere Pro'),
     ],
@@ -55,6 +63,7 @@ export default function sidebar() {
     ],
     '/resource/': [
       walk(rootDir + '/resource/','副业网站'),
+      walk(rootDir + '/resource/','冷门生意'),
     ],
   };
 }

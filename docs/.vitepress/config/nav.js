@@ -70,6 +70,18 @@ export default function sidebar() {
               text: 'GitHub',
               link: '/skill/operation/github/GitHub/Fast GitHub',
             },
+            {
+              text: 'Ubuntu',
+              link: '/skill/operation/ubuntu/基本配置/基本配置',
+            },
+            {
+              text: '树莓派',
+              link: '/skill/operation/树莓派/树莓派',
+            },
+            {
+              text: 'OpenWRT',
+              link: '/skill/operation/openwrt/OpenWRT',
+            },
           ],
         },
         {
