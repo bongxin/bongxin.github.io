@@ -20,6 +20,9 @@ export default function sidebar() {
       walk(rootDir + '/skill/development/php/', 'PHP'),
       walk(rootDir + '/skill/development/php/', 'WordPress'),
     ],
+    '/skill/development/java/': [
+      walk(rootDir + '/skill/development/java/', 'SpringBoot'),
+    ],
     '/skill/development/nestjs/': [
       walk(rootDir + '/skill/development/nestjs/', 'NestJS'),
     ],

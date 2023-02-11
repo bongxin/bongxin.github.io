@@ -27,6 +27,10 @@ export default function sidebar() {
               text: 'PHP',
               link: '/skill/development/php/PHP/认识PHP',
             },
+            {
+              text: 'Java',
+              link: '/skill/development/java/SpringBoot/部署项目',
+            },
             // {
             //   text: 'Nest.js',
             //   link: '/skill/development/nestjs/NestJS/认识NestJS',
