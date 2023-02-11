@@ -2,7 +2,7 @@ export default function sidebar() {
   const rootDir = './docs'
   return {
     '/skill/development/framework/': [
-      walk(rootDir + '/skill/development/framework/', '前后端框架'),
+      walk(rootDir + '/skill/development/framework/', '若依'),
     ],
     '/skill/development/npm/': [
       walk(rootDir + '/skill/development/npm/', 'npm'),

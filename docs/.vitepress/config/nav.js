@@ -35,10 +35,10 @@ export default function sidebar() {
             //   text: 'Nest.js',
             //   link: '/skill/development/nestjs/NestJS/认识NestJS',
             // },
-            // {
-            //   text: '框架',
-            //   link: '/skill/development/framework/前后端框架/若依',
-            // },
+            {
+              text: '框架',
+              link: '/skill/development/framework/若依/0.改版',
+            },
           ],
         },
         {
