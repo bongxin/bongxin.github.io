@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.2ef68240.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/development/vue/Element Plus/简介.md","lastUpdated":1678246922000}'),s={name:"skill/development/vue/Element Plus/简介.md"};function n(o,r,l,c,p,d){return a(),t("div")}const i=e(s,[["render",n]]);export{m as __pageData,i as default};

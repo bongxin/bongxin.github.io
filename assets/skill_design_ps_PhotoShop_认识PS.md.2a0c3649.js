@@ -1,1 +1,0 @@
-import{_ as e,c as t,o}from"./app.5daf74bc.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/design/ps/PhotoShop/认识PS.md","lastUpdated":1674659241000}'),s={name:"skill/design/ps/PhotoShop/认识PS.md"};function a(r,n,p,c,d,i){return o(),t("div")}const m=e(s,[["render",a]]);export{l as __pageData,m as default};

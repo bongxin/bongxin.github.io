@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./app.5daf74bc.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/development/vue/Vant/简介.md","lastUpdated":1674659241000}'),n={name:"skill/development/vue/Vant/简介.md"};function o(s,r,c,p,d,l){return a(),t("div")}const m=e(n,[["render",o]]);export{i as __pageData,m as default};

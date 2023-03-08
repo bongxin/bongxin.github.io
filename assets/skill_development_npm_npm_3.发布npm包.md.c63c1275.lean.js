@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as n}from"./app.5daf74bc.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/development/npm/npm/3.发布npm包.md","lastUpdated":1674659241000}'),a={name:"skill/development/npm/npm/3.发布npm包.md"};function p(o,s,r,m,_,c){return n(),t("div")}const i=e(a,[["render",p]]);export{l as __pageData,i as default};
