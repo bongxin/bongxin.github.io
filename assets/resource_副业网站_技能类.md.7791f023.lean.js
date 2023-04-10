@@ -1,1 +1,0 @@
-import{_ as a,c as e,o as r,b as h}from"./app.2ef68240.js";const b=JSON.parse('{"title":"技能类","description":"","frontmatter":{},"headers":[],"relativePath":"resource/副业网站/技能类.md","lastUpdated":1678246922000}'),t={name:"resource/副业网站/技能类.md"},i=h("",42),n=[i];function d(c,s,o,p,l,f){return r(),e("div",null,n)}const u=a(t,[["render",d]]);export{b as __pageData,u as default};
