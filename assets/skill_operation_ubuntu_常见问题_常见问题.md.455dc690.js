@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app.2ef68240.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/operation/ubuntu/常见问题/常见问题.md","lastUpdated":1681136201000}'),o={name:"skill/operation/ubuntu/常见问题/常见问题.md"};function r(n,s,c,_,p,i){return a(),e("div")}const u=t(o,[["render",r]]);export{l as __pageData,u as default};
