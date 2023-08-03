@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as r,b as d}from"./app.2ef68240.js";const f=JSON.parse('{"title":"线上类","description":"","frontmatter":{},"headers":[],"relativePath":"resource/冷门生意/线上类.md","lastUpdated":1681136201000}'),i={name:"resource/冷门生意/线上类.md"},o=d("",11),t=[o];function _(s,h,c,m,n,b){return r(),a("div",null,t)}const l=e(i,[["render",_]]);export{f as __pageData,l as default};
