@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a}from"./app.2ef68240.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/operation/ubuntu/Ubuntu.md","lastUpdated":1691078339000}'),n={name:"skill/operation/ubuntu/Ubuntu.md"};function o(r,s,u,c,p,i){return a(),e("div")}const _=t(n,[["render",o]]);export{l as __pageData,_ as default};

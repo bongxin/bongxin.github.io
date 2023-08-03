@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./app.2ef68240.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"skill/operation/bt/宝塔面板/认识宝塔面板.md","lastUpdated":1691079030000}'),o={name:"skill/operation/bt/宝塔面板/认识宝塔面板.md"};function r(s,n,_,c,p,i){return a(),e("div")}const m=t(o,[["render",r]]);export{l as __pageData,m as default};
