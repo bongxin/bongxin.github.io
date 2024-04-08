@@ -19,6 +19,9 @@ export default defineConfig({
   ],
 
   markdown: {
+    toc: {
+      level: [1,2,3], // 指定标题的层级
+    },
     headers: {
       level: [0, 0],
     },
