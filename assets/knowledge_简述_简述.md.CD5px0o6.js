@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.CZ6ihM--.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"knowledge/简述/简述.md","filePath":"knowledge/简述/简述.md","lastUpdated":1712553221000}'),o={name:"knowledge/简述/简述.md"};function n(r,s,c,d,_,p){return a(),t("div")}const m=e(o,[["render",n]]);export{i as __pageData,m as default};
