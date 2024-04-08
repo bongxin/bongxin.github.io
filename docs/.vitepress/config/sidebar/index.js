@@ -1,21 +1,22 @@
-export function sidebarExample() {
-  return [
-    {
-      text: '简介',
-      collapsed: false,
-      items: [
-        { text: '什么是 VitePress？', link: 'markdown-examples' },
-        { text: '快速开始', link: 'api-examples' },
-      ],
-    },
-    {
-      text: '实验性功能',
-      collapsed: false,
-      items: [
-        { text: 'MPA 模式', link: 'api-examples' },
-        { text: 'sitemap 生成', link: 'markdown-examples' },
-      ],
-    },
-    { text: '配置和 API 参考', base: '/zh/reference/', link: 'site-config' },
-  ];
+import { sidebarExample } from './example';
+import { sidebarNpm, sidebarPhp, sidebarVue } from './skill';
+import { sidebarFigma } from './design';
+import { sidebarPmp, sidebarCsmm } from './management';
+import { sidebarMarkdown } from './others';
+
+export default function sidebar() {
+  return {
+    // '/example/': { base: '/example/', items: sidebarExample() },
+    '/skill/development/npm': { base: '/skill/development/npm/', items: sidebarNpm() },
+    '/skill/development/php': { base: '/skill/development/php/', items: sidebarPhp() },
+    '/skill/development/vue': { base: '/skill/development/vue/', items: sidebarVue() },
+
+    '/skill/design/figma': { base: '/skill/design/figma/', items: sidebarFigma() },
+
+    '/skill/management/pmp': { base: '/skill/management/pmp/', items: sidebarPmp() },
+    '/skill/management/csmm': { base: '/skill/management/csmm/', items: sidebarCsmm() },
+
+    '/others/markdown': { base: '/others/markdown/', items: sidebarMarkdown() }
+
+  }
 }

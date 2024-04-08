@@ -1,9 +1,7 @@
 import { defineConfig } from 'vitepress';
 import { withMermaid } from 'vitepress-plugin-mermaid';
 import nav from './config/nav';
-
-import {sidebarExample} from './config/sidebar';
-import { sidebarDevelopment } from './config/sidebar/skill';
+import sidebar from './config/sidebar';
 
 // https://vitepress.dev/reference/site-config
 export default withMermaid(
@@ -12,13 +10,8 @@ export default withMermaid(
     description: '个人的知识库',
     themeConfig: {
       logo: '/logo.svg',
-      // sidebar: sidebar(),
       nav: nav(),
-
-      sidebar: {
-        '/example/': { base: '/example/', items: sidebarExample() },
-        '/skill/development/': { base: '/skill/development/', items: sidebarDevelopment() },
-      },
+      sidebar: sidebar(),
       editLink: {
         pattern:
           'https://github.com/bongxin/bongxin.github.io/edit/main/docs/:path',
