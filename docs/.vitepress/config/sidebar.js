@@ -71,8 +71,10 @@ export default function sidebar() {
   };
 }
 
-const path = require('path');
-const fs = require('fs');
+// const path = require('path');
+import path from "path";
+// const fs = require('fs');
+import fs from "fs";
 
 // 动态生成侧边栏函数
 const walk = function (dir, subDir = '') {
