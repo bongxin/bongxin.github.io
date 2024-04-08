@@ -1,8 +1,10 @@
 import { defineConfig } from 'vitepress';
 import sidebar from './config/sidebar';
 import nav from './config/nav';
+import markdownItAnchor from 'markdown-it-anchor';
+import { withMermaid } from "vitepress-plugin-mermaid";
 
-export default defineConfig({
+export default withMermaid({
   lang: 'zh-CN',
   title: 'BongXin',
   description: '个人的知识库',
@@ -19,11 +21,25 @@ export default defineConfig({
   ],
 
   markdown: {
+    // markdown-it-anchor 的选项
+    // https://github.com/valeriangalliat/markdown-it-anchor#usage
+    anchor: {
+      permalink: markdownItAnchor.permalink.headerLink(),
+    },
+    // @mdit-vue/plugin-toc 的选项
+    // https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-toc#options
     toc: {
-      level: [1,2,3], // 指定标题的层级
+      level: [1, 2, 3], // 指定标题的层级
     },
     headers: {
       level: [0, 0],
+    },
+    extendMarkdown: (md) => {
+      md.use(require('markdown-it-mermaid').default);
+    },
+
+    mermaid: {
+      //mermaidConfig !theme here works for ligth mode since dark theme is forced in dark mode
     },
   },
 
@@ -37,7 +53,8 @@ export default defineConfig({
     ],
 
     editLink: {
-      pattern: 'https://github.com/bongxin/bongxin.github.io/edit/main/docs/:path',
+      pattern:
+        'https://github.com/bongxin/bongxin.github.io/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页',
     },
 

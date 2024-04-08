@@ -9,9 +9,15 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "mermaid": "^10.9.0",
     "vitepress": "^1.0.2",
+    "vitepress-plugin-mermaid": "^2.0.16",
     "vitepress-sidebar": "^1.1.5",
     "vue": "^3.2.45"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "markdown-it-anchor": "^8.6.7"
+  }
 }

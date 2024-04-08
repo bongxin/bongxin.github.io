@@ -1,5 +1,18 @@
 [[toc]]
 
+```mermaid
+flowchart TD
+  Start --> Stop
+```
+
+```mermaid
+graph LR;
+A[Hard edge] -->|Label| B(Round edge)
+B --> C{Decision}
+C -->|One| D[Result one]
+C -->|Two| E[Result two]
+```
+
 | Tables        |      Are      |  Cool |
 | ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
