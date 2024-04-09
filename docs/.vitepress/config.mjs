@@ -30,6 +30,7 @@ export default withMermaid(
 
       outline: {
         label: '页面导航',
+        level: [2,3]
       },
 
       lastUpdated: {
