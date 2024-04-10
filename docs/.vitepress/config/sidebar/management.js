@@ -4,7 +4,8 @@ export function sidebarPmp() {
       text: 'PMP',
       collapsed: false,
       items: [
-        { text: '什么是PMP', link: 'PMP/认识PMP' }
+        { text: '什么是PMP', link: 'PMP/认识PMP' },
+        { text: '学习计划', link: 'PMP/学习计划' }
       ],
     },
   ];
