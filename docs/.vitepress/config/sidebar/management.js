@@ -6,7 +6,36 @@ export function sidebarPmp() {
       items: [
         { text: '什么是PMP', link: 'PMP/认识PMP' },
         { text: '学习计划', link: 'PMP/学习计划' },
-        { text: '8.十五至尊图', link: 'PMP/十五至尊图' }
+      ],
+    },
+    {
+      text: '资料',
+      collapsed: false,
+      items: [
+        { text: '1.PMBOK看书指引（第六版）', link: 'PMP/PMBOK看书指引（第六版）' },
+        { text: '2.电子版教材', link: 'PMP/电子版教材' },
+        { text: '3.ITTO图', link: 'PMP/ITTO图' },
+        { text: '4.项目管理模板和其他资料', link: 'PMP/项目管理模板和其他资料' },
+        { text: '5.敏捷相关资料', link: 'PMP/敏捷相关资料' },
+        { text: '7.项目管理实用表格与应用（中文）', link: 'PMP/项目管理实用表格与应用（中文）' },
+        { text: '8.十五至尊图', link: 'PMP/十五至尊图' },
+        { text: '11.整理资料（知识点总结）', link: 'PMP/整理资料（知识点总结）' }
+      ],
+    },
+    {
+      text: 'ITTO图',
+      collapsed: false,
+      items: [
+        { text: '4. 项目整合管理', link: 'PMP/ITTO图/4. 项目整合管理' },
+        { text: '5. 项目范围管理', link: 'PMP/ITTO图/5. 项目范围管理' },
+        { text: '6. 项目进度管理', link: 'PMP/ITTO图/6. 项目进度管理' },
+        { text: '7. 项目成本管理', link: 'PMP/ITTO图/7. 项目成本管理' },
+        { text: '8. 项目质量管理', link: 'PMP/ITTO图/8. 项目质量管理' },
+        { text: '9. 项目资源管理', link: 'PMP/ITTO图/9. 项目资源管理' },
+        { text: '10. 项目沟通管理', link: 'PMP/ITTO图/10. 项目沟通管理' },
+        { text: '11. 项目风险管理', link: 'PMP/ITTO图/11. 项目风险管理' },
+        { text: '12. 项目采购管理', link: 'PMP/ITTO图/12. 项目采购管理' },
+        { text: '13. 项目相关方管理', link: 'PMP/ITTO图/13. 项目相关方管理' },
       ],
     },
   ];
