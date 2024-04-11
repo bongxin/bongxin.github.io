@@ -3,7 +3,6 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
 import nav from './config/nav';
 import sidebar from './config/sidebar';
 
-// https://vitepress.dev/reference/site-config
 export default withMermaid(
   defineConfig({
     title: 'BongXin',
@@ -30,7 +29,7 @@ export default withMermaid(
 
       outline: {
         label: '页面导航',
-        level: [2,3]
+        level: [2, 3]
       },
 
       lastUpdated: {
@@ -58,5 +57,6 @@ export default withMermaid(
     mermaid: {
       //mermaidConfig !theme here works for ligth mode since dark theme is forced in dark mode
     },
-  })
+  },
+  )
 );

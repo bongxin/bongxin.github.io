@@ -126,7 +126,7 @@ B：Below Target（低于目标）
 
 N：Needs Improvement（有待提高）
 
-![PMP考试结果](./PMP考试结果.png)  
+![PMP考试结果](./PMP考试结果.png) 
 
 ### 4.考试成绩单和证书
 
