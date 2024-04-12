@@ -12,14 +12,14 @@ export function sidebarPmp() {
       text: '资料',
       collapsed: false,
       items: [
-        { text: '1.PMBOK看书指引（第六版）', link: 'PMP/PMBOK看书指引（第六版）' },
-        { text: '2.电子版教材', link: 'PMP/电子版教材' },
-        { text: '3.ITTO图', link: 'PMP/ITTO图' },
-        { text: '4.项目管理模板和其他资料', link: 'PMP/项目管理模板和其他资料' },
-        { text: '5.敏捷相关资料', link: 'PMP/敏捷相关资料' },
-        { text: '7.项目管理实用表格与应用（中文）', link: 'PMP/项目管理实用表格与应用（中文）' },
+        // { text: '1.PMBOK看书指引（第六版）', link: 'PMP/PMBOK看书指引（第六版）' },
+        // { text: '2.电子版教材', link: 'PMP/电子版教材' },
+        // { text: '3.ITTO图', link: 'PMP/ITTO图' },
+        // { text: '4.项目管理模板和其他资料', link: 'PMP/项目管理模板和其他资料' },
+        // { text: '5.敏捷相关资料', link: 'PMP/敏捷相关资料' },
+        // { text: '7.项目管理实用表格与应用（中文）', link: 'PMP/项目管理实用表格与应用（中文）' },
         { text: '8.十五至尊图', link: 'PMP/十五至尊图' },
-        { text: '11.整理资料（知识点总结）', link: 'PMP/整理资料（知识点总结）' }
+        // { text: '11.整理资料（知识点总结）', link: 'PMP/整理资料（知识点总结）' }
       ],
     },
     {
@@ -36,6 +36,24 @@ export function sidebarPmp() {
         { text: '11. 项目风险管理', link: 'PMP/ITTO图/11. 项目风险管理' },
         { text: '12. 项目采购管理', link: 'PMP/ITTO图/12. 项目采购管理' },
         { text: '13. 项目相关方管理', link: 'PMP/ITTO图/13. 项目相关方管理' },
+      ],
+    },
+    {
+      text: '光环国际PMP课程学习笔记',
+      collapsed: false,
+      items: [
+        { text: '第01章 导论', link: 'PMP/光环国际PMP课程学习笔记/光环国际PMP课程学习笔记#第01章-导论' },
+        { text: '第02章 项目运行环境', link: 'PMP/光环国际PMP课程学习笔记/光环国际PMP课程学习笔记#第02章-项目运行环境'},
+        { text: '第03章 项目经理的角色', link: 'PMP/光环国际PMP课程学习笔记/光环国际PMP课程学习笔记#第03章-项目经理的角色'},
+        { text: '第04章 项目整合管理', link: 'PMP/光环国际PMP课程学习笔记/光环国际PMP课程学习笔记#第04章-项目整合管理'},
+      ],
+    },
+    {
+      text: '光环国际PMP章节练习题',
+      collapsed: false,
+      items: [
+        { text: '引论+环境', link: 'PMP/光环国际PMP章节练习题/引论+环境' },
+        { text: '人员', link: 'PMP/光环国际PMP章节练习题/人员' },
       ],
     },
     {
