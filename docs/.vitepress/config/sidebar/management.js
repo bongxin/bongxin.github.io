@@ -21,6 +21,7 @@ export function sidebarPmp() {
         { text: '8.十五至尊图', link: 'PMP/资料/十五至尊图' },
         { text: 'PMP做题技巧', link: 'PMP/资料/PMP做题技巧' },
         // { text: '11.整理资料（知识点总结）', link: 'PMP/整理资料（知识点总结）' }
+        { text: '光环国际PMP知识点总结超强版', link: 'PMP/光环国际PMP知识点总结超强版/光环国际PMP知识点总结超强版' },
       ],
     },
     {
