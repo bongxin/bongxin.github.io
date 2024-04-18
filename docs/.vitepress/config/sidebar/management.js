@@ -18,7 +18,8 @@ export function sidebarPmp() {
         // { text: '4.项目管理模板和其他资料', link: 'PMP/项目管理模板和其他资料' },
         // { text: '5.敏捷相关资料', link: 'PMP/敏捷相关资料' },
         // { text: '7.项目管理实用表格与应用（中文）', link: 'PMP/项目管理实用表格与应用（中文）' },
-        { text: '8.十五至尊图', link: 'PMP/十五至尊图' },
+        { text: '8.十五至尊图', link: 'PMP/资料/十五至尊图' },
+        { text: 'PMP做题技巧', link: 'PMP/资料/PMP做题技巧' },
         // { text: '11.整理资料（知识点总结）', link: 'PMP/整理资料（知识点总结）' }
       ],
     },
