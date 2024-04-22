@@ -12,12 +12,10 @@ export function sidebarPmp() {
       text: '资料',
       collapsed: false,
       items: [
-        // { text: '1.PMBOK看书指引（第六版）', link: 'PMP/PMBOK看书指引（第六版）' },
-        // { text: '2.电子版教材', link: 'PMP/电子版教材' },
-        // { text: '3.ITTO图', link: 'PMP/ITTO图' },
-        // { text: '4.项目管理模板和其他资料', link: 'PMP/项目管理模板和其他资料' },
-        // { text: '5.敏捷相关资料', link: 'PMP/敏捷相关资料' },
-        // { text: '7.项目管理实用表格与应用（中文）', link: 'PMP/项目管理实用表格与应用（中文）' },
+        { text: '1-电子版教材', link: 'PMP/资料/1-电子教材/电子教材' },
+        { text: '2-PMP MAX3.0 学习笔记', link: 'PMP/资料/2-PMPMAX3.0学习笔记-配套《PMP备考宝典（第2版）》/2-PMPMAX3.0学习笔记-配套《PMP备考宝典（第2版）》' },
+        { text: '3-冲刺串讲学习笔记', link: 'PMP/资料/3-冲刺串讲学习笔记-配套《PMP通关一本通》/3-冲刺串讲学习笔记-配套《PMP通关一本通》' },
+        
         { text: '8.十五至尊图', link: 'PMP/资料/十五至尊图' },
         { text: 'PMP做题技巧', link: 'PMP/资料/PMP做题技巧' },
         // { text: '11.整理资料（知识点总结）', link: 'PMP/整理资料（知识点总结）' }
