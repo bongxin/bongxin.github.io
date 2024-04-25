@@ -12,6 +12,7 @@ export function sidebarPmp() {
       text: '资料',
       collapsed: false,
       items: [
+        { text: '0-开始', link: 'PMP/资料/' },
         { text: '1-电子版教材', link: 'PMP/资料/1-电子教材/电子教材' },
         { text: '2-PMP MAX3.0 学习笔记', link: 'PMP/资料/2-PMPMAX3.0学习笔记-配套《PMP备考宝典（第2版）》/2-PMPMAX3.0学习笔记-配套《PMP备考宝典（第2版）》' },
         { text: '3-冲刺串讲学习笔记', link: 'PMP/资料/3-冲刺串讲学习笔记-配套《PMP通关一本通》/3-冲刺串讲学习笔记-配套《PMP通关一本通》' },
