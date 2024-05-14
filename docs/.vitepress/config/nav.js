@@ -48,6 +48,23 @@ export default function nav() {
             // },
           ],
         },
+        {
+          text: 'UML画图',
+          items: [
+            {
+              text: 'PlantUML',
+              link: '/skill/design/uml/plantuml/PlantUML/认识PlantUML',
+            },
+            {
+              text: 'Mermaid',
+              link: '/skill/design/uml/mermaid/Mermaid/认识Mermaid.md',
+            },
+            {
+              text: 'Gravizo',
+              link: '/skill/design/uml/gravizo//Gravizo/认识Gravizo.md',
+            },
+          ],
+        },
       ]
     }, {
       text: '管理',
@@ -95,6 +112,11 @@ export default function nav() {
               text: 'Markdown',
               link: '/others/markdown/Markdown/认识Markdown',
             },
+            {
+              text: 'AsciiDoc',
+              link: '/others/markdown/AsciiDoc/认识Markdown',
+            },
+            
             // {
             //   text: 'GitHub',
             //   link: '/skill/operation/github/GitHub/Fast GitHub',

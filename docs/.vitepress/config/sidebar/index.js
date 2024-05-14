@@ -1,6 +1,6 @@
 import { sidebarExample } from './example';
 import { sidebarNpm, sidebarPhp, sidebarVue } from './skill';
-import { sidebarFigma } from './design';
+import { sidebarFigma,sidebarUML } from './design';
 import { sidebarPmp, sidebarCsmm } from './management';
 import { sidebarMarkdown } from './others';
 
@@ -12,6 +12,8 @@ export default function sidebar() {
     '/skill/development/vue': { base: '/skill/development/vue/', items: sidebarVue() },
 
     '/skill/design/figma': { base: '/skill/design/figma/', items: sidebarFigma() },
+
+    '/skill/design/uml': { base: '/skill/design/uml/', items: sidebarUML() },
 
     '/skill/management/pmp': { base: '/skill/management/pmp/', items: sidebarPmp() },
     '/skill/management/csmm': { base: '/skill/management/csmm/', items: sidebarCsmm() },
