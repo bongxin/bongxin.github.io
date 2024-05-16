@@ -71,7 +71,7 @@ digraph G {Hello->World}
 '>
 ```
 
-## 示例2：支持Mermaid语法
+## 示例3：不支持Mermaid语法
 
 ### 效果
 <img src='https://g.gravizo.com/svg?
@@ -89,4 +89,65 @@ sequenceDiagram
     John-->>Alice: Great!
     Alice-)John: See you later!
 '>
+```
+
+## 示例4：支持Graphviz DOT语法
+
+### 效果
+<img src='https://g.gravizo.com/svg?
+digraph WaterCycle {
+  layout=neato;
+  overlap=false;
+  node [shape=rectangle];
+  0 [label="大气中的水蒸气"];
+  1 [label="凝结成云"];
+  2 [label="形成降水"];
+  3 [label="降水到地面"];
+  4 [label="形成地表水"];
+  5 [label="流入河流"];
+  6 [label="进入地下水"];
+  7 [label="蒸发"];
+  8 [label="回到大气中的水蒸气"];
+  0 -> 1;
+  1 -> 2;
+  2 -> 3;
+  3 -> 4;
+  4 -> 5;
+  4 -> 6;
+  5 -> 7;
+  6 -> 7;
+  7 -> 8;
+  8 -> 0;
+}
+'>
+
+### 代码
+```
+digraph WaterCycle {
+  layout=neato;
+  overlap=false;
+  node [shape=rectangle];
+
+  0 [label="大气中的水蒸气"];
+  1 [label="凝结成云"];
+  2 [label="形成降水"];
+  3 [label="降水到地面"];
+  4 [label="形成地表水"];
+  5 [label="流入河流"];
+  6 [label="进入地下水"];
+  7 [label="蒸发"];
+  8 [label="回到大气中的水蒸气"];
+
+  0 -> 1;
+  1 -> 2;
+  2 -> 3;
+  3 -> 4;
+  4 -> 5;
+  4 -> 6;
+  5 -> 7;
+  6 -> 7;
+  7 -> 8;
+  8 -> 0;
+}
+
 ```

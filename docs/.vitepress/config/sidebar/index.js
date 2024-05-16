@@ -3,6 +3,7 @@ import { sidebarNpm, sidebarPhp, sidebarVue } from './skill';
 import { sidebarFigma,sidebarUML } from './design';
 import { sidebarPmp, sidebarCsmm } from './management';
 import { sidebarMarkdown } from './others';
+import { sidebarAI } from './ai';
 
 export default function sidebar() {
   return {
@@ -18,7 +19,9 @@ export default function sidebar() {
     '/skill/management/pmp': { base: '/skill/management/pmp/', items: sidebarPmp() },
     '/skill/management/csmm': { base: '/skill/management/csmm/', items: sidebarCsmm() },
 
-    '/others/markdown': { base: '/others/markdown/', items: sidebarMarkdown() }
+    '/others/markdown': { base: '/others/markdown/', items: sidebarMarkdown() },
+    
+    '/ai': { base: '/ai/', items: sidebarAI() }
 
   }
 }

@@ -1,6 +1,6 @@
 export default function nav() {
   return [
-    // { text: '主页', link: '/' },
+    { text: 'AI', link: '/ai/AI/' },
     // {
     //   text: '例子',
     //   link: '/example/markdown-examples',

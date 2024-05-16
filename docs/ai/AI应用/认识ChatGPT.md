@@ -1,0 +1,7 @@
+ChatGPT 是一个基于OpenAI的GPT（Generative Pre-trained Transformer）架构的AI模型。它通过大量的数据预训练，能够生成连贯的、上下文相关的文本。ChatGPT可以看作是窄AI的一个实例，因为它专门用于生成文本和进行语言相关的任务。同时，ChatGPT也是AIGC的一个典型例子，因为它主要用于生成内容，例如对话、文章、摘要等。
+
+
+ChatGPT属于AI和AIGC的范畴。它是一个专注于特定类型内容生成的AI工具，没有达到AGI的普适性和灵活性。未来，随着技术的发展，我们可能会看到更接近AGI的模型，但当前ChatGPT主要是作为窄AI和AIGC工具而存在。
+
+## AIGC和Chat GPT的关系
+AIGC是AI大模型，特别是自然语言处理模型的一种重要应用；ChatGPT则是AIGC在聊天对话场景的一个具体应用。可以把AIGC看作是一个大的范畴，而ChatGPT是其中一个类别的小应用。
