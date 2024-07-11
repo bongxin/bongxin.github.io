@@ -15,7 +15,10 @@
   --vp-c-brand-3: #3c3c43;
 
   /* 导航栏高度 */
-  --vp-nav-height: 42px;
+  --vp-nav-height: 48px;
+
+  /* 提示块 */
+  --vp-custom-block-tip-bg: rgba(60, 60, 60, 0.2);
 }
 
 .dark {
@@ -27,12 +30,34 @@ body {
   font-size: 15px;
 }
 
-.VPSidebarItem.level-1 .text{
+/* 导航栏 */
+.VPNavBarMenu .text {
+  font-size: 13px;
+}
+
+.VPNavBarMenu .VPMenu .title {
+  font-size: 13px;
+}
+
+.VPNavBarMenu .VPMenu .link {
+  font-size: 13px;
+  line-height: 28px;
+}
+
+/* 页面导航 */
+.VPDocAsideOutline .outline-link {
+  font-size: 13px;
+  line-height: 28px;
+}
+
+/* 侧边栏 */
+.VPSidebarItem.level-1 .text {
   font-size: 13px;
   line-height: 21px;
 }
 
-.VPDocAsideOutline .outline-link{
+/* 页面导航 */
+.VPDocAsideOutline .outline-link {
   font-size: 13px;
   line-height: 28px;
 }

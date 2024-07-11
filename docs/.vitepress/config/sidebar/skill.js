@@ -27,7 +27,7 @@ export function sidebarPhp() {
       text: 'Wordpress',
       collapsed: false,
       items: [
-        { text: 'Wordpress', link: 'npm/npm' },
+        { text: 'Wordpress', link: 'Wordpress' },
       ],
     },
 
@@ -35,7 +35,8 @@ export function sidebarPhp() {
       text: 'B2 Pro',
       collapsed: false,
       items: [
-        { text: 'B2 Pro', link: 'npm/npm包推荐' },
+        { text: '简介', link: 'B2Pro' },
+        { text: '快速上手', link: 'B2Pro/guide' },
       ],
     },
     {

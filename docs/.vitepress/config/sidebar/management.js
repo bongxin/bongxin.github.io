@@ -79,6 +79,7 @@ export function sidebarPmp() {
         { text: '引论+环境', link: 'PMP/光环国际PMP章节练习题/引论+环境' },
         { text: '人员', link: 'PMP/光环国际PMP章节练习题/人员' },
         { text: '过程', link: 'PMP/光环国际PMP章节练习题/过程' },
+        { text: 'PMP模考题（二）', link: 'PMP/PMP模考题（二）' },
         { text: 'chatGPT指令（选择题格式转换）', link: 'PMP/光环国际PMP章节练习题/chatGPT指令（选择题格式转换）' },
         
       ],
