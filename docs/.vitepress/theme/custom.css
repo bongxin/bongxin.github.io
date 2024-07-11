@@ -1,0 +1,38 @@
+/* .vitepress/theme/custom.css */
+:root {
+  --global-font-size: 12px;
+  --vp-c-text-1: rgba(60, 60, 67);
+  --vp-c-text-2: rgba(60, 60, 60, 0.7);
+  --vp-c-text-3: rgba(60, 60, 67, 0.56);
+
+  /* 品牌颜色 */
+  --vp-c-brand-1: #000000;
+
+  /* 品牌按钮背景色 */
+  --vp-c-brand-2: #000000;
+
+  /* 品牌按钮背景色 */
+  --vp-c-brand-3: #3c3c43;
+
+  /* 导航栏高度 */
+  --vp-nav-height: 42px;
+}
+
+.dark {
+  --vp-c-brand-1: #ffffff;
+  /* --vp-c-brand-2: #747bff; */
+}
+
+body {
+  font-size: 15px;
+}
+
+.VPSidebarItem.level-1 .text{
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.VPDocAsideOutline .outline-link{
+  font-size: 13px;
+  line-height: 28px;
+}

@@ -1,4 +1,5 @@
 ---
+passwordProtected: true
 layout: home
 
 hero:
