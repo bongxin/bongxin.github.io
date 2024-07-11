@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 import { withMermaid } from 'vitepress-plugin-mermaid';
 
-import { imgSize } from '@mdit/plugin-img-size'
+import { imgSize } from '@mdit/plugin-img-size';
 
 import nav from './config/nav';
 import sidebar from './config/sidebar';
@@ -32,7 +32,7 @@ export default withMermaid(
 
       outline: {
         label: '页面导航',
-        level: [2, 3]
+        level: [2, 3],
       },
 
       lastUpdated: {
@@ -51,21 +51,23 @@ export default withMermaid(
       ],
 
       search: {
-        provider: 'local'
+        provider: 'local',
       },
 
-      lightModeSwitchTitle: '切换到浅色模式',
-      darkModeSwitchTitle: '切换到深色模式',
+      // lightModeSwitchTitle: '切换到浅色模式',
+      // darkModeSwitchTitle: '切换到深色模式',
     },
+    
+
+    appearance: false, // 关闭主题切换按钮
     markdown: {
       config: (md) => {
         // 使用更多的 Markdown-it 插件！
-        md.use(imgSize)
-      }
+        md.use(imgSize);
+      },
     },
     mermaid: {
       //mermaidConfig !theme here works for ligth mode since dark theme is forced in dark mode
     },
-  },
-  )
+  })
 );
