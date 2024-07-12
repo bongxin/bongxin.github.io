@@ -18,14 +18,14 @@ export function sidebarPhp() {
   return [
     {
       text: 'PHP',
-      collapsed: false,
+      // collapsed: false,
       items: [
         { text: '什么是PHP', link: 'PHP' }
       ],
     },
     {
       text: 'Wordpress',
-      collapsed: false,
+      // collapsed: false,
       items: [
         { text: 'Wordpress', link: 'Wordpress' },
       ],
@@ -33,22 +33,23 @@ export function sidebarPhp() {
 
     {
       text: 'B2 Pro',
-      collapsed: false,
+      // collapsed: false,
       items: [
         { text: '简介', link: 'B2Pro' },
         { text: '快速上手', link: 'B2Pro/guide' },
+        { text: 'B2Pro APP', link: 'B2Pro/guide-app' },
       ],
     },
     {
       text: '子比主题',
-      collapsed: false,
+      // collapsed: false,
       items: [
         { text: '子比主题', link: 'npm/npm包推荐' },
       ],
     },
     {
       text: '点大商城',
-      collapsed: false,
+      // collapsed: false,
       items: [
         { text: '点大商城', link: 'npm/npm包推荐' },
       ],

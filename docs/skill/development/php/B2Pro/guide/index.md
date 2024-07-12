@@ -231,23 +231,23 @@ Mysql 的查询也是比较消耗时间的，我们强烈建议您安装 Redis �
 
 如果您要缓存站点的所有页面，请排除以下网址
 
-你的域名+/pay
-你的域名+/notify
-你的域名+/return
-你的域名+/download
-你的域名+/redirect
-你的域名+/wecatmpnotify
-你的域名+/open
+你的域名+/pay  
+你的域名+/notify  
+你的域名+/return  
+你的域名+/download  
+你的域名+/redirect  
+你的域名+/wecatmpnotify  
+你的域名+/open  
 
 比如：
 
-https://7b2.com/pay
-https://7b2.com/notify
-https://7b2.com/return
-https://7b2.com/download
-https://7b2.com/redirect
-https://7b2.com/wecatmpnotify
-https://7b2.com/open
+https://7b2.com/pay  
+https://7b2.com/notify  
+https://7b2.com/return  
+https://7b2.com/download  
+https://7b2.com/redirect  
+https://7b2.com/wecatmpnotify  
+https://7b2.com/open  
 
 一般的缓存插件或者CDN的设置中都会有排除网址带问号页面的缓存选项。请不要缓存带问号的页面。
 
