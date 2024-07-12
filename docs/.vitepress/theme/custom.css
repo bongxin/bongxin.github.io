@@ -45,6 +45,11 @@ body {
 .VPNavBarMenu .VPMenu .link {
   font-size: 13px;
   line-height: 28px;
+  color: var(--vp-c-text-2)
+}
+
+.VPNavBarMenu .VPMenu .link.active {
+  color: #000000;
 }
 
 /* 页面导航 */
