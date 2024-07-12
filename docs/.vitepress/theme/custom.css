@@ -53,14 +53,29 @@ body {
   line-height: 28px;
 }
 
+.VPNavBarTitle.has-sidebar .title {
+  border-bottom: none;
+  /* var(--vp-c-divider); */
+}
+
+.VPNav .VPNavBar.has-sidebar .divider {
+  padding-left: 0;
+}
+
+.VPNav .VPNavBar.has-sidebar .divider .divider-line {
+  background: none;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
 /* 侧边栏 */
 @media (min-width: 960px) {
   .Layout .VPSidebar {
-    padding-top: 85px;
+    padding-top: 37px;
+    margin-top: var(--vp-nav-height)
   }
 
   .VPSidebar #VPSidebarNav {
-    border-right: 1px solid var(--vp-c-divider);
+    /* border-right: 1px solid var(--vp-c-divider); */
   }
 }
 
