@@ -19,6 +19,9 @@
 
   /* 提示块 */
   --vp-custom-block-tip-bg: rgba(60, 60, 60, 0.2);
+
+  /* 侧边栏背景色 */
+  --vp-sidebar-bg-color: #fff;
 }
 
 .dark {
@@ -51,9 +54,27 @@ body {
 }
 
 /* 侧边栏 */
-.VPSidebarItem.level-1 .text {
+@media (min-width: 960px) {
+  .Layout .VPSidebar {
+    padding-top: 85px;
+  }
+
+  .VPSidebar #VPSidebarNav {
+    border-right: 1px solid var(--vp-c-divider);
+  }
+}
+
+.VPSidebar .VPSidebarItem.level-0 {
+  padding-bottom: 0px;
+}
+
+.VPSidebar .VPSidebarItem.level-1 .text {
   font-size: 13px;
   line-height: 21px;
+}
+
+.VPSidebar #VPSidebarNav .group+.group {
+  border-top: none;
 }
 
 /* 页面导航 */
