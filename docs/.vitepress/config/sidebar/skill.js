@@ -10,7 +10,6 @@ export function sidebarNpm() {
         { text: '什么是 nrm', link: 'npm/nrm' },
       ],
     },
-    { text: '配置和 API 参考', base: '/zh/reference/', link: 'site-config' },
   ];
 }
 

@@ -53,18 +53,26 @@ body {
   line-height: 28px;
 }
 
+/* logo */
 .VPNavBarTitle.has-sidebar .title {
   border-bottom: none;
   /* var(--vp-c-divider); */
 }
 
-.VPNav .VPNavBar.has-sidebar .divider {
+/* 导航菜单 */
+.VPNav .VPNavBar.has-sidebar .divider,
+.VPNav .VPNavBar:not(.home.top) .divider {
   padding-left: 0;
 }
 
-.VPNav .VPNavBar.has-sidebar .divider .divider-line {
+.VPNav .VPNavBar.has-sidebar .divider .divider-line,
+.VPNav .VPNavBar:not(.home.top) .divider .divider-line {
   background: none;
   border-top: 1px solid var(--vp-c-divider);
+}
+
+.VPNavBar:not(.has-sidebar):not(.home.top) .divider {
+  background: none !important;
 }
 
 /* 侧边栏 */
