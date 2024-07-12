@@ -84,24 +84,32 @@ export default function nav() {
         },
       ]
     }, 
-    // {
-    //   text: '运维',
-    //   items: [
-    //     {
-    //       text: '运维',
-    //       items: [
-    //         {
-    //           text: '宝塔面板',
-    //           link: '/skill/operation/bt/宝塔面板/认识宝塔面板',
-    //         },
-    //         {
-    //           text: 'Linux',
-    //           link: '/skill/operation/ubuntu/基本配置/基本配置',
-    //         },
-    //       ],
-    //     }
-    //   ]
-    // }, 
+    {
+      text: '运维',
+      items: [
+        {
+          text: '运维',
+          items: [
+            {
+              text: '宝塔面板',
+              link: '/skill/operation/bt/宝塔面板/认识宝塔面板',
+            },
+            {
+              text: 'Linux',
+              link: '/skill/operation/ubuntu/基本配置/基本配置',
+            },
+            {
+              text: 'Clash',
+              link: '/skill/operation/clash/',
+            },
+            {
+              text: 'OpenWRT',
+              link: '/skill/operation/openwrt/OpenWRT',
+            },
+          ],
+        }
+      ]
+    }, 
     {
       text: '其他',
       items: [
