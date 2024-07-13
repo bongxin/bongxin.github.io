@@ -48,20 +48,19 @@
 
 ![](./1-9.png){ width=240 }
 
-
-## windous使用方法
+## windous 使用方法
 
 ### 1.购买商城会员
 
 [https://www.ssad.shop/#](https://www.ssad.shop/#)（如已购买，直接开始下一步）
 
-PC端 clash下载
+PC 端 clash 下载
 
 [https://wwjt.lanzouw.com/iW0Mb0t2062f](https://wwjt.lanzouw.com/iW0Mb0t2062f)
 
 ![](./2-1.png){ width=640 }
 
-### 2.点击proflies
+### 2.点击 proflies
 
 ![](./2-2.png){ width=640 }
 
@@ -77,25 +76,23 @@ PC端 clash下载
 
 绿色代表开 红色代表关
 
-
 ::: warning 提醒
 注：不用的时候关掉，开着会影响网速，长时间开着会造成电脑没网
-::: 
+:::
 
 ![](./2-4.png){ width=640 }
 
-
-## Mac使用方法
+## Mac 使用方法
 
 ### 1.购买商城会员
 
 https://www.ssad.shop/#（如已购买，直接开始下一步）
 
-### 2.Clashx下载
+### 2.Clashx 下载
 
 https://doc.miyun.app/apps/clashx/ClashX.dmg
 
-### 3.安装 
+### 3.安装
 
 下载后运行 dmg 文件以安装,手动将安装包拖入「应用程序」文件夹中。
 
@@ -107,23 +104,23 @@ ClashX 首次运行会提示是否安装帮助程序（Helper）。此帮助程�
 
 ![](./3-2.png){ width=640 }
 
-### 4.配置 
+### 4.配置
 
 一键导入 Clash 订阅
 
- 配置订阅 ：点击状态栏 ClashX 图标 → 配置 → 托管配置 → 点击 管理 之后步骤同 自动配置。
+配置订阅 ：点击状态栏 ClashX 图标 → 配置 → 托管配置 → 点击 管理 之后步骤同 自动配置。
 
-复制到url地址
+复制到 url 地址
 
 ![](./3-3.png){ width=640 }
 
 ![](./3-4.png){ width=640 }
 
-将地址复制到URL输入框，点击OK即可。
+将地址复制到 URL 输入框，点击 OK 即可。
 
 ![](./3-5.png){ width=640 }
 
-5、客户端将从BosLife API中心验证地址并下载配置文件。
+5、客户端将从 BosLife API 中心验证地址并下载配置文件。
 
 ![](./3-6.png){ width=640 }
 

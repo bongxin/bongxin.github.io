@@ -1,3 +1,5 @@
+@import "./style.css";
+
 /* .vitepress/theme/custom.css */
 :root {
   --global-font-size: 12px;

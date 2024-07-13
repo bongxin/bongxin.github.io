@@ -125,6 +125,14 @@ export default function nav() {
         },
       ],
     },{
+      text: "音乐",
+      items: [
+        {
+          text: "治愈",
+          link: "/music/KOKIA",
+        },
+      ],
+    },{
       text: "其他",
       items: [
         {

@@ -6,6 +6,7 @@ import { sidebarUbuntu, sidebarBt, sidebarOthers } from "./DevOps";
 import { sidebarMarkdown } from "./others";
 import { sidebarAI } from "./ai";
 import { sidebarCli } from "./operation";
+import { sidebarMusic } from "./music";
 
 export default function sidebar() {
   return {
@@ -54,5 +55,7 @@ export default function sidebar() {
     "/others/markdown": { base: "/others/markdown/", items: sidebarMarkdown() },
 
     "/ai": { base: "/ai/", items: sidebarAI() },
+
+    "/music": { base: "/music/", items: sidebarMusic() },
   };
 }

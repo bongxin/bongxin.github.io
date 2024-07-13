@@ -7,6 +7,12 @@ export function sidebarCli() {
         { text: "草料微信二维码生成器", link: "草料微信二维码生成器" },
         { text: "微信二维码制作", link: "微信二维码制作" },
       ],
+    },{
+      text: "其他",
+      collapsed: false,
+      items: [
+        { text: "嵌入Bilibili视频移动端自适应", link: "嵌入Bilibili视频移动端自适应" },
+      ],
     },
   ];
 }
