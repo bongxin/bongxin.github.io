@@ -1,4 +1,4 @@
-  <div class="demo-image__preview">
+  <!-- <div class="demo-image__preview">
     <el-image
       style="width: 100px; height: 100px"
       :src="url"
@@ -36,4 +36,17 @@ const srcList = [
   width: 100%;
   height: 200px;
 }
-</style>
+</style> -->
+
+<script setup lang="ts">
+import { reactive, watch } from 'vue'
+
+const font = reactive({
+  color: 'rgba(0, 0, 0, .15)',
+})
+
+</script>
+
+  <el-watermark :font="font" :content="['BONGXIN', 'DIFFERENT ME']">
+    <div style="height: 500px" />
+  </el-watermark>
