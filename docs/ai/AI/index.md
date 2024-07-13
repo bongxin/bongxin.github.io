@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: 'AI'
-  text: '人工智能（Artificial Intelligence）'
+  name: "AI"
+  text: "人工智能"
   tagline: 人工智能（Artificial Intelligence），英文缩写为AI。它是研究、开发用于模拟、延伸和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。
   image:
     src: /ai.jpg

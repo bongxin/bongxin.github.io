@@ -2,7 +2,7 @@ import { sidebarExample } from './example';
 import { sidebarNpm, sidebarPhp, sidebarVue } from './skill';
 import { sidebarFigma,sidebarUML } from './design';
 import { sidebarPmp, sidebarCsmm } from './management';
-import { sidebarUbuntu,sidebarBt } from './operation';
+import { sidebarUbuntu,sidebarBt } from './DevOps';
 import { sidebarMarkdown } from './others';
 import { sidebarAI } from './ai';
 
@@ -20,8 +20,8 @@ export default function sidebar() {
     '/skill/management/pmp': { base: '/skill/management/pmp/', items: sidebarPmp() },
     '/skill/management/csmm': { base: '/skill/management/csmm/', items: sidebarCsmm() },
     
-    '/skill/operation/ubuntu': { base: '/skill/operation/ubuntu/', items: sidebarUbuntu() },
-    '/skill/operation/bt': { base: '/skill/operation/bt/', items: sidebarBt() },
+    '/skill/DevOps/ubuntu': { base: '/skill/DevOps/ubuntu/', items: sidebarUbuntu() },
+    '/skill/DevOps/bt': { base: '/skill/DevOps/bt/', items: sidebarBt() },
 
     '/others/markdown': { base: '/others/markdown/', items: sidebarMarkdown() },
     

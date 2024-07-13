@@ -92,19 +92,19 @@ export default function nav() {
           items: [
             {
               text: '宝塔面板',
-              link: '/skill/operation/bt/宝塔面板/认识宝塔面板',
+              link: '/skill/DevOps/bt/宝塔面板/认识宝塔面板',
             },
             {
               text: 'Linux',
-              link: '/skill/operation/ubuntu/基本配置/基本配置',
+              link: '/skill/DevOps/ubuntu/基本配置/基本配置',
             },
             {
               text: 'Clash',
-              link: '/skill/operation/clash/',
+              link: '/skill/DevOps/clash/',
             },
             {
               text: 'OpenWRT',
-              link: '/skill/operation/openwrt/OpenWRT',
+              link: '/skill/DevOps/openwrt/OpenWRT',
             },
           ],
         }
@@ -127,19 +127,19 @@ export default function nav() {
             
             // {
             //   text: 'GitHub',
-            //   link: '/skill/operation/github/GitHub/Fast GitHub',
+            //   link: '/skill/DevOps/github/GitHub/Fast GitHub',
             // },
             // {
             //   text: '树莓派',
-            //   link: '/skill/operation/树莓派/树莓派',
+            //   link: '/skill/DevOps/树莓派/树莓派',
             // },
             // {
             //   text: 'OpenWRT',
-            //   link: '/skill/operation/openwrt/OpenWRT',
+            //   link: '/skill/DevOps/openwrt/OpenWRT',
             // },
             // {
             //   text: 'Mac',
-            //   link: '/skill/operation/openwrt/OpenWRT',
+            //   link: '/skill/DevOps/openwrt/OpenWRT',
             // },
           ],
         },
