@@ -1,46 +1,47 @@
 export default function nav() {
   return [
-    { text: 'AI', link: '/ai/AI/' },
+    { text: "AI", link: "/ai/AI/" },
     // {
     //   text: '例子',
     //   link: '/example/markdown-examples',
     //   activeMatch: '/zh/example/',
     // },
     {
-      text: '开发',
+      text: "开发",
       items: [
         {
-          text: '前端',
+          text: "前端",
           items: [
             {
-              text: 'npm',
-              link: '/skill/development/npm/npm',
+              text: "npm",
+              link: "/skill/development/npm/npm",
             },
             {
-              text: 'Vue',
-              link: '/skill/development/vue/Vue/简介',
+              text: "Vue",
+              link: "/skill/development/vue/Vue/简介",
             },
           ],
         },
         {
-          text: '后端',
+          text: "后端",
           items: [
             {
-              text: 'PHP',
-              link: '/skill/development/php/PHP/认识PHP',
+              text: "PHP",
+              link: "/skill/development/php/PHP/认识PHP",
             },
           ],
         },
-      ]
-    }, {
-      text: '设计',
+      ],
+    },
+    {
+      text: "设计",
       items: [
         {
-          text: 'UI设计',
+          text: "UI设计",
           items: [
             {
-              text: 'Figma',
-              link: '/skill/design/figma/Figma/认识Figma',
+              text: "Figma",
+              link: "/skill/design/figma/Figma/认识Figma",
             },
             // {
             //   text: 'PS',
@@ -49,82 +50,95 @@ export default function nav() {
           ],
         },
         {
-          text: 'UML画图',
+          text: "UML画图",
           items: [
             {
-              text: 'PlantUML',
-              link: '/skill/design/uml/plantuml/PlantUML/认识PlantUML',
+              text: "PlantUML",
+              link: "/skill/design/uml/plantuml/PlantUML/认识PlantUML",
             },
             {
-              text: 'Mermaid',
-              link: '/skill/design/uml/mermaid/Mermaid/认识Mermaid.md',
+              text: "Mermaid",
+              link: "/skill/design/uml/mermaid/Mermaid/认识Mermaid.md",
             },
             {
-              text: 'Gravizo',
-              link: '/skill/design/uml/gravizo//Gravizo/认识Gravizo.md',
+              text: "Gravizo",
+              link: "/skill/design/uml/gravizo//Gravizo/认识Gravizo.md",
             },
           ],
         },
-      ]
-    }, {
-      text: '管理',
+      ],
+    },
+    {
+      text: "管理",
       items: [
         {
-          text: '项目管理',
+          text: "项目管理",
           items: [
             {
-              text: 'PMP',
-              link: '/skill/management/pmp/PMP/认识PMP',
+              text: "PMP",
+              link: "/skill/management/pmp/PMP/认识PMP",
             },
             {
-              text: 'CSMM',
-              link: '/skill/management/csmm/CSMM/认识CSMM',
+              text: "CSMM",
+              link: "/skill/management/csmm/CSMM/认识CSMM",
             },
           ],
         },
-      ]
-    }, 
+      ],
+    },
     {
-      text: '运维',
+      text: "运维",
       items: [
         {
-          text: '运维',
+          text: "运维",
           items: [
             {
-              text: '宝塔面板',
-              link: '/skill/DevOps/bt/宝塔面板/认识宝塔面板',
+              text: "宝塔面板",
+              link: "/skill/DevOps/bt/宝塔面板/认识宝塔面板",
             },
             {
-              text: 'Linux',
-              link: '/skill/DevOps/ubuntu/基本配置/基本配置',
+              text: "Linux",
+              link: "/skill/DevOps/ubuntu/基本配置/基本配置",
             },
             {
-              text: 'Clash',
-              link: '/skill/DevOps/clash/',
+              text: "Clash",
+              link: "/skill/DevOps/clash/",
             },
             {
-              text: 'OpenWRT',
-              link: '/skill/DevOps/openwrt/OpenWRT',
+              text: "OpenWRT",
+              link: "/skill/DevOps/openwrt/OpenWRT",
+            },
+            {
+              text: "其他",
+              link: "/skill/DevOps/others/内网穿透",
             },
           ],
-        }
-      ]
-    }, 
+        },
+      ],
+    },
     {
-      text: '其他',
+      text: "运营",
       items: [
         {
-          text: '其他',
+          text: "草料二维码",
+          link: "/skill/operation/草料微信二维码生成器",
+        },
+      ],
+    },{
+      text: "其他",
+      items: [
+        {
+          text: "其他",
           items: [
             {
-              text: 'Markdown',
-              link: '/others/markdown/Markdown/认识Markdown',
+              text: "Markdown",
+              link: "/others/markdown/Markdown/认识Markdown",
             },
             {
-              text: 'AsciiDoc',
-              link: '/others/markdown/AsciiDoc/认识Markdown',
+              text: "AsciiDoc",
+              link: "/others/markdown/AsciiDoc/认识Markdown",
             },
-            
+
             // {
             //   text: 'GitHub',
             //   link: '/skill/DevOps/github/GitHub/Fast GitHub',
@@ -143,7 +157,7 @@ export default function nav() {
             // },
           ],
         },
-      ]
+      ],
     },
   ];
 }
