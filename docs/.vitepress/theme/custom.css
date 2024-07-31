@@ -23,7 +23,7 @@
   --vp-custom-block-tip-bg: rgba(60, 60, 60, 0.2);
 
   /* 侧边栏背景色 */
-  --vp-sidebar-bg-color: #fff;
+  --vp-sidebar-bg-color: transparent;
 }
 
 .dark {
