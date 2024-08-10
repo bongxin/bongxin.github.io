@@ -16,7 +16,7 @@ export default withMermaid(
       sidebar: sidebar(),
       editLink: {
         pattern:
-          "https://github.com/bongxin/bongxin.github.io/edit/main/docs/:path",
+          "https://github.com/bongxin/bongxin.github.io/edit/base/docs/:path",
         text: "在 GitHub 上编辑此页面",
       },
 
