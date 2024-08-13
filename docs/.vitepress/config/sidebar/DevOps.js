@@ -6,6 +6,7 @@ export function sidebarUbuntu() {
       items: [
         { text: "基本配置", link: "基本配置/基本配置" },
         { text: "开发环境配置", link: "基本配置/开发环境配置" },
+        { text: "OpenVPN服务", link: "基本配置/OpenVPN服务" },
       ],
     },
     {
