@@ -29,6 +29,10 @@ export default function nav() {
               text: "PHP",
               link: "/skill/development/php/PHP/认识PHP",
             },
+            {
+              text: "Java",
+              link: "/skill/development/java/yudao/guide",
+            },
           ],
         },
       ],

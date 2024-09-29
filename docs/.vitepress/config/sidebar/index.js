@@ -1,5 +1,5 @@
 import { sidebarExample } from "./example";
-import { sidebarNpm, sidebarPhp, sidebarVue } from "./skill";
+import { sidebarNpm, sidebarPhp, sidebarJava, sidebarVue } from "./skill";
 import { sidebarFigma, sidebarUML } from "./design";
 import { sidebarPmp, sidebarCsmm } from "./management";
 import { sidebarUbuntu, sidebarBt, sidebarOthers } from "./DevOps";
@@ -18,6 +18,10 @@ export default function sidebar() {
     "/skill/development/php": {
       base: "/skill/development/php/",
       items: sidebarPhp(),
+    },
+    "/skill/development/java": {
+      base: "/skill/development/java/",
+      items: sidebarJava(),
     },
     "/skill/development/vue": {
       base: "/skill/development/vue/",

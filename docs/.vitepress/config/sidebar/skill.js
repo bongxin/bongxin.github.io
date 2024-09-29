@@ -56,6 +56,19 @@ export function sidebarPhp() {
   ];
 }
 
+export function sidebarJava() {
+  return [
+    {
+      text: '芋道源码',
+      // collapsed: false,
+      items: [
+        { text: '简介', link: 'yudao/guide' },
+        { text: '部署', link: 'yudao/deploy' },
+      ],
+    },
+  ]
+}
+
 export function sidebarVue() {
   return [
     {
