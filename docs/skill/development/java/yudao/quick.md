@@ -18,7 +18,7 @@ outline: "deep"
 
 修改 `yudao\ruoyi-vue-pro\yudao-server\target\classes` 目录下的 `application-dev.yaml`，主要是修改ip地址
 
-```
+``` yaml
 ···
 datasource:
 master:
@@ -27,7 +27,7 @@ master:
     password: 123456
 slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据自己需要修改
     lazy: true # 开启懒加载，保证启动速度
-    url: jdbc:mysql://192.168.6.181/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+    url: jdbc:mysql://192.168.6.181:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
     username: root
     password: 123456
 ···          
@@ -39,7 +39,7 @@ slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据�
 
 修改 `yudao\ruoyi-vue-pro\yudao-server\target\classes` 目录下的 `application-dev.yaml`，主要是修改host地址
 
-```
+``` yaml
 ···  
 # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
 data:
@@ -52,7 +52,7 @@ redis:
 
 修改 `application.yaml` 配置，将 `active: local` 改成 `dev`
 
-```
+``` yaml
 spring:
   application:
     name: yudao-server
@@ -75,7 +75,7 @@ maven终端执行 `mvn clean install package '-Dmaven.test.skip=true'`
 
 报错的话就改成以下命令：
 
-```
+``` sh
 mvn install -Dmaven.test.skip=true
 ```
 
@@ -88,6 +88,52 @@ mvn install -Dmaven.test.skip=true
 
 启动完成后，使用浏览器访问 `http://127.0.0.1:48080`地址，返回如下 JSON 字符串，说明成功
 
+
+#### 常见问题处理
+
+::: danger
+
+启动其它模块后，启动项目时报错：
+> Error running 'YudaoServerApplication'   Error running YudaoServerApplication.   Command line is too long.   Shorten the command line and rerun.`
+:::
+
+解决办法：在项目的 `.idea/workspace.xml` 文件中，找到 `<component name="PropertiesComponent">` ，后面在添加一行 `"dynamic.classpath": "true"` 这种方式一次设置就行。
+
+``` xml
+<component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.YudaoServerApplication.executor": "Run",
+    "Maven.yudao [clean,install,package...].executor": "Run",
+    "Maven.yudao [clean].executor": "Run",
+    "Maven.yudao [install,-Dmaven.test.skip=true].executor": "Run",
+    "Maven.yudao [install].executor": "Run",
+    "Maven.yudao [spring-boot:run...].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Branch__v2.2.0(jdk17/21)",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "dynamic.classpath": "true"
+  }
+```
+
+关闭演示模式
+
+修改 `yudao\ruoyi-vue-pro\yudao-server\target\classes` 目录下的 `application-dev.yaml`，主要是修改为 `demo: false`
+
+``` yaml
+# 芋道配置项，设置当前项目所有自定义的配置
+yudao:
+  captcha:
+    enable: false # 本地环境，暂时关闭图片验证码，方便登录等接口的测试；
+  security:
+    mock-enable: true
+  pay:
+    order-notify-url: http://yunai.natapp1.cc/admin-api/pay/notify/order # 支付渠道的【支付】回调地址
+    refund-notify-url: http://yunai.natapp1.cc/admin-api/pay/notify/refund # 支付渠道的【退款】回调地址
+  access-log: # 访问日志的配置项
+    enable: false
+  demo: false # 关闭演示模式
+``` 
 
 ## 前端项目
 
@@ -109,7 +155,7 @@ npm run dev
 
 查看 `package.json` 配置
 
-```
+``` json
 "scripts": {
     "i": "pnpm install",
     "dev": "vite --mode env.local",
@@ -135,7 +181,7 @@ npm run dev
 
 主要修改 `VITE_BASE_URL` 和 `VITE_UPLOAD_URL` 的host地址
 
-```
+``` json
 # 本地开发环境：本地启动所有项目（前端、后端、APP）时使用，不依赖外部环境
 NODE_ENV=development
 

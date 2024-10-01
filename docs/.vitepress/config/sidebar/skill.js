@@ -63,8 +63,15 @@ export function sidebarJava() {
       // collapsed: false,
       items: [
         { text: '简介', link: 'yudao/guide' },
-        { text: '部署', link: 'yudao/deploy' },
         { text: '快速启动', link: 'yudao/quick' },
+      ],
+    },
+    {
+      text: '部署',
+      // collapsed: false,
+      items: [
+        { text: '基础环境准备', link: 'yudao/deploy' },
+        { text: '部署应用', link: 'yudao/deploy_app' },
       ],
     },
   ]
