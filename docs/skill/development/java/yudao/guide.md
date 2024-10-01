@@ -12,11 +12,3 @@
 ## 技术架构
 
 ![技术架构](./技术架构.png)
-
-## 快速启动
-
-### 后端项目
-
-使用 [IDEA Community](https://www.jetbrains.com/zh-cn/idea/download/?section=windows) 运行后端项目
-
-### 前端项目

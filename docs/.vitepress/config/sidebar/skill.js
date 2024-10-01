@@ -64,6 +64,7 @@ export function sidebarJava() {
       items: [
         { text: '简介', link: 'yudao/guide' },
         { text: '部署', link: 'yudao/deploy' },
+        { text: '快速启动', link: 'yudao/quick' },
       ],
     },
   ]

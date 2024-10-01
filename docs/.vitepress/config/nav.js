@@ -105,6 +105,10 @@ export default function nav() {
               link: "/skill/DevOps/ubuntu/基本配置/基本配置",
             },
             {
+              text: "WSL2",
+              link: "/skill/DevOps/wsl2/",
+            },
+            {
               text: "Clash",
               link: "/skill/DevOps/clash/",
             },
