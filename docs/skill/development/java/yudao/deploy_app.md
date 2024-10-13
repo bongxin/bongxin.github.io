@@ -332,6 +332,56 @@ server {
 
 ``` conf
 server {
+    listen       443 ssl; # 监听 HTTPS 端口
+    server_name  bongxin.com.cn; # 您的域名
+
+    ssl_certificate /etc/nginx/cert/bongxin.com.cn_bundle.crt; # 使用 bundle.crt 文件
+    ssl_certificate_key /etc/nginx/cert/bongxin.com.cn.key; # 私钥文件
+
+    # SSL 相关配置
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:50m;
+    ssl_protocols TLSv1.2 TLSv1.3; # 使用最新的加密协议
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    # OCSP Stapling 配置
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 valid=300s;
+    resolver_timeout 5s;
+
+    # HTTP 重定向到 HTTPS
+    if ($scheme != "https") {
+        return 301 https://$host$request_uri;
+    }
+
+    location / { ## 前端项目
+        root   /usr/share/nginx/html/yudao-ui-admin;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location = /index.html {
+        root   /usr/share/nginx/html/yudao-ui-admin;
+    }
+
+    location /admin-api/ { ## 后端项目 - 管理后台
+        proxy_pass http://172.25.142.160:48080/admin-api/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location /app-api/ { ## 后端项目 - 用户 App
+        proxy_pass http://172.25.142.160:48080/app-api/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+
+server {
     listen       80;
     server_name  bongxin.com.cn; ## 重要！！！修改成你的外网 IP/域名
 
@@ -414,4 +464,184 @@ server {
 * accessSecret: `******`
 
 
+## 部署商城应用（H5）
 
+::: tip 前置准备
+
+① 克隆 [https://github.com/yudaocode/yudao-mall-uniapp](https://github.com/yudaocode/yudao-mall-uniapp) 项目。
+
+② 下载 `HBuilder` 工具，并进行安装。
+
+③ 点击 HBuilder 的 [文件 -> 导入 -> 从本地项目导入...] 菜单，选择克隆的 `yudao-mall-uniapp` 目录
+
+:::
+
+### 安装依赖
+
+``` sh 
+npm i
+```
+
+### 修改配置
+
+``` json
+# 版本号
+SHOPRO_VERSION = v1.8.3
+
+# 后端接口 - 正式环境（通过 process.env.NODE_ENV 非 development）
+SHOPRO_BASE_URL = http://api-dashboard.yudao.iocoder.cn
+
+# 后端接口 - 测试环境（通过 process.env.NODE_ENV = development）
+SHOPRO_DEV_BASE_URL = http://bongxin.com.cn:48080
+### SHOPRO_DEV_BASE_URL = http://yunai.natapp1.cc
+
+# 后端接口前缀（一般不建议调整）
+SHOPRO_API_PATH = /app-api
+
+# 后端 websocket 接口前缀
+SHOPRO_WEBSOCKET_PATH = /infra/ws
+
+# 开发环境运行端口
+SHOPRO_DEV_PORT = 3000
+
+# 客户端静态资源地址 空=默认使用服务端指定的CDN资源地址前缀 | local=本地  |  http(s)://xxx.xxx=自定义静态资源地址前缀
+SHOPRO_STATIC_URL = https://file.sheepjs.com
+
+# 是否开启直播  1 开启直播 | 0 关闭直播 (小程序官方后台未审核开通直播权限时请勿开启)
+SHOPRO_MPLIVE_ON = 0
+
+# 租户ID 默认 1
+SHOPRO_TENANT_ID = 1
+```
+
+### 打包项目
+
+1. HBuilder 打开 `uni-app项目 -> 发行 -> 网站 -> PC Web或手机H5` 
+
+2. 点完之后会弹出一个框, 填写 `网站标题` 和 `网站域名` 之后点 `发行`
+
+3.  点完之后控制台会显示正在编译中... , 稍等一会
+
+4. 打包成功, 生成了unpackage文件夹, 打包好的文件存放在里面 `yudao-mall-uniapp\unpackage\dist\build\web`
+
+
+### 上传 web 文件
+
+在 Linux 服务器上创建 `/work/projects/yudao-ui-mall` 目录，使用 scp 命令或者 FTP 工具，将 web 上传到该目录
+
+#### 打包压缩包
+
+进入 `web` 文件夹，使用 `7zip` 将文件打包压缩包 `web.tar`
+
+#### 上传压缩包
+
+使用 `MobaXterm` 上传 `web.tar` 到服务器 `/work/projects/yudao-ui-mall` 目录
+
+#### 解压压缩包
+
+``` sh
+tar -xf web.tar
+```
+
+### 配置 Nginx 转发
+
+
+::: tip 提示
+复制服务器 `/work/projects/yudao-ui-mall` 目录到 `/work/nginx/html/yudao-ui-mall`
+``` sh
+mkdir /work/nginx/html/yudao-ui-mall
+cp /work/projects/yudao-ui-mall/* /work/nginx/html/yudao-ui-mall
+```
+:::
+
+#### 独立域名访问（推荐）（未验证）
+
+(1) 在 `/work/nginx/conf.d` 目录下，创建 `ruoyi-vue-pro3.conf`，内容如下：
+
+``` conf
+# 二级域名配置
+server {
+    listen       443 ssl; # 监听 HTTPS 端口
+    server_name  mall.bongxin.com.cn; # 二级域名
+
+    ssl_certificate /etc/nginx/cert/bongxin.com.cn_bundle.crt; # 使用 bundle.crt 文件
+    ssl_certificate_key /etc/nginx/cert/bongxin.com.cn.key; # 私钥文件
+
+    # SSL 相关配置
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:50m;
+    ssl_protocols TLSv1.2 TLSv1.3; # 使用最新的加密协议
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    # OCSP Stapling 配置
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 valid=300s;
+    resolver_timeout 5s;
+
+    # HTTP 重定向到 HTTPS
+    #if ($scheme != "https") {
+    #    return 301 https://$host$request_uri;
+    #}
+
+    location / {
+        proxy_pass http://localhost:3000; ## 将请求转发到本地主机的 3000 端口
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+
+    # 错误页面配置
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+
+server {
+    listen       80;
+    server_name  mall.bongxin.com.cn; ## 二级域名
+
+    location / {
+        proxy_pass http://localhost:3000; ## 将请求转发到本地主机的 3000 端口
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+
+    # 错误页面配置
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+
+# 3000 端口上的前端项目配置
+server {
+    listen       3000;
+
+    location / { ## 前端项目
+        root   /usr/share/nginx/html/yudao-ui-mall;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location = /index.html {
+        root   /usr/share/nginx/html/yudao-ui-mall;
+    }
+}
+```
+
+(2) 执行 `docker exec yudao-nginx nginx -s reload` 命令，重新加载 Nginx 配置。
+
+
+(3) 请求 `http://mall.bongxin.com.cn` 地址，成功访问商城项目的外网地址
