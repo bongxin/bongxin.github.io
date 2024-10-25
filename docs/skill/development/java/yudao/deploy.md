@@ -92,7 +92,7 @@ docker run -d \
 
 #### 手动创建 `/work/nginx/nginx.conf`
 
-``` conf
+``` sh
 # User: nobody
 user  nginx;
 

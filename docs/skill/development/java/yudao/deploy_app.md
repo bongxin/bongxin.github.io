@@ -201,12 +201,12 @@ NODE_ENV=production
 VITE_DEV=true
 
 # 请求路径
-VITE_BASE_URL='http://bongxin.com.cn'
+VITE_BASE_URL='https://bongxin.com.cn'
 
 # 文件上传类型：server - 后端上传， client - 前端直连上传，仅支持S3服务
 VITE_UPLOAD_TYPE=server
 # 上传路径
-VITE_UPLOAD_URL='http://bongxin.com.cn/admin-api/infra/file/upload'
+VITE_UPLOAD_URL='https://bongxin.com.cn/admin-api/infra/file/upload'
 
 # 接口地址
 VITE_API_URL=/admin-api
@@ -227,7 +227,7 @@ VITE_BASE_PATH=/
 VITE_OUT_DIR=dist
 
 # 商城H5会员端域名
-VITE_MALL_H5_DOMAIN='http://mall.bongxin.com.cn'
+VITE_MALL_H5_DOMAIN='https://mall.bongxin.com.cn'
 
 # 验证码的开关
 VITE_APP_CAPTCHA_ENABLE=true
@@ -263,7 +263,7 @@ tar -xf dist.tar
 ::: warning
 Nginx配置必须加上这三行，不然访问会报404错误
 
-``` conf
+``` sh
 location = /index.html {
     root   /usr/share/nginx/html/yudao-ui-admin;
 }
@@ -278,7 +278,7 @@ location = /index.html {
 
 (1) 在 `/work/nginx/conf.d` 目录下，创建 `ruoyi-vue-pro.conf`，内容如下：
 
-``` conf
+``` sh
 server {
     listen       80;
     server_name  8.138.22.121; ## 重要！！！修改成你的外网 IP/域名
@@ -330,7 +330,7 @@ server {
 
 (1) 在 `/work/nginx/conf.d` 目录下，创建 `ruoyi-vue-pro2.conf`，内容如下：
 
-``` conf
+``` sh
 server {
     listen       443 ssl; # 监听 HTTPS 端口
     server_name  bongxin.com.cn; # 您的域名
@@ -351,11 +351,6 @@ server {
     resolver 8.8.8.8 valid=300s;
     resolver_timeout 5s;
 
-    # HTTP 重定向到 HTTPS
-    if ($scheme != "https") {
-        return 301 https://$host$request_uri;
-    }
-
     location / { ## 前端项目
         root   /usr/share/nginx/html/yudao-ui-admin;
         index  index.html index.htm;
@@ -364,6 +359,15 @@ server {
 
     location = /index.html {
         root   /usr/share/nginx/html/yudao-ui-admin;
+    }
+
+    # 配置反向代理到 HTTP 服务器
+    location /yudaoyuanma/ {
+        proxy_pass http://bongxin.cn:39000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
     }
 
     location /admin-api/ { ## 后端项目 - 管理后台
@@ -384,6 +388,11 @@ server {
 server {
     listen       80;
     server_name  bongxin.com.cn; ## 重要！！！修改成你的外网 IP/域名
+
+    # 将所有 HTTP 请求重定向到 HTTPS
+    if ($scheme != "https") {
+        return 301 https://$host$request_uri;
+    }
 
     location / { ## 前端项目
         root   /usr/share/nginx/html/yudao-ui-admin;
@@ -411,6 +420,14 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 
+    # 配置反向代理到 MinIO 服务器
+    location /yudaoyuanma/ {
+        proxy_pass http://bongxin.cn:39000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
 }
 
 ```
@@ -451,6 +468,26 @@ server {
 
 * Access Key: `******`
 * Secret Key: `******`
+
+### 修改Nginx配置
+
+::: danger 重点
+解决浏览器自动转https导致minio无法访问问题
+:::
+
+```
+···
+# 配置反向代理到 HTTP 服务器
+location /yudaoyuanma/ {
+    proxy_pass http://bongxin.cn:39000;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+···
+```
+完整nginx配置，见[配置Nginx转发方法二：独立域名访问（推荐）](#方式二-独立域名访问-推荐)
 
 ### 配置系统文件配置
 
@@ -558,12 +595,13 @@ cp /work/projects/yudao-ui-mall/* /work/nginx/html/yudao-ui-mall
 
 (1) 在 `/work/nginx/conf.d` 目录下，创建 `ruoyi-vue-pro3.conf`，内容如下：
 
-``` conf
+``` sh
 # 二级域名配置
 server {
     listen       443 ssl; # 监听 HTTPS 端口
     server_name  mall.bongxin.com.cn; # 二级域名
 
+    # 配置 SSL 证书
     ssl_certificate /etc/nginx/cert/bongxin.com.cn_bundle.crt; # 使用 bundle.crt 文件
     ssl_certificate_key /etc/nginx/cert/bongxin.com.cn.key; # 私钥文件
 
@@ -581,12 +619,12 @@ server {
     resolver_timeout 5s;
 
     # HTTP 重定向到 HTTPS
-    #if ($scheme != "https") {
-    #    return 301 https://$host$request_uri;
-    #}
+    if ($scheme != "https") {
+        return 301 https://$host$request_uri;
+    }
 
     location / {
-        proxy_pass http://localhost:3000; ## 将请求转发到本地主机的 3000 端口
+        proxy_pass http://172.25.142.160:3000; ## 将请求转发到本地主机的 3000 端口
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -639,6 +677,70 @@ server {
         root   /usr/share/nginx/html/yudao-ui-mall;
     }
 }
+```
+
+``` sh
+
+# HTTPS 服务器块
+server {
+    listen       443 ssl; # 监听 HTTPS 端口
+    server_name  mall.bongxin.com.cn; # 二级域名
+
+    # 配置 SSL 证书
+    ssl_certificate /etc/nginx/cert/bongxin.com.cn_bundle.crt; # 使用 bundle.crt 文件
+    ssl_certificate_key /etc/nginx/cert/bongxin.com.cn.key; # 私钥文件
+
+    # SSL 相关配置
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:50m;
+    ssl_protocols TLSv1.2 TLSv1.3; # 使用最新的加密协议
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    # OCSP Stapling 配置
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 valid=300s;
+    resolver_timeout 5s;
+
+    # HTTP 重定向到 HTTPS
+    if ($scheme != "https") {
+        return 301 https://$host$request_uri;
+    }
+
+    location / {
+        proxy_pass http://172.25.142.160:3000; ## 将请求转发到目标服务器的 3000 端口
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+
+    # 错误页面配置
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+
+# 3000 端口上的前端项目配置
+server {
+    listen       3000;
+
+    location / { ## 前端项目
+        root   /usr/share/nginx/html/yudao-ui-mall;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location = /index.html {
+        root   /usr/share/nginx/html/yudao-ui-mall;
+    }
+}
+
 ```
 
 (2) 执行 `docker exec yudao-nginx nginx -s reload` 命令，重新加载 Nginx 配置。
