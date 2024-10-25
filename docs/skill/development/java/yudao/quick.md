@@ -14,6 +14,10 @@ outline: "deep"
 
 创建一个名字为 `ruoyi-vue-pro` 数据库，执行对应数据库类型的 `yudao\ruoyi-vue-pro\sql\mysql` 目录下的 `ruoyi-vue-pro.sql` SQL 文件，进行初始化
 
+::: danger 注意
+如果启动报错，`Couldn't acquire next trigger: Table 'ruoyi-vue-pro-2.3.0.QRTZ_TRIGGERS' doesn't exist`，则需再执行 `yudao\ruoyi-vue-pro\sql\mysql` 目录下的 `quartz.sql` SQL 文件
+:::
+
 #### 修改配置文件
 
 修改 `yudao\ruoyi-vue-pro\yudao-server\target\classes` 目录下的 `application-dev.yaml`，主要是修改ip地址
