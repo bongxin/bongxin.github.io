@@ -42,20 +42,20 @@ VITE_APP_CAPTCHA_ENABLE=true
 
 ## 工作流 `bpm`
 
-执行对应 `工作流` 的SQL脚本 [bpm-2024-10-07.sql](/sql/bpm/bpm-2024-10-07.sql){target="_blank"}
+<!-- 执行对应 `工作流` 的SQL脚本 [bpm-2024-10-07.sql](/sql/bpm/bpm-2024-10-07.sql){target="_blank"} -->
 
 ## 会员中心 `menber`
 
-执行对应 `会员中心` 的SQL脚本 [member-2024-01-18.sql](/sql/member/member-2024-01-18.sql){target="_blank"}
+<!-- 执行对应 `会员中心` 的SQL脚本 [member-2024-01-18.sql](/sql/member/member-2024-01-18.sql){target="_blank"} -->
 
 ## 微信公众号 `mp`
 
-执行对应 `微信公众号` 的SQL脚本 [mp-2024-05-29.sql](/sql/mp/mp-2024-05-29.sql){target="_blank"}
+<!-- 执行对应 `微信公众号` 的SQL脚本 [mp-2024-05-29.sql](/sql/mp/mp-2024-05-29.sql){target="_blank"} -->
 
 ## 商城 `mall`
 
-执行对应 `微信公众号` 的SQL脚本 [mall-2024-10-05.sql](/sql/mall/mall-2024-10-05.sql){target="_blank"}
+<!-- 执行对应 `微信公众号` 的SQL脚本 [mall-2024-10-05.sql](/sql/mall/mall-2024-10-05.sql){target="_blank"} -->
 
 ## 支付 `pay`
 
-执行对应 `微信公众号` 的SQL脚本 [pay-2024-08.sql](/sql/pay/pay-2024-08.sql){target="_blank"}
+<!-- 执行对应 `微信公众号` 的SQL脚本 [pay-2024-08.sql](/sql/pay/pay-2024-08.sql){target="_blank"} -->
