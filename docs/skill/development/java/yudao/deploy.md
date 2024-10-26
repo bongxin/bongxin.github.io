@@ -10,9 +10,7 @@ outline: "deep"
 镜像加速：[DaoCloud / public-image-mirror](https://github.com/DaoCloud/public-image-mirror)
 :::
 
-:::
-[全站镜像索引数量https://docker.aityp.com/](https://docker.aityp.com/)
-:::
+[全站镜像索引：https://docker.aityp.com/](https://docker.aityp.com/)
 
 ### MySQL
 
