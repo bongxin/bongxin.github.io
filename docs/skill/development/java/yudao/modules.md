@@ -34,7 +34,7 @@ VITE_APP_CAPTCHA_ENABLE=true
 
 ## 数据报表 `report`
 
-执行对应 `报表设计器` 的SQL脚本 [go-view.sql](/sql/report/go-view.sql) ，以及对应 `大屏设计器` 的SQL脚本 [jimureport.mysql5.7.create.sql](/sql/report/jimureport.mysql5.7.create.sql) 
+<!-- 执行对应 `报表设计器` 的SQL脚本 [go-view.sql](/sql/report/go-view.sql) ，以及对应 `大屏设计器` 的SQL脚本 [jimureport.mysql5.7.create.sql](/sql/report/jimureport.mysql5.7.create.sql)  -->
  
 ::: warning 提示
 `大屏设计器` 还需要运行前端项目 `yudao-ui-go-view`
