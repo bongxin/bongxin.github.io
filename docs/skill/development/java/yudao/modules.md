@@ -32,6 +32,27 @@ demo: false # 开启演示模式
 VITE_APP_CAPTCHA_ENABLE=true
 ```
 
+## 文件管理
+
+菜单 `[基础设置-文件管理-文件配置]`
+
+![MinIO S3 对象存储](./MinIO-S3-对象存储.jpg)
+
+::: danger 注意
+注意 `自定义域名` 和 `nginx配置文件` 的配合使用
+:::
+
+```
+# 配置反向代理到 HTTP 服务器
+location /yudaoyuanma/ {
+    proxy_pass http://bongxin.cn:39000;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+```
+
 ## 数据报表 `report`
 
 <!-- 执行对应 `报表设计器` 的SQL脚本 [go-view.sql](/sql/report/go-view.sql) ，以及对应 `大屏设计器` 的SQL脚本 [jimureport.mysql5.7.create.sql](/sql/report/jimureport.mysql5.7.create.sql)  -->
