@@ -2,7 +2,7 @@ import { sidebarExample } from "./example";
 import { sidebarNpm, sidebarPhp, sidebarJava, sidebarVue } from "./skill";
 import { sidebarFigma, sidebarUML } from "./design";
 import { sidebarPmp, sidebarCsmm } from "./management";
-import { sidebarUbuntu, sidebarBt, sidebarOthers } from "./DevOps";
+import { sidebarUbuntu, sidebarBt, sidebarOthers, sidebarOpenwrt } from "./DevOps";
 import { sidebarMarkdown } from "./others";
 import { sidebarAI } from "./ai";
 import { sidebarCli } from "./operation";
@@ -53,6 +53,7 @@ export default function sidebar() {
       base: "/skill/DevOps/others/",
       items: sidebarOthers(),
     },
+    "/skill/DevOps/openwrt": { base: "/skill/DevOps/openwrt/", items: sidebarOpenwrt() },
 
     "/skill/operation": { base: "/skill/operation/", items: sidebarCli() },
 
