@@ -34,7 +34,10 @@ export function sidebarOpenwrt() {
     {
       text: "OpenWRT",
       collapsed: false,
-      items: [{ text: "认识OpenWRT", link: "OpenWRT" },{ text: "AX6000刷固件", link: "AX6000刷固件" }],
+      items: [
+        { text: "认识OpenWRT", link: "OpenWRT" },
+        { text: "AX6000刷固件", link: "AX6000刷固件" },
+        { text: "OpenWRT使用", link: "OpenWRT使用" }],
     },
   ];
 }
