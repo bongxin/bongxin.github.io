@@ -73,6 +73,7 @@ export function sidebarJava() {
         { text: '基础环境准备', link: 'yudao/deploy' },
         { text: '部署应用', link: 'yudao/deploy_app' },
         { text: '拓展模块', link: 'yudao/modules' },
+        { text: '常见问题', link: 'yudao/problems' },
       ],
     },
   ]

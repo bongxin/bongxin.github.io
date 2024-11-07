@@ -2,11 +2,43 @@
 
 ## 拨号上网
 
-## 设置联网Wifi账号密码
+### WAN口配置、
+
+进入 `网络-接口`
+协议选择 `PPPoE` ，输入宽带账号密码
+
+![](WAN口配置.png)
+
+### LAN口配置
+
+进入 `网络-接口`
+协议选择 `静态地址`
+
+![](LAN口配置.png)
+
+## Wi-Fi无线网络配置
+
+进入 `网络-无线`
+
+
 
 ## 安装软件
 
+软件包对照：[https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8387547&highlight=%E8%BD%AF%E4%BB%B6%E5%8C%85](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8387547&highlight=%E8%BD%AF%E4%BB%B6%E5%8C%85)
+
 ### luci-app-DDNS(动态DNS)
+
+```
+luci-app-ddns-go
+luci-i18n-ddns-go-zh-cn
+```
+
+### luci-app-adblock(广告拦截功能)
+```
+luci-app-adblock
+luci-i18n-adblock-zh-cn
+```             
+
 
 ## 修改IP网段
 
