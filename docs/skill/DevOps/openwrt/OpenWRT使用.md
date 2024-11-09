@@ -37,8 +37,18 @@ luci-i18n-ddns-go-zh-cn
 ```
 luci-app-adblock
 luci-i18n-adblock-zh-cn
-```             
+```
 
+### luci-app-openvpn-server(VPN服务)
+```
+luci-app-openvpn-server
+luci-i18n-openvpn-server-zh-cn
+```
+
+### luci-app-openclash
+```
+luci-app-openclash
+```
 
 ## 修改IP网段
 
@@ -109,3 +119,9 @@ reboot
 ```
 
 ## 绑定IP和Mac地址
+
+进入 `网络-DHCP/DNS-静态地址分配`
+
+## 端口映射
+
+进入 `网络-防火墙-端口转发`
