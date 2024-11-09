@@ -145,3 +145,9 @@ http {
 docker run -d --name yudao-redis --restart=always -p 6379:6379 m.daocloud.io/docker.io/redis
 
 ```
+
+### SSL证书
+
+::: tip 提示
+免费申请SSL证书：[https://letsencrypt.osfipin.com/](https://letsencrypt.osfipin.com/)
+:::

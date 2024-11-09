@@ -6,9 +6,7 @@ outline: "deep"
 
 ## 部署后端服务
 
-
 ### 修改配置
-
 
 （1）修改 `yudao\ruoyi-vue-pro\yudao-server\target\classes` 目录下的 `application-dev.yaml`，主要是修改ip地址
 
@@ -31,7 +29,7 @@ slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据�
 （2）修改 `yudao\ruoyi-vue-pro\yudao-server\target\classes` 目录下的 `application-dev.yaml`，主要是修改host地址
 
 ``` yaml
-···  
+···
 # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
 data:
 redis:
@@ -56,7 +54,7 @@ yudao:
   access-log: # 访问日志的配置项
     enable: false
   demo: false # 关闭演示模式
-``` 
+```
 
 （4）修改 `yudao\ruoyi-vue-pro\yudao-server\target\classes` 目录下的 `application-dev.yaml`，主要是补充 `captcha.enable: false`
 ```
@@ -99,7 +97,6 @@ maven终端执行 `mvn clean install package -Dmaven.test.skip=true`
 打包生成的jar包在 `yudao\ruoyi-vue-pro\yudao-server\target` 目录下
 
 在 Linux 服务器上创建 `/work/projects/yudao-server` 目录，使用 scp 命令或者 FTP 工具，将 `yudao-server.jar` 上传到该目录下
-
 
 ### 构建镜像
 
@@ -186,7 +183,6 @@ yudao-server
 ```
 
 (2) 执行 docker logs yudao-server 命令，查看启动日志。
-
 
 ## 部署前端应用
 
@@ -315,16 +311,14 @@ server {
 
 (2) 执行 `docker exec yudao-nginx nginx -s reload` 命令，重新加载 Nginx 配置。
 
-
 (3) 执行 `curl http://8.138.22.121/admin-api/` 命令，成功访问后端项目的内网地址，返回结果如下：
 
-```
+``` sh
 {"code":401,"data":null,"msg":"账号未登录"}
 
 ```
 
 (4) 请求 `http://8.138.22.121` 地址，成功访问前端项目的外网地址
-
 
 #### 方式二：独立域名访问（推荐）
 
@@ -440,7 +434,6 @@ server {
 
 (2) 执行 `docker exec yudao-nginx nginx -s reload` 命令，重新加载 Nginx 配置。
 
-
 (3) 执行 `curl http://bongxin.com.cn/admin-api/` 命令，成功访问后端项目的内网地址，返回结果如下：
 
 ```
@@ -493,6 +486,7 @@ location /yudaoyuanma/ {
 }
 ···
 ```
+
 完整nginx配置，见[配置Nginx转发方法二：独立域名访问（推荐）](#方式二-独立域名访问-推荐)
 
 ### 配置系统文件配置
@@ -505,7 +499,6 @@ location /yudaoyuanma/ {
 * 节点地址: `yudaoyuanma`
 * accessKey: `******`
 * accessSecret: `******`
-
 
 ## 部署商城应用（H5）
 
@@ -521,7 +514,7 @@ location /yudaoyuanma/ {
 
 ### 安装依赖
 
-``` sh 
+``` sh
 npm i
 ```
 
@@ -529,32 +522,37 @@ npm i
 
 ``` json
 # 版本号
-SHOPRO_VERSION = v1.8.3
+SHOPRO_VERSION=v2.3.0
 
 # 后端接口 - 正式环境（通过 process.env.NODE_ENV 非 development）
-SHOPRO_BASE_URL = http://api-dashboard.yudao.iocoder.cn
+SHOPRO_BASE_URL=https://bongxin.com.cn
 
 # 后端接口 - 测试环境（通过 process.env.NODE_ENV = development）
-SHOPRO_DEV_BASE_URL = http://bongxin.com.cn:48080
+SHOPRO_DEV_BASE_URL=http://127.0.0.1:48080
 ### SHOPRO_DEV_BASE_URL = http://yunai.natapp1.cc
 
+# 文件上传类型：server - 后端上传， client - 前端直连上传，仅支持 S3 服务
+SHOPRO_UPLOAD_TYPE=server
+
 # 后端接口前缀（一般不建议调整）
-SHOPRO_API_PATH = /app-api
+SHOPRO_API_PATH=/app-api
 
 # 后端 websocket 接口前缀
-SHOPRO_WEBSOCKET_PATH = /infra/ws
+SHOPRO_WEBSOCKET_PATH=/infra/ws
 
 # 开发环境运行端口
-SHOPRO_DEV_PORT = 3000
+SHOPRO_DEV_PORT=3000
 
 # 客户端静态资源地址 空=默认使用服务端指定的CDN资源地址前缀 | local=本地  |  http(s)://xxx.xxx=自定义静态资源地址前缀
-SHOPRO_STATIC_URL = https://file.sheepjs.com
+SHOPRO_STATIC_URL=local
+# SHOPRO_STATIC_URL=http://test.yudao.iocoder.cn
+### SHOPRO_STATIC_URL = https://file.sheepjs.com
 
 # 是否开启直播  1 开启直播 | 0 关闭直播 (小程序官方后台未审核开通直播权限时请勿开启)
-SHOPRO_MPLIVE_ON = 0
+SHOPRO_MPLIVE_ON=0
 
 # 租户ID 默认 1
-SHOPRO_TENANT_ID = 1
+SHOPRO_TENANT_ID=1
 ```
 
 ### 打包项目
@@ -566,7 +564,6 @@ SHOPRO_TENANT_ID = 1
 3.  点完之后控制台会显示正在编译中... , 稍等一会
 
 4. 打包成功, 生成了unpackage文件夹, 打包好的文件存放在里面 `yudao-mall-uniapp\unpackage\dist\build\web`
-
 
 ### 上传 web 文件
 
@@ -587,7 +584,6 @@ tar -xf web.tar
 ```
 
 ### 配置 Nginx 转发
-
 
 ::: tip 提示
 复制服务器 `/work/projects/yudao-ui-mall` 目录到 `/work/nginx/html/yudao-ui-mall`
@@ -751,5 +747,16 @@ server {
 
 (2) 执行 `docker exec yudao-nginx nginx -s reload` 命令，重新加载 Nginx 配置。
 
-
 (3) 请求 `http://mall.bongxin.com.cn` 地址，成功访问商城项目的外网地址
+
+
+## 打包商城应用（APK）
+
+`HBuilder X-发行-App-Android/iOS-云打包(P)`
+
+::: tip 提示
+在线生成证书：[https://www.yunedit.com/createcert](https://www.yunedit.com/createcert)
+:::
+
+
+## 发布微信小程序
