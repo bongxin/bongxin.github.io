@@ -137,7 +137,19 @@ export default function nav() {
       items: [
         {
           text: "治愈",
-          link: "/music/KOKIA",
+          link: "/music/KOKIA.html#i-found-the-love-live-2015-和声",
+        },
+        {
+          text: "鼓舞",
+          link: "/music/BoA.html#only-one",
+        },
+        {
+          text: "迷幻",
+          link: "/music/有点迷幻的Rap.html#礼拜日-life-goes-on",
+        },
+        {
+          text: "性感",
+          link: "/music/sexy.html#Under%20The%20Influence",
         },
       ],
     },{

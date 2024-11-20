@@ -12,6 +12,16 @@ export function sidebarMusic() {
         { text: "平原绫香", link: "平原绫香" },
         { text: "宇多田光（Utada Hikaru）", link: "Utada" },
         { text: "中岛美嘉", link: "中岛美嘉" },
+        { text: "李宝蓝", link: "李宝蓝" },
+      ],
+    },
+    {
+      text: "鼓舞",
+      collapsed: false,
+      items: [
+        { text: "2NE1", link: "2NE1" },
+        { text: "泽野弘之/mizuki", link: "泽野弘之" },
+        { text: "BoA", link: "BoA" },
       ],
     },
     {
@@ -51,6 +61,16 @@ export function sidebarMusic() {
         {
           text: "《荡漾》- 满舒克（Live）",
           link: "有点迷幻的Rap#荡漾-live",
+        },
+      ],
+    },
+    {
+      text: "性感",
+      collapsed: false,
+      items: [
+        {
+          text: "《Under The Influence》- Chris Brown",
+          link: "sexy#Under The Influence",
         },
       ],
     },
