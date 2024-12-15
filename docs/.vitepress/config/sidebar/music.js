@@ -70,8 +70,16 @@ export function sidebarMusic() {
       items: [
         {
           text: "《Under The Influence》- Chris Brown",
-          link: "sexy#Under The Influence",
+          link: "sexy#under-the-influence",
         },
+      ],
+    },
+    {
+      text: "808",
+      collapsed: false,
+      items: [
+        { text: "《Purpose》 - NEFFEX", link: "808#purpose" },
+        { text: "《NOT ME》 - 404 RAPPER", link: "808#not-me" },
       ],
     },
   ];
