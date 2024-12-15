@@ -42,6 +42,18 @@ export function sidebarOpenwrt() {
   ];
 }
 
+export function sidebarDSM() {
+  return [
+    {
+      text: "群晖NAS",
+      collapsed: false,
+      items: [
+        { text: "认识群晖NAS", link: "认识群晖NAS" },
+        { text: "安装黑群晖", link: "认识群晖NAS#安装黑群晖" }],
+    },
+  ];
+}
+
 export function sidebarOthers() {
   return [
     {

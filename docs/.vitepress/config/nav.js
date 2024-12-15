@@ -117,6 +117,10 @@ export default function nav() {
               link: "/skill/DevOps/openwrt/OpenWRT",
             },
             {
+              text: "DSM",
+              link: "/skill/DevOps/dsm/认识群晖NAS",
+            },
+            {
               text: "其他",
               link: "/skill/DevOps/others/内网穿透",
             },
