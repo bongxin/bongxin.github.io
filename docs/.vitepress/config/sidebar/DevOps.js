@@ -59,7 +59,17 @@ export function sidebarOthers() {
     {
       text: "其他",
       collapsed: false,
-      items: [{ text: "内网穿透", link: "宝塔面板/认识宝塔面板" }],
+      items: [{ text: "内网穿透", link: "内网穿透" },{ text: "WSL2", link: "wsl2" },{ text: "Clash", link: "clash" }],
+    },
+    {
+      text: "VPN",
+      collapsed: false,
+      items: [{ text: "ConfigVPN", link: "vpn/ConfigVPN" },{ text: "SoftEtherVPN", link: "vpn/SoftEtherVPN" }],
+    },
+    {
+      text: "宝塔面板",
+      collapsed: false,
+      items: [{ text: "宝塔面板", link: "bt/宝塔面板/认识宝塔面板" }],
     },
   ];
 }

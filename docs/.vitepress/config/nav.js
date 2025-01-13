@@ -97,20 +97,8 @@ export default function nav() {
           text: "运维",
           items: [
             {
-              text: "宝塔面板",
-              link: "/skill/DevOps/bt/宝塔面板/认识宝塔面板",
-            },
-            {
               text: "Linux",
               link: "/skill/DevOps/ubuntu/基本配置/基本配置",
-            },
-            {
-              text: "WSL2",
-              link: "/skill/DevOps/wsl2/",
-            },
-            {
-              text: "Clash",
-              link: "/skill/DevOps/clash/",
             },
             {
               text: "OpenWRT",
