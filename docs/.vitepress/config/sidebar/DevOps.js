@@ -10,12 +10,10 @@ export function sidebarUbuntu() {
       ],
     },
     {
-        text: "常见操作",
-        collapsed: false,
-        items: [
-          { text: "常见操作", link: "常见操作/常见操作" },
-        ],
-      },
+      text: "常见操作",
+      collapsed: false,
+      items: [{ text: "常见操作", link: "常见操作/常见操作" }],
+    },
   ];
 }
 
@@ -37,7 +35,8 @@ export function sidebarOpenwrt() {
       items: [
         { text: "认识OpenWRT", link: "OpenWRT" },
         { text: "AX6000刷固件", link: "AX6000刷固件" },
-        { text: "OpenWRT使用", link: "OpenWRT使用" }],
+        { text: "OpenWRT使用", link: "OpenWRT使用" },
+      ],
     },
   ];
 }
@@ -45,11 +44,35 @@ export function sidebarOpenwrt() {
 export function sidebarDSM() {
   return [
     {
+      text: "NAS",
+      collapsed: false,
+      items: [{ text: "什么是NAS", link: "什么是NAS" }],
+    },
+    {
       text: "群晖NAS",
       collapsed: false,
       items: [
-        { text: "认识群晖NAS", link: "认识群晖NAS" },
-        { text: "安装黑群晖", link: "认识群晖NAS#安装黑群晖" }],
+        {
+          text: "核心功能",
+          link: "群晖NAS系统（DSM）的安装和使用#nas系统有哪些核心功能",
+        },
+        {
+          text: "安装",
+          link: "群晖NAS系统（DSM）的安装和使用#群晖nas系统-dsm-的安装",
+        },
+        {
+          text: "使用",
+          link: "群晖NAS系统（DSM）的安装和使用#群晖nas系统-dsm-的使用",
+        },
+        {
+          text: "套件分享",
+          link: "群晖NAS系统（DSM）的安装和使用#群晖nas套件分享和演示",
+        },
+        {
+          text: "应用",
+          link: "群晖NAS系统（DSM）的安装和使用#nas在企业和家庭中的应用",
+        },
+      ],
     },
   ];
 }
@@ -59,12 +82,19 @@ export function sidebarOthers() {
     {
       text: "其他",
       collapsed: false,
-      items: [{ text: "内网穿透", link: "内网穿透" },{ text: "WSL2", link: "wsl2" },{ text: "Clash", link: "clash" }],
+      items: [
+        { text: "内网穿透", link: "内网穿透" },
+        { text: "WSL2", link: "wsl2" },
+        { text: "Clash", link: "clash" },
+      ],
     },
     {
       text: "VPN",
       collapsed: false,
-      items: [{ text: "ConfigVPN", link: "vpn/ConfigVPN" },{ text: "SoftEtherVPN", link: "vpn/SoftEtherVPN" }],
+      items: [
+        { text: "ConfigVPN", link: "vpn/ConfigVPN" },
+        { text: "SoftEtherVPN", link: "vpn/SoftEtherVPN" },
+      ],
     },
     {
       text: "宝塔面板",

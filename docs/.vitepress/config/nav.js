@@ -106,7 +106,7 @@ export default function nav() {
             },
             {
               text: "DSM",
-              link: "/skill/DevOps/dsm/认识群晖NAS",
+              link: "/skill/DevOps/dsm/群晖NAS系统（DSM）的安装和使用",
             },
             {
               text: "其他",
