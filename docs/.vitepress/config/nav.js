@@ -102,7 +102,7 @@ export default function nav() {
             },
             {
               text: "Docker",
-              link: "/skill/DevOps/docker/Docker",
+              link: "/skill/DevOps/docker/DockerCompose",
             },
             {
               text: "OpenWRT",
