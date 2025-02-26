@@ -101,6 +101,10 @@ export default function nav() {
               link: "/skill/DevOps/ubuntu/基本配置/基本配置",
             },
             {
+              text: "Docker",
+              link: "/skill/DevOps/docker/Docker",
+            },
+            {
               text: "OpenWRT",
               link: "/skill/DevOps/openwrt/OpenWRT",
             },
