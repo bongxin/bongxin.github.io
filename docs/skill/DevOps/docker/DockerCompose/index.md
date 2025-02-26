@@ -1,3 +1,7 @@
+---
+outline: "deep"
+---
+
 # 认识Docker Compose
 
 Docker Compose 是一个用于定义和运行多容器 Docker 应用程序的工具。通过一个 docker-compose.yml 文件，你可以配置应用程序的服务、网络和卷等，然后使用一条命令启动所有服务。
@@ -212,8 +216,7 @@ explicit_defaults_for_timestamp=1  # 明确处理时间戳字段
 
 ##### localtime
 
-localtime示例
-
+::: details localtime示例
 ```
 # tzdb data for Asia and environs
 
@@ -4444,6 +4447,7 @@ Zone Asia/Ho_Chi_Minh	7:06:30 -	LMT	1906 Jul  1
 # use Asia/Bangkok; see the VN entries in the file zone1970.tab.
 # For timestamps before 1970, see Asia/Hanoi in the file 'backzone'.
 ```
+::: 
 
 ### 准备docker-compose文件
 
@@ -4482,4 +4486,223 @@ services:
 
 ``` sh
 docker-compose up -d
+```
+
+## Redis
+
+### 运行一个Redis容器
+
+docker pull redis
+
+### 创建挂载目录和创建配置文件
+
+#### 创建挂载目录
+> 本地的挂载目录：/data/docker/redis
+
+需要创建的挂载目录如下：
+- /data/docker/redis/conf
+- /data/docker/redis/data
+
+#### 创建配置文件
+
+- /data/docker/redis/conf/redis.conf
+
+#### 简单配置
+``` yml
+# 关闭保护模式，允许远程连接
+protected-mode no
+# 开启AOF持久化
+appendonly yes 
+# 密码
+requirepass 123456
+```
+
+#### 完整配置
+``` yml
+# Redis 配置文件示例
+
+################################## 网络相关 #####################################
+
+# 绑定到指定的网卡地址，默认是127.0.0.1，注释掉或修改为0.0.0.0可允许外部访问
+# bind 127.0.0.1
+bind 0.0.0.0
+
+# Redis监听的端口号，默认是6379
+port 6379
+
+# 是否启用保护模式，默认是yes。保护模式会阻止外部网络访问。
+protected-mode no
+
+# 设置超时时间（秒），客户端空闲超过该时间会被关闭
+timeout 300
+
+# TCP keepalive选项，建议设置为60秒
+tcp-keepalive 60
+
+################################## 日志相关 #####################################
+
+# 指定日志级别，可选值有：debug, verbose, notice, warning
+loglevel notice
+
+# 指定日志文件路径，"-"表示标准输出
+logfile "/var/log/redis/redis-server.log"
+
+# 是否记录慢查询日志，单位为微秒
+slowlog-log-slower-than 10000
+
+# 慢查询日志的最大条目数
+slowlog-max-len 128
+
+################################## 快照相关 #####################################
+
+# 开启RDB持久化，格式为：save <seconds> <changes>
+# 表示在指定秒内至少有指定数量的键发生变化时进行快照
+save 900 1
+save 300 10
+save 60 10000
+
+# 如果RDB持久化失败，是否停止Redis写操作
+stop-writes-on-bgsave-error yes
+
+# 是否压缩RDB文件，默认是yes
+rdbcompression yes
+
+# 是否使用校验和来验证RDB文件的完整性，默认是yes
+rdbchecksum yes
+
+# RDB文件的名称
+dbfilename dump.rdb
+
+# 数据目录，存放RDB文件和其他数据文件
+dir /var/lib/redis/
+
+################################## 复制相关 #####################################
+
+# 主从复制配置，如果这台Redis是主节点，则不需要配置此行
+# slaveof <masterip> <masterport>
+
+# 主从复制密码（如果主节点设置了requirepass）
+# masterauth <master-password>
+
+# 当从节点断开连接后重新连接时，是否完整同步，默认是no
+repl-diskless-sync no
+
+# 完整同步的延迟时间（秒），默认是5秒
+repl-diskless-sync-delay 5
+
+# 从节点只读，默认是yes
+slave-read-only yes
+
+################################## 安全相关 #####################################
+
+# 设置Redis访问密码，去掉注释并设置密码以启用
+# requirepass your_password_here
+
+# 命令重命名，用于禁用危险命令
+rename-command FLUSHALL ""
+rename-command CONFIG   ""
+rename-command SLAVEOF  ""
+
+################################## 资源限制 #####################################
+
+# 设置Redis最大占用内存，默认不限制
+maxmemory 2gb
+
+# 内存策略，当达到最大内存限制时的处理方式
+# volatile-lru -> 使用LRU算法删除设置了过期时间的key
+# allkeys-lru -> 使用LRU算法删除任意key
+# volatile-random -> 随机删除设置了过期时间的key
+# allkeys-random -> 随机删除任意key
+# volatile-ttl -> 删除即将过期的key
+# noeviction -> 不删除任何key，返回错误
+maxmemory-policy volatile-lru
+
+# 设置同时连接的最大客户端数，默认是10000
+maxclients 10000
+
+################################## AOF持久化 ####################################
+
+# 是否开启AOF持久化，默认是no
+appendonly no
+
+# AOF文件名
+appendfilename "appendonly.aof"
+
+# AOF同步策略，可选值有：
+# always -> 每次写操作都同步
+# everysec -> 每秒同步一次（推荐）
+# no -> 由操作系统决定何时同步
+appendfsync everysec
+
+# 是否在AOF重写期间禁止fsync，默认是no
+no-appendfsync-on-rewrite no
+
+# 自动重写AOF文件的条件，格式为：auto-aof-rewrite-percentage <percentage> <min-size>
+auto-aof-rewrite-percentage 100
+auto-aof-rewrite-min-size 64mb
+
+################################## 其他配置 #####################################
+
+# 是否启用哈希表的渐进式再哈希，默认是yes
+hash-max-ziplist-entries 512
+hash-max-ziplist-value 64
+
+# 是否启用列表的压缩存储，默认是yes
+list-max-ziplist-size -2
+list-compress-depth 0
+
+# 是否启用集合的压缩存储，默认是yes
+set-max-intset-entries 512
+
+# 是否启用有序集合的压缩存储，默认是yes
+zset-max-ziplist-entries 128
+zset-max-ziplist-value 64
+
+# 是否启用字符串的压缩存储，默认是yes
+string-key-prefetch-size 8
+
+# 是否启用HyperLogLog的压缩存储，默认是yes
+hyperloglog-precision 16
+```
+
+### 准备docker-compose文件
+
+> docker-compose文件：/data/docker/redis/docker-compose.yml
+
+``` yml
+services:
+  redis:
+    restart: always
+    container_name: redis
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      # 映射配置文件目录
+      - E:/data/docker/redis/conf/redis.conf:/etc/redis/redis.conf
+      # # 映射数据目录
+      - E:/data/docker/redis/data:/data
+    environment:
+      - TZ=Asia/Shanghai
+    privileged: true
+    # 指定配置文件启动redis-server进程
+    command: ["redis-server","/etc/redis/redis.conf"] 
+```
+
+### 创建和启动容器
+
+``` sh
+docker-compose up -d
+```
+
+#### 连接测试
+
+这里可以直接使用外部工具连接，也可以直接使用docker exec调用容器类程序测试，这里会直接使用docker exec方式连接redis。
+
+``` sh
+# 使用docker exec 执行容器名称为redis6容器中的redis-cli命令连接redis
+docker exec -it redis redis-cli -a 123456
+# 查看当前redis的服务信息
+127.0.0.1:6379> info server
+
 ```
