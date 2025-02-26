@@ -6,13 +6,23 @@ Docker Compose 是一个用于定义和运行多容器 Docker 应用程序的工
 
 ### 运行一个Nginx容器
 
-### 复制挂载文件
+### 创建挂载目录和复制挂载文件
 
+#### 创建挂载目录
+> 本地的挂载目录：/data/docker/nginx
+
+需要创建的挂载目录如下：
+- /data/docker/nginx/conf/cert
+- /data/docker/nginx/conf/conf.d
+- /data/docker/nginx/html
+- /data/docker/nginx/logs
+
+#### 复制挂载文件
+
+需要复制的文件有以下三个：
 - /etc/nginx/nginx.conf
 - /etc/nginx/conf.d/default.conf
 - /usr/share/nginx/html
-
-> 本地的挂载目录：/data/docker/nginx
 
 ``` sh
 cp silly_wozniak:/etc/nginx/nginx.conf ./conf
