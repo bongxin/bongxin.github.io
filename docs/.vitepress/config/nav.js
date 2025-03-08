@@ -86,6 +86,10 @@ export default function nav() {
               text: "CSMM",
               link: "/skill/management/csmm/CSMM/认识CSMM",
             },
+            {
+              text: "软考-高项",
+              link: "/skill/management/ispm/信息系统项目管理师/AI生成工作分解结构",
+            },
           ],
         },
       ],

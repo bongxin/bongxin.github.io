@@ -133,7 +133,7 @@ B2所需扩展和 ionCube 扩展冲突，如果您已经安装了 ionCube 扩展
 
 如果您是自己编译的环境，请参考：[Wordpress伪静态设置](https://www.jianshu.com/p/40a3028448b4)
 
-Wordpress固定连接设置
+### Wordpress固定连接设置
 B2主题不支持带有问好的连接形式，必须使用自定义的形式。这里注意，如果您使用 `/%postname%` 这种伪静态形式，可能存在部分网址冲突，请尽量用 `/%post_id%.html` 这种连接形式。
 
 ![](./5-3.png)
