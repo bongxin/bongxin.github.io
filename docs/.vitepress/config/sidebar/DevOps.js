@@ -17,6 +17,16 @@ export function sidebarUbuntu() {
   ];
 }
 
+export function sidebarDocker() {
+  return [
+    {
+      text: "Docker",
+      collapsed: false,
+      items: [{ text: "Docker Compose", link: "DockerCompose" }],
+    },
+  ];
+}
+
 export function sidebarBt() {
   return [
     {
