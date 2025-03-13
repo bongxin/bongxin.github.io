@@ -111,5 +111,10 @@ export function sidebarOthers() {
       collapsed: false,
       items: [{ text: "宝塔面板", link: "bt/宝塔面板/认识宝塔面板" }],
     },
+    {
+      text: "摄像头",
+      collapsed: false,
+      items: [{ text: "摄像头", link: "hk/海康威视/硬盘录像机" }],
+    },
   ];
 }
