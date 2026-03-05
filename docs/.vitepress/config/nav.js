@@ -1,11 +1,6 @@
 export default function nav() {
   return [
-    { text: "AI", link: "/ai/AI/" },
-    // {
-    //   text: '例子',
-    //   link: '/example/markdown-examples',
-    //   activeMatch: '/zh/example/',
-    // },
+    // { text: "AI", link: "/ai/AI/" },
     {
       text: "开发",
       items: [
