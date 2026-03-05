@@ -1,6 +1,5 @@
 export default function nav() {
   return [
-    // { text: "AI", link: "/ai/AI/" },
     {
       text: "开发",
       items: [
