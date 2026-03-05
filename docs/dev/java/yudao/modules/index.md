@@ -1,0 +1,89 @@
+---
+title: 模块说明
+---
+
+# 拓展模块
+``` xml
+<module>yudao-module-system</module>
+<module>yudao-module-infra</module>
+<module>yudao-module-member</module>
+<module>yudao-module-bpm</module>
+<module>yudao-module-report</module>
+<module>yudao-module-mp</module>
+<module>yudao-module-pay</module>
+<module>yudao-module-mall</module>
+<module>yudao-module-crm</module>
+<module>yudao-module-erp</module>
+<module>yudao-module-ai</module>
+<module>yudao-module-iot</module>
+```
+除了 `system` 和 `infra` 以外，其他均为可选
+
+## 演示模式
+
+修改 `ruoyi-vue-pro` 目录下的 `application-dev.yaml` 
+
+```
+demo: false # 开启演示模式
+```
+
+## 验证码
+
+修改 `yudao-ui-admin-vue3` 目录下的 `.env.dev` 
+
+```
+# 验证码的开关
+VITE_APP_CAPTCHA_ENABLE=true
+```
+
+## 文件管理
+
+菜单 `[基础设置-文件管理-文件配置]`
+
+![MinIO S3 对象存储](../MinIO-S3-对象存储.jpg)
+
+::: danger 注意
+注意 `自定义域名` 和 `nginx配置文件` 的配合使用
+:::
+
+```
+# 配置反向代理到 HTTP 服务器
+location /yudaoyuanma/ {
+    proxy_pass http://bongxin.cn:39000;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_connect_timeout 600s;
+    proxy_send_timeout 600s;
+    proxy_read_timeout 600s;
+}
+```
+
+## 数据报表 `report`
+
+执行对应 `报表设计器` 的SQL脚本 <a href="../sql/report/go-view.sql" download>go-view.sql</a> ，以及对应 `大屏设计器` 的SQL脚本 <a href="../sql/report/jimureport.mysql5.7.create.sql" download>jimureport.mysql5.7.create.sql</a>
+
+::: warning 提示
+`大屏设计器` 还需要运行前端项目 `yudao-ui-go-view`
+:::
+
+## 工作流 `bpm`
+
+执行对应 `工作流` 的SQL脚本 <a href="../sql/bpm/bpm-2024-10-07.sql" download>bpm-2024-10-07.sql</a>
+
+## 会员中心 `menber`
+
+执行对应 `会员中心` 的SQL脚本 <a href="../sql/member/member-2024-01-18.sql" download>member-2024-01-18.sql</a>
+
+## 微信公众号 `mp`
+
+执行对应 `微信公众号` 的SQL脚本 <a href="../sql/mp/mp-2024-05-29.sql" download>mp-2024-05-29.sql</a>
+
+## 商城 `mall`
+
+执行对应 `微信公众号` 的SQL脚本 <a href="../sql/mall/mall-2024-10-05.sql" download>mall-2024-10-05.sql</a>
+
+## 支付 `pay`
+
+执行对应 `微信公众号` 的SQL脚本 <a href="../sql/pay/pay-2024-08.sql" download>pay-2024-08.sql</a>

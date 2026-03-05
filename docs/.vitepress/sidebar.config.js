@@ -15,18 +15,54 @@ export const sidebarConfigs = [
     useFolderLinkFromIndexFile: true,
   },
 
-  // --- 2. 开发 (Development) 【核心变化点】 ---
-  // 对应导航栏：开发技能 (包含 Java, Vue, PHP, NPM 等所有子项)
-  // 策略：不再为每个技术栈单独写配置，而是扫描整个 development 目录
+  // --- 2. 开发 (Development)：按子模块使用不同侧边栏 ---
+  // 更具体的 resolvePath 放前面，优先匹配
   {
     documentRootPath: '/docs',
-    // 👇 关键：直接扫描到 development 层级
-    // 插件会自动遍历其下的 java/, vue/, php/ 等子文件夹并生成树状结构
+    scanStartPath: 'dev/web/vue',
+    resolvePath: '/dev/web/vue/',
+    collapsed: false,
+    // capitalizeFirst: false,
+    useTitleFromFrontmatter: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+  },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'dev/java',
+    resolvePath: '/dev/java/',
+    collapsed: false,
+    capitalizeFirst: false,
+    useTitleFromFrontmatter: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+  },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'dev/php',
+    resolvePath: '/dev/php/',
+    collapsed: false,
+    capitalizeFirst: false,
+    useTitleFromFrontmatter: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+  },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'dev/framework',
+    resolvePath: '/dev/framework/',
+    collapsed: false,
+    capitalizeFirst: false,
+    useTitleFromFrontmatter: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+  },
+  // 兜底：dev 下其他路径（如 npm）仍用整棵 dev 树
+  {
+    documentRootPath: '/docs',
     scanStartPath: 'dev',
-    // 👇 关键：URL 前缀也对应到 development
-    // 只要 URL 以 /dev/ 开头，都使用这个侧边栏配置
     resolvePath: '/dev/',
-    collapsed: false,       // 默认展开，方便查看子技术栈
+    collapsed: false,
     capitalizeFirst: false,
     useTitleFromFrontmatter: true,
     useFolderTitleFromIndexFile: true,

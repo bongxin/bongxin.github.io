@@ -1,0 +1,143 @@
+# 功能裁减
+主要是把原始系统中不需要的功能去掉，包括菜单、代码、按钮、功能入口等
+## 去掉顶部菜单项
+### 必删菜单项
+去掉的菜单项包含`源码地址`,`文档地址`
+修改文件`src/layout/components/Navbar.vue`,将以下代码删除掉
+```vue
+<el-tooltip content="源码地址" effect="dark" placement="bottom">
+  <ruo-yi-git id="ruoyi-git" class="right-menu-item hover-effect" />
+</el-tooltip>
+
+<el-tooltip content="文档地址" effect="dark" placement="bottom">
+  <ruo-yi-doc id="ruoyi-doc" class="right-menu-item hover-effect" />
+</el-tooltip>
+
+<screenfull id="screenfull" class="right-menu-item hover-effect" />
+```
+
+### 可选菜单项
+去掉的菜单项包含`搜索`,`布局大小`,`布局设置`
+修改文件`src/layout/components/Navbar.vue`，将以下代码注释掉
+```vue
+<search id="header-search" class="right-menu-item" />
+...
+<el-tooltip content="布局大小" effect="dark" placement="bottom">
+  <size-select id="size-select" class="right-menu-item hover-effect" />
+</el-tooltip>
+```
+
+```vue
+<el-dropdown-item @click.native="setting = true">
+  <span>布局设置</span>
+</el-dropdown-item>
+```
+
+## 去掉顶部菜单项（只保留部分系统菜单）
+### 菜单树
+```
+├─首页
+├─系统管理
+│  ├─用户管理
+│  ├─角色管理
+│  ├─菜单管理
+│  ├─部门管理
+│  ├─岗位管理
+│  ├─字典管理
+│  ├─参数设置（可选）
+│  ├─通知公告（可选）
+│  ├─日志管理（可选）
+│  │  ├─操作日志（可选）
+│  │  ├─登录日志（可选）
+├─系统监控（可选）
+│  ├─在线用户（可选）
+│  ├─定时任务（可选）
+│  ├─数据监控（可选）
+│  └─服务监控（可选）
+│  └─缓存监控（可选）
+│  └─缓存列表（可选）
+└─系统工具（可选）
+│   ├─表单构建（可选）
+│   ├─代码生成（可选）
+│   ├─系统接口（可选）
+└─官网（可选）
+```
+### 处理菜单
+处理的菜单分为两种类型，一种是固定菜单，一种是动态菜单，动态菜单需要在数据库里面删除
+#### 修改数据库菜单表记录
+数据库表名称为`sys_menu`,将`status`字段的值改成`1`即可，（0正常，1停用）
+`visible`表示菜单显示状态（0显示，1隐藏），隐藏时只是菜单不显示而已，通过路由地址依然可以访问。
+`status`表示菜单启用状态（0正常，1停用），停用时不仅是菜单不显示，通过路由地址也访问不了。
+>最好是数据库补充`is_delete`字段用于控制逻辑删除
+
+## 去掉首页内容
+重命名`/src/index.vue`文件为`/src/index.vue.bak`，或直接删掉
+
+复制`/src/index_v1.vue`文件为`/src/index.vue`,修改文件内容
+
+注释或删除以下代码
+```vue
+<div class="dashboard-editor-container">
+  <panel-group @handleSetLineChartData="handleSetLineChartData" />
+  
+  <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
+      <line-chart :chart-data="lineChartData" />
+  </el-row>
+  
+  <el-row :gutter="32">
+      <el-col :xs="24" :sm="24" :lg="8">
+      <div class="chart-wrapper">
+          <raddar-chart />
+      </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :lg="8">
+      <div class="chart-wrapper">
+          <pie-chart />
+      </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :lg="8">
+      <div class="chart-wrapper">
+          <bar-chart />
+      </div>
+      </el-col>
+  </el-row>
+</div>
+```
+
+补充以下代码
+```
+<h1>XXX系统</h1>
+```
+
+## 修改加载页面的背景样式
+### 修改背景色
+原来是紫色的，可改成自己喜欢的颜色，修改文件`public/index.html`
+修改内容如下,修改`#loader-wrapper`选择器的`background`属性
+```html
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #7171C6;
+    z-index: 1000;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+```
+
+### 修改加载提示文本
+```html
+同样是修改文件`public/index.html`的`load_title`文本内容
+<body>
+    <div id="app">
+	    <div id="loader-wrapper">
+		    <div id="loader"></div>
+		    <div class="loader-section section-left"></div>
+		    <div class="loader-section section-right"></div>
+		    <div class="load_title">正在加载系统资源，请耐心等待</div>
+      </div>
+	</div>
+  </body>
+```

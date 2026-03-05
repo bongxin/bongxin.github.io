@@ -4,29 +4,23 @@ export default function nav() {
       text: "开发",
       items: [
         {
-          text: "前端",
+          text: "💻 前端生态",
           items: [
-            {
-              text: "npm",
-              link: "/dev/npm/npm",
-            },
-            {
-              text: "Vue",
-              link: "/dev/web/vue/Vue/简介",
-            },
+            { text: "Vue 3 全家桶", link: "/dev/web/vue/" },
           ],
         },
         {
-          text: "后端",
+          text: "⚙️ 后端生态",
           items: [
-            {
-              text: "PHP",
-              link: "/dev/php/PHP/认识PHP",
-            },
-            {
-              text: "Java",
-              link: "/dev/java/yudao/guide",
-            },
+            { text: "Java (SpringBoot)", link: "/dev/java/" },
+            { text: "PHP (WordPress)", link: "/dev/php/" },
+          ],
+        },
+        {
+          text: "📦 工程与工具",
+          items: [
+            { text: "NPM 包管理", link: "/dev/npm/" },
+            { text: "通用框架/若依", link: "/dev/framework/" },
           ],
         },
       ],
