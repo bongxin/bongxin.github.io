@@ -8,11 +8,11 @@ export default function nav() {
           items: [
             {
               text: "npm",
-              link: "/skill/development/npm/npm",
+              link: "/dev/npm/npm",
             },
             {
               text: "Vue",
-              link: "/skill/development/vue/Vue/简介",
+              link: "/dev/web/vue/Vue/简介",
             },
           ],
         },
@@ -21,11 +21,11 @@ export default function nav() {
           items: [
             {
               text: "PHP",
-              link: "/skill/development/php/PHP/认识PHP",
+              link: "/dev/php/PHP/认识PHP",
             },
             {
               text: "Java",
-              link: "/skill/development/java/yudao/guide",
+              link: "/dev/java/yudao/guide",
             },
           ],
         },
@@ -39,7 +39,7 @@ export default function nav() {
           items: [
             {
               text: "Figma",
-              link: "/skill/design/figma/Figma/认识Figma",
+              link: "/design/figma/Figma/认识Figma",
             },
             // {
             //   text: 'PS',
@@ -52,15 +52,15 @@ export default function nav() {
           items: [
             {
               text: "PlantUML",
-              link: "/skill/design/uml/plantuml/PlantUML/认识PlantUML",
+              link: "/design/uml/plantuml/PlantUML/认识PlantUML",
             },
             {
               text: "Mermaid",
-              link: "/skill/design/uml/mermaid/Mermaid/认识Mermaid.md",
+              link: "/design/uml/mermaid/Mermaid/认识Mermaid.md",
             },
             {
               text: "Gravizo",
-              link: "/skill/design/uml/gravizo//Gravizo/认识Gravizo.md",
+              link: "/design/uml/gravizo//Gravizo/认识Gravizo.md",
             },
           ],
         },
@@ -74,15 +74,15 @@ export default function nav() {
           items: [
             {
               text: "PMP",
-              link: "/skill/management/pmp/PMP/认识PMP",
+              link: "/mgmt/pmp/PMP/认识PMP",
             },
             {
               text: "CSMM",
-              link: "/skill/management/csmm/CSMM/认识CSMM",
+              link: "/mgmt/csmm/CSMM/认识CSMM",
             },
             {
               text: "软考-高项",
-              link: "/skill/management/ispm/信息系统项目管理师/AI生成工作分解结构",
+              link: "/mgmt/ispm/信息系统项目管理师/AI生成工作分解结构",
             },
           ],
         },
@@ -96,23 +96,23 @@ export default function nav() {
           items: [
             {
               text: "Linux",
-              link: "/skill/DevOps/ubuntu/基本配置/基本配置",
+              link: "/ops/linux/基本配置/基本配置",
             },
             {
               text: "Docker",
-              link: "/skill/DevOps/docker/DockerCompose",
+              link: "/ops/docker/DockerCompose",
             },
             {
               text: "OpenWRT",
-              link: "/skill/DevOps/openwrt/OpenWRT",
+              link: "/ops/openwrt/OpenWRT",
             },
             {
               text: "DSM",
-              link: "/skill/DevOps/dsm/群晖NAS系统（DSM）的安装和使用",
+              link: "/ops/dsm/群晖NAS系统（DSM）的安装和使用",
             },
             {
               text: "其他",
-              link: "/skill/DevOps/others/内网穿透",
+              link: "/ops/others/内网穿透",
             },
           ],
         },

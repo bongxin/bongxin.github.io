@@ -6,8 +6,8 @@ export const sidebarConfigs = [
   {
     documentRootPath: '/docs',
     // 扫描整个 business 目录，插件会自动识别子文件夹
-    scanStartPath: 'skill/business',
-    resolvePath: '/skill/business/',
+    scanStartPath: 'business',
+    resolvePath: '/business/',
     collapsed: false,
     capitalizeFirst: false,
     useTitleFromFrontmatter: true,
@@ -22,10 +22,10 @@ export const sidebarConfigs = [
     documentRootPath: '/docs',
     // 👇 关键：直接扫描到 development 层级
     // 插件会自动遍历其下的 java/, vue/, php/ 等子文件夹并生成树状结构
-    scanStartPath: 'skill/development',
+    scanStartPath: 'dev',
     // 👇 关键：URL 前缀也对应到 development
-    // 只要 URL 以 /skill/development/ 开头，都使用这个侧边栏配置
-    resolvePath: '/skill/development/',
+    // 只要 URL 以 /dev/ 开头，都使用这个侧边栏配置
+    resolvePath: '/dev/',
     collapsed: false,       // 默认展开，方便查看子技术栈
     capitalizeFirst: false,
     useTitleFromFrontmatter: true,
@@ -37,8 +37,8 @@ export const sidebarConfigs = [
   // 对应导航栏：设计技能 (包含 Figma, UML 等)
   {
     documentRootPath: '/docs',
-    scanStartPath: 'skill/design',
-    resolvePath: '/skill/design/',
+    scanStartPath: 'design',
+    resolvePath: '/design/',
     collapsed: false,
     capitalizeFirst: false,
     useTitleFromFrontmatter: true,
@@ -46,12 +46,24 @@ export const sidebarConfigs = [
     useFolderLinkFromIndexFile: true,
   },
 
-  // --- 4. 运维 (DevOps) ---
+  // --- 4. 管理 (Management) ---
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'mgmt',
+    resolvePath: '/mgmt/',
+    collapsed: false,
+    capitalizeFirst: false,
+    useTitleFromFrontmatter: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+  },
+
+  // --- 5. 运维 (DevOps) ---
   // 对应导航栏：运维技能
   {
     documentRootPath: '/docs',
-    scanStartPath: 'skill/DevOps',
-    resolvePath: '/skill/DevOps/',
+    scanStartPath: 'ops',
+    resolvePath: '/ops/',
     collapsed: false,
     capitalizeFirst: false,
     useTitleFromFrontmatter: true,
@@ -59,7 +71,7 @@ export const sidebarConfigs = [
     useFolderLinkFromIndexFile: true,
   },
 
-  // --- 5. 音乐 (Music) ---
+  // --- 6. 音乐 (Music) ---
   // 对应导航栏：音乐空间
   {
     documentRootPath: '/docs',
