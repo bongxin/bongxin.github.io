@@ -11,7 +11,6 @@ description: PHP 与 WordPress 生态笔记
 
 | 分类 | 说明 |
 |------|------|
-| [PHP 基础](/dev/php/php/) | PHP 语言入门 |
 | [WordPress](/dev/php/wordpress/) | WordPress 建站与使用 |
 | [B2 主题 - 使用指南](/dev/php/b2-pro/guide/) | B2 主题配置与功能 |
 | [B2 主题 - App 指南](/dev/php/b2-pro/guide-app/) | B2 主题 App 端相关 |
