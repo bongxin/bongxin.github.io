@@ -1,57 +1,85 @@
-# 关于
+# 谢凯新
+**AI增强型项目经理 | PMP®认证 | 全栈交付专家**
+📞 136-3140-7919  |  📧 bongxin@yeah.net  |  📍 广州
 
-## 个人简历
+---
 
-<el-descriptions title="个人资料" :border="false">
-    <el-descriptions-item label="姓名">谢凯新</el-descriptions-item>
-    <el-descriptions-item label="电话">13631407919</el-descriptions-item>
-    <el-descriptions-item label="出生年月">1993-5</el-descriptions-item>
-    <el-descriptions-item label="民族">汉</el-descriptions-item>
-    <el-descriptions-item label="邮箱">bongxin@yeah.net</el-descriptions-item>
-    <el-descriptions-item label="地址">广东广州</el-descriptions-item>
-  </el-descriptions>
-<el-descriptions title="教育背景" :border="false" :column='4'>
-    <el-descriptions-item label="">2012-9至2016-7</el-descriptions-item>
-    <el-descriptions-item label="">广东药科大学</el-descriptions-item>
-    <el-descriptions-item label="">计算机科学与技术</el-descriptions-item>
-    <el-descriptions-item label="">本科</el-descriptions-item>
-  </el-descriptions>
-<el-descriptions title="工作经验" :border="false">
-    <el-descriptions-item label="">2016-7至2018-8</el-descriptions-item>
-    <el-descriptions-item label="">广州思迈特软件有限公司</el-descriptions-item>
-    <el-descriptions-item label="">前端开发</el-descriptions-item>
-    <el-descriptions-item label="">2018-8至2021-4</el-descriptions-item>
-    <el-descriptions-item label="">广州华微明天软件技术有限公司</el-descriptions-item>
-    <el-descriptions-item label="">前端开发</el-descriptions-item>
-    <el-descriptions-item label="">2021-4至今</el-descriptions-item>
-    <el-descriptions-item label="">广州华微明天软件技术有限公司</el-descriptions-item>
-    <el-descriptions-item label="">项目管理</el-descriptions-item>
-  </el-descriptions>
-  <!-- <el-descriptions title="项目经验"> -->
-    <!-- <el-descriptions-item label="">2016-7至2018-8</el-descriptions-item>
-    <el-descriptions-item label="">广州思迈特软件有限公司</el-descriptions-item>
-    <el-descriptions-item label="">前端开发</el-descriptions-item>
-    <el-descriptions-item label="">2018-8至今</el-descriptions-item>
-    <el-descriptions-item label="">广州华微明天软件技术有限公司</el-descriptions-item>
-    <el-descriptions-item label="">前端开发/项目管理</el-descriptions-item> -->
-  <!-- </el-descriptions> -->
-  <el-descriptions title="技能证书" :border="false">
-    <el-descriptions-item label="">PMP（国际项目管理师）</el-descriptions-item>
+### 🚀 核心价值：AI赋能的效能革命
+*   **AI驱动的全栈交付**：打破传统PM与开发的边界。深度整合 **Cursor** (AI代码编辑器) 与 **通义千问** (大模型) 至工作流，具备独立快速构建原型、编写核心代码及自动化测试的能力。在近期项目中，利用AI辅助将**开发效率提升50%**，实现“需求-设计-代码-文档”的极速闭环。
+*   **设计思维可视化 **(Figma)：摒弃传统的文字需求文档，精通 **Figma** 高保真原型设计。能在现场调研时直接绘制可交互原型，将“需求确认”时间从数天缩短至**小时级**，大幅降低沟通成本与返工风险。(现在更多采用AI直接生成页面的方式)
+*   **专家级文档与汇报**：擅长利用AI工具辅助撰写高质量的**招投标方案、技术白皮书及汇报PPT**。能够快速梳理复杂逻辑，生成结构严谨、视觉专业的文档，多次在百万级项目竞标中凭借优异方案胜出。
+*   **现场交付与需求洞察**：拥有极强的驻场实战经验。善于在复杂现场环境中，结合**AI数据分析**与**引导式提问**，精准挖掘客户隐性需求，并迅速转化为可落地的技术方案。
 
-   </el-descriptions>
-<!-- <el-row>
-<el-col :span="8"><div class="grid-content ep-bg-purple" />
-    <el-descriptions direction='vertical' title="User Info">
-    <el-descriptions-item label="Username">kooriookami</el-descriptions-item>
-    <el-descriptions-item label="Remarks">
-      <el-tag size="small">School</el-tag>
-    </el-descriptions-item>
-    <el-descriptions-item label="Address">
-      No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
-    </el-descriptions-item>
-  </el-descriptions>
-</el-col>
-<el-col :span="16"><div class="grid-content ep-bg-purple-light" />
-asd
-</el-col>
-</el-row> -->
+---
+
+### 💼 工作经历
+
+**广州华微明天软件技术有限公司** | 2018.08 – 至今
+**职位**：项目经理 / AI效能实践者
+**核心职责**：
+*   **AI工作流重构**：在团队内推广 **Cursor** 编程助手，建立“自然语言描述 -> AI生成代码框架 -> 人工审查优化”的开发模式。个人常利用此模式在关键节点**独立承担**核心模块开发，减少对纯开发资源的依赖。
+*   **设计与交付闭环**：主导项目从0到1的孵化。利用 **Figma** 快速输出高保真UI/UX，直接指导前端还原；利用 **通义千问** 自动生成单元测试用例、用户手册及API文档，确保交付物标准化且高质量。
+*   **商务与方案支撑**：负责招投标技术标书撰写及现场述标PPT制作。通过AI辅助分析招标文件痛点，定制化输出解决方案。
+
+**广州思迈特软件有限公司** | 2016.08 – 2018.07
+**职位**：定制开发工程师
+**主要职责**：负责电信及企业定制化项目的全栈开发，奠定了扎实的技术底座，为后续驾驭AI编程工具打下坚实基础。
+
+---
+
+### 🏆 重点项目经验（AI赋能实战）
+
+#### 1. 智慧农业与食品溯源系列（2021.10 – 至今）
+**角色**：项目经理 & 核心架构师
+*   **中山颐丰智慧屠宰项目** (2024.10)
+    *   **AI提效**：利用 **Cursor** 快速搭建物联网数据接收中间件，将原本需3天的接口开发压缩至**0.5天**；使用 **通义千问** 生成设备接入规范文档。
+    *   **设计落地**：现场使用 **Figma** 绘制屠宰流程监控大屏原型，当场获得甲方确认，避免后期需求变更。
+    *   **成果**：项目提前2周上线，实现全流程数字化追溯。
+
+*   **贵州移动AI问答项目** (2024.08)
+    *   **核心职责**：主导基于大模型的智能客服系统落地。
+    *   **AI实践**：作为项目核心，直接利用 **Prompt Engineering** 优化模型回答准确率，协助团队清洗训练数据，展现了对AI技术的深度理解与应用能力。
+    *   **成果**：快速迭代多个版本，显著降低人工客服压力，获甲方高度认可。
+
+*   **粤海食品智慧屠宰/销售系统** (2021.10 – 2023.09)
+    *   **需求与交付**：深入一线猪场与屠宰场，通过“**现场访谈 + Figma原型演示**”的方式，将模糊的业务痛点转化为清晰的功能列表。
+    *   **文档能力**：独立撰写全套《用户需求说明书》与《系统操作手册》，并利用AI工具将其转化为视频教程脚本，极大提升了用户培训效率。
+    *   **成果**：成功中标二期项目，客户满意度评级为“优秀”。
+
+#### 2. 智慧水务与政府信息化系列（2018.08 – 2022.12）
+**角色**：项目负责人 (PL) & 主设计师
+*   **白云智慧水务项目** (2022.12)
+    *   **方案设计**：负责整体技术架构设计与PPT汇报材料制作。利用AI辅助分析历史水务数据，提出预测性维护方案，在评标中获得高分。
+    *   **可视化**：使用 **Figma** 设计水务驾驶舱界面，直观展示水质水量监测数据，成为项目亮点。
+
+*   **东江北干流大墩国考断面达标系统** (2019.11 – 2020.04)
+    *   **驻场攻坚**：作为驻场负责人，面对工期紧、需求变更多的挑战，采用“**白天调研画原型（Figma），晚上AI辅助写代码/文档**”的高强度模式。
+    *   **成果**：按期高质量交付，并成功促成后续**500万+运维合同**的签订，证明了极强的现场把控与商业转化能力。
+
+*   **东江流域水资源监测体系深化建设** (2020.09)
+    *   **技术落地**：主导前端重构，引入组件化开发思想，提升系统响应速度。
+
+#### 3. 运营商与定制化项目
+*   **长沙移动项目** (2020.11 – 2022.04)：担任项目经理，统筹多方资源，确保复杂集成项目顺利验收。
+*   **湖北电信定制项目** (2018.05 – 2018.07)：**独立全栈交付**。在无后端支持情况下，独立完成前后端开发（此经历验证了您现在能驾驭AI辅助开发的潜力，如今效率已翻倍）。
+
+---
+
+### 🛠 技能栈：传统实力 + AI新引擎
+
+| 类别 | 核心技能 | **AI赋能下的应用场景** |
+| :--- | :--- | :--- |
+| **AI效能工具** | **Cursor, 通义千问, Copilot** | **代码**：自动生成CRUD、正则、SQL、单元测试；**文档**：一键生成会议纪要、技术文档初稿、标书润色；**决策**：辅助风险分析与方案比对。 |
+| **设计与原型** | **Figma, Axure** | **现场交付**：实时绘制高保真交互原型，所见即所得；**UI规范**：快速生成设计系统（Design System），统一团队风格。 |
+| **文档与汇报** | **PPT** | **投标/汇报**：利用AI快速构建PPT大纲与内容，自动美化排版；**方案书**：快速输出几百页的技术方案书，确保逻辑严密。 |
+| **项目管理** | **PMP, 禅道, Project** | 敏捷/瀑布混合管理、风险控制、干系人管理、成本/进度控制。 |
+| **技术开发** | **Vue.js, JS, 小程序** | **技术评审**：准确评估AI生成代码的质量与安全性；**快速原型**：独立搭建MVP（最小可行性产品）验证业务。 |
+| **行业领域** | **智慧农业（智慧屠宰）, 智慧水务** | 熟悉业务流程、政策法规及行业标准，具备深厚的领域知识。 |
+
+---
+
+### 🎓 教育背景
+*   **2012.09 – 2016.06** | **广东药科大学** | 计算机科学与技术 | 本科
+*   **2024.06** | **PMP® 项目管理专业人士认证**
+
+---
