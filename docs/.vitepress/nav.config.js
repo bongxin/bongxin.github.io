@@ -12,15 +12,15 @@ export default function nav() {
         {
           text: "⚙️ 后端生态",
           items: [
-            { text: "Java (SpringBoot)", link: "/dev/java/" },
-            { text: "PHP (WordPress)", link: "/dev/php/" },
+            { text: "Java (SpringBoot)", link: "/dev/java/spring-boot/" },
+            { text: "PHP (WordPress)", link: "/dev/php/wordpress/" },
           ],
         },
         {
           text: "📦 工程与工具",
           items: [
             { text: "NPM 包管理", link: "/dev/npm/" },
-            { text: "通用框架/若依", link: "/dev/framework/" },
+            { text: "通用框架/芋道(ruoyi-vue-pro)", link: "/dev/framework/yudao/" },
           ],
         },
       ],
@@ -31,31 +31,15 @@ export default function nav() {
         {
           text: "UI设计",
           items: [
-            {
-              text: "Figma",
-              link: "/design/figma/Figma/认识Figma",
-            },
-            // {
-            //   text: 'PS',
-            //   link: '/skill/design/ps/PhotoShop/认识PS',
-            // },
+            { text: "Figma", link: "/design/figma/" },
           ],
         },
         {
           text: "UML画图",
           items: [
-            {
-              text: "PlantUML",
-              link: "/design/uml/plantuml/PlantUML/认识PlantUML",
-            },
-            {
-              text: "Mermaid",
-              link: "/design/uml/mermaid/Mermaid/认识Mermaid.md",
-            },
-            {
-              text: "Gravizo",
-              link: "/design/uml/gravizo//Gravizo/认识Gravizo.md",
-            },
+            { text: "PlantUML", link: "/design/uml/plantuml/PlantUML/认识PlantUML" },
+            { text: "Mermaid", link: "/design/uml/mermaid/Mermaid/认识Mermaid" },
+            { text: "Gravizo", link: "/design/uml/gravizo/Gravizo/认识Gravizo" },
           ],
         },
       ],
@@ -120,7 +104,8 @@ export default function nav() {
           link: "/skill/operation/草料微信二维码生成器",
         },
       ],
-    },{
+    },
+    {
       text: "音乐",
       items: [
         {
@@ -140,7 +125,8 @@ export default function nav() {
           link: "/music/sexy.html#Under%20The%20Influence",
         },
       ],
-    },{
+    },
+    {
       text: "其他",
       items: [
         {

@@ -49,3 +49,9 @@ export const sidebarConfigs = [
 ```
 npm i vitepress-plugin-mermaid mermaid -D
 ```
+
+## 参考
+
+- [vitepress-sidebar](https://github.com/valmisson/vitepress-sidebar) — VitePress 自动侧边栏配置
+- [vitepress-plugin-mermaid](https://github.com/emersonbottero/vitepress-plugin-mermaid) — 在 VitePress 中渲染 Mermaid 图表
+- [VitePress 官方 - 插件](https://vitepress.dev/guide/using-vue#using-vue-in-markdown) — 使用 Vue 与扩展

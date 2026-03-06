@@ -1,4 +1,7 @@
 ---
+order: 1
+---
+---
 title: B2 主题
 description: B2 主题使用与配置
 ---

@@ -1,6 +1,7 @@
 ---
 title: 部署
 outline: "deep"
+order: 3
 ---
 
 # 基础环境准备

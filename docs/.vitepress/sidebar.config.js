@@ -13,6 +13,7 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
   },
 
   // --- 2. 开发 (Development)：按子模块使用不同侧边栏 ---
@@ -26,6 +27,9 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true, // 从文件的标题中获取标题
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+    frontmatterOrderDefaultValue: 999, // 未设置 order 的项排到后面，保证 Vue 3 根 index 排第一
+    includeRootIndexFile: true, // 把 Vue 根目录 index 也显示为侧边栏一项
   },
   {
     documentRootPath: '/docs',
@@ -36,6 +40,7 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
   },
   {
     documentRootPath: '/docs',
@@ -46,6 +51,7 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true, //按照frontmatter的order排序
   },
   {
     documentRootPath: '/docs',
@@ -56,7 +62,20 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
   },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'dev/npm',
+    resolvePath: '/dev/npm/',
+    collapsed: null,
+    capitalizeFirst: false,
+    useTitleFromFileHeading: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+  },
+
   // 兜底：dev 下其他路径（如 npm）仍用整棵 dev 树
   {
     documentRootPath: '/docs',
@@ -67,10 +86,34 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
   },
 
   // --- 3. 设计 (Design) ---
   // 对应导航栏：设计技能 (包含 Figma, UML 等)
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'design/figma',
+    resolvePath: '/design/figma/',
+    collapsed: null,
+    capitalizeFirst: false,
+    useTitleFromFileHeading: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true, // 把 Figma 根目录 index 也显示为侧边栏一项
+  },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'design/uml',
+    resolvePath: '/design/uml/',
+    collapsed: null,
+    capitalizeFirst: false,
+    useTitleFromFileHeading: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+  },
   {
     documentRootPath: '/docs',
     scanStartPath: 'design',
@@ -80,6 +123,7 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
   },
 
   // --- 4. 管理 (Management) ---
@@ -92,6 +136,7 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
   },
 
   // --- 5. 运维 (DevOps) ---
@@ -105,6 +150,7 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
   },
 
   // --- 6. 音乐 (Music) ---
@@ -118,6 +164,7 @@ export const sidebarConfigs = [
     useTitleFromFileHeading: true,
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
   },
   
   // --- 6. 其他 (Others) ---

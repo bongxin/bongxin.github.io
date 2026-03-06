@@ -11,3 +11,4 @@ npm install element-plus
 ## 参考
 
 - [Element Plus 官方文档](https://element-plus.org/zh-CN/)
+- [Element Plus GitHub](https://github.com/element-plus/element-plus)
