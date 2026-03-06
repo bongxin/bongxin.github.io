@@ -100,6 +100,7 @@ export const sidebarConfigs = [
     useFolderTitleFromIndexFile: true,
     useFolderLinkFromIndexFile: true,
     sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true, // 把
   },
   {
     documentRootPath: '/docs',

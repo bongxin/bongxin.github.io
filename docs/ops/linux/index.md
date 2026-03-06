@@ -23,8 +23,8 @@ aside: 'right'
 | [基本配置](/ops/linux/基本配置/基本配置) | 网络（Netplan）、静态 IP、UFW 防火墙等 |
 | [开发环境配置](/ops/linux/基本配置/开发环境配置) | Java、MySQL、Docker、GitLab 等在 Ubuntu 上的安装与配置 |
 | [OpenVPN 服务](/ops/linux/基本配置/OpenVPN服务) | 基于 Ubuntu 的 OpenVPN 服务端搭建 |
-| [常见操作](/ops/linux/常见操作/常见操作) | 端口查看、包管理、服务管理等常用命令 |
-| [常见问题](/ops/linux/常见问题/常见问题) | 常见报错与排查思路 |
+| [常见操作](/ops/linux/常见操作/) | 端口查看、包管理、服务管理等常用命令 |
+| [常见问题](/ops/linux/常见问题/) | 常见报错与排查思路 |
 
 ## 快速参考
 

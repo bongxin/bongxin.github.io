@@ -36,7 +36,7 @@ aside: 'right'
 3. 通过 `ssh pi@<树莓派IP>` 或默认主机名 `raspberrypi.local` 登录。
 
 ::: tip 与 Ubuntu 的相似处
-Raspberry Pi OS 使用 systemd、apt、UFW 等，多数 [Linux 常见操作](/ops/linux/常见操作/常见操作) 与 [基本配置](/ops/linux/基本配置/基本配置) 思路可直接沿用。
+Raspberry Pi OS 使用 systemd、apt、UFW 等，多数 [Linux 常见操作](/ops/linux/常见操作/) 与 [基本配置](/ops/linux/基本配置/基本配置) 思路可直接沿用。
 :::
 
 ## 四、常见用途
