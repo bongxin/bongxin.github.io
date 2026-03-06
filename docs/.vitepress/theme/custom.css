@@ -37,8 +37,13 @@ body {
 }
 
 /* 导航栏 */
+.VPNavBar {
+  margin: 2px 0;
+}
+
 .VPNavBarMenu .text {
   font-size: 13px;
+  font-weight: 500px;
 }
 
 .VPNavBarMenu .VPMenu .title {
@@ -71,6 +76,7 @@ body {
 .VPNav .VPNavBar.has-sidebar .divider,
 .VPNav .VPNavBar:not(.home.top) .divider {
   padding-left: 0;
+  margin-top: 2px;
 }
 
 .VPNav .VPNavBar.has-sidebar .divider .divider-line,

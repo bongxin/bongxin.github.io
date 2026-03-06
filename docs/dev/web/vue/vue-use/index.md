@@ -1,3 +1,6 @@
+---
+title: VueUse
+---
 # VueUse
 [VueUse](https://vueuse.org/) 是一个基于 Composition API 的实用程序函数集合。
 

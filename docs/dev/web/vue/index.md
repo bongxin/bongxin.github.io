@@ -6,7 +6,6 @@
 
 | 分类       | 说明 |
 | ---------- | ---- |
-| [Vue](/dev/web/vue/vue/) | Vue 3 核心与基础 |
 | [Element Plus](/dev/web/vue/element-plus/) | 桌面端 UI 组件库 |
 | [Vant](/dev/web/vue/vant/) | 移动端 UI 组件库 |
 | [VitePress](/dev/web/vue/vitepress/) | 静态站点 / 文档生成 |
