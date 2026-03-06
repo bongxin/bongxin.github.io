@@ -1,10 +1,9 @@
 ---
-# layout: home
-aside: 'right'
-# sidebar: false
+order: 2
 ---
 
-# 认识Gravizo
+# Gravizo
+
 官网地址：[https://www.gravizo.com/](https://www.gravizo.com/)
 
 Gravizo 是一个绘图引擎，只需要用 Url 包含 PlantUML 代码放到一个 img 标签中，就可以在线实时的绘制出我们需要的 UML 图。

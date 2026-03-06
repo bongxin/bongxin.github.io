@@ -5,9 +5,7 @@ export default function nav() {
       items: [
         {
           text: "💻 前端生态",
-          items: [
-            { text: "Vue 3 全家桶", link: "/dev/web/vue/" },
-          ],
+          items: [{ text: "Vue 3 全家桶", link: "/dev/web/vue/" }],
         },
         {
           text: "⚙️ 后端生态",
@@ -20,7 +18,10 @@ export default function nav() {
           text: "📦 工程与工具",
           items: [
             { text: "NPM 包管理", link: "/dev/npm/" },
-            { text: "通用框架/芋道(ruoyi-vue-pro)", link: "/dev/framework/yudao/" },
+            {
+              text: "通用框架/芋道(ruoyi-vue-pro)",
+              link: "/dev/framework/yudao/",
+            },
           ],
         },
       ],
@@ -30,16 +31,14 @@ export default function nav() {
       items: [
         {
           text: "UI设计",
-          items: [
-            { text: "Figma", link: "/design/figma/" },
-          ],
+          items: [{ text: "Figma", link: "/design/figma/" }],
         },
         {
           text: "UML画图",
           items: [
-            { text: "PlantUML", link: "/design/uml/plantuml/PlantUML/认识PlantUML" },
-            { text: "Mermaid", link: "/design/uml/mermaid/Mermaid/认识Mermaid" },
-            { text: "Gravizo", link: "/design/uml/gravizo/Gravizo/认识Gravizo" },
+            { text: "PlantUML", link: "/design/uml/plantuml/" },
+            { text: "Mermaid", link: "/design/uml/mermaid/" },
+            { text: "Gravizo", link: "/design/uml/gravizo/" },
           ],
         },
       ],
@@ -52,15 +51,15 @@ export default function nav() {
           items: [
             {
               text: "PMP",
-              link: "/mgmt/pmp/PMP/认识PMP",
+              link: "/mgmt/pmp/",
             },
             {
               text: "CSMM",
-              link: "/mgmt/csmm/CSMM/认识CSMM",
+              link: "/mgmt/csmm/",
             },
             {
-              text: "软考-高项",
-              link: "/mgmt/ispm/信息系统项目管理师/AI生成工作分解结构",
+              text: "高项",
+              link: "/mgmt/ispm/",
             },
           ],
         },
@@ -70,28 +69,34 @@ export default function nav() {
       text: "运维",
       items: [
         {
-          text: "运维",
+          text: "主机与容器",
           items: [
-            {
-              text: "Linux",
-              link: "/ops/linux/基本配置/基本配置",
-            },
-            {
-              text: "Docker",
-              link: "/ops/docker/DockerCompose",
-            },
-            {
-              text: "OpenWRT",
-              link: "/ops/openwrt/OpenWRT",
-            },
-            {
-              text: "DSM",
-              link: "/ops/dsm/群晖NAS系统（DSM）的安装和使用",
-            },
-            {
-              text: "其他",
-              link: "/ops/others/内网穿透",
-            },
+            { text: "Linux", link: "/ops/linux/" },
+            { text: "WSL2", link: "/ops/wsl2/" },
+            { text: "树莓派", link: "/ops/raspberry-pi/" },
+            { text: "Docker", link: "/ops/docker/docker-compose/" },
+          ],
+        },
+        {
+          text: "网络与安全",
+          items: [
+            { text: "OpenWRT", link: "/ops/openwrt/" },
+            { text: "Clash", link: "/ops/clash/" },
+            { text: "内网穿透 (Natapp)", link: "/ops/natapp/" },
+            { text: "VPN", link: "/ops/vpn/ConfigVPN" },
+          ],
+        },
+        {
+          text: "应用与服务",
+          items: [
+            { text: "DSM 群晖 NAS", link: "/ops/dsm/群晖NAS系统（DSM）的安装和使用" },
+            { text: "宝塔面板", link: "/ops/bt/宝塔面板/认识宝塔面板" },
+          ],
+        },
+        {
+          text: "工具",
+          items: [
+            { text: "Fast GitHub", link: "/ops/github/fast-github/" },
           ],
         },
       ],
@@ -140,23 +145,6 @@ export default function nav() {
               text: "AsciiDoc",
               link: "/others/markdown/AsciiDoc/认识Markdown",
             },
-
-            // {
-            //   text: 'GitHub',
-            //   link: '/skill/DevOps/github/GitHub/Fast GitHub',
-            // },
-            // {
-            //   text: '树莓派',
-            //   link: '/skill/DevOps/树莓派/树莓派',
-            // },
-            // {
-            //   text: 'OpenWRT',
-            //   link: '/skill/DevOps/openwrt/OpenWRT',
-            // },
-            // {
-            //   text: 'Mac',
-            //   link: '/skill/DevOps/openwrt/OpenWRT',
-            // },
           ],
         },
       ],

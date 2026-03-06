@@ -2,7 +2,7 @@
 outline: "deep"
 ---
 
-# 认识Docker Compose
+# Docker Compose
 
 Docker Compose 是一个用于定义和运行多容器 Docker 应用程序的工具。通过一个 docker-compose.yml 文件，你可以配置应用程序的服务、网络和卷等，然后使用一条命令启动所有服务。
 

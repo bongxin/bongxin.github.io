@@ -1,10 +1,9 @@
 ---
-# layout: home
-aside: 'right'
-# sidebar: false
+order: 1
 ---
 
-# 认识Mermaid
+# Mermaid
+
 官网地址：[https://mermaid.js.org/](https://mermaid.js.org/)
 
 Mermaid Live Editor: [https://mermaid.live/](https://mermaid.live/)

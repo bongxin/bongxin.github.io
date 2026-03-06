@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 🚀 开始探索
-      link: /skill/management/pmp/PMP/认识PMP
+      link: /mgmt/pmp/
     - theme: alt
       text: 查看源码
       link: https://github.com/bongxin/bongxin.github.io
@@ -20,17 +20,17 @@ features:
   - icon: 🔨
     title: 软件开发
     details:  Java (SpringBoot/Yudao)、PHP (WordPress) 及前端生态 (Vue3/ElementPlus/Uni-app)。
-    link: /design/
+    link: /dev/web/vue/
     linkText: 浏览设计资源
   - icon: 🎨
     title: 界面设计
     details: 从 Figma 原型到 PS 精修，再到 UML 架构图 (Mermaid/PlantUML)，全链路设计思维。 
-    link: /design/
+    link: /design/figma/
     linkText: 浏览设计资源
   - icon: 📌
     title: 项目管理
     details: 系统化学习 PMP 项目管理知识与 ISPM 信息管理，提升交付效率。
-    link: /mgmt/
+    link: /mgmt/pmp/
     linkText: 学习管理知识
   - icon: ⚙️
     title: 运维部署

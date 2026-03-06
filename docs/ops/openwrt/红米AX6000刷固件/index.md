@@ -1,8 +1,8 @@
-# 红米AX6000刷UBoot和OpenWrt固件
+# 红米 AX6000 刷 UBoot 和 OpenWrt 固件
 
-* 开启SSH
+* 开启 SSH
 * 刷入过渡固件
-* 刷入OpenWrt固件
+* 刷入 OpenWrt 固件
 
 ## 降级官方固件
 
@@ -12,7 +12,7 @@
 要降级：导航到 Upload firmware （上传固件） 页面并选择适当的软件版本。它会抱怨降级。编辑 url 并将末尾的 <html>0</html> 更改为 <html>1</html>，然后按 Enter。或者，如果已经有 <html>1</html>（在 v1.0.64 上看到），请更改为 <html>2</html>。降级将继续进行。
 :::
 
-## 开启SSH
+## 开启 SSH
 
 <BilibiliPlayer
   base-src="//player.bilibili.com/player.html?isOutside=true&aid=260611365&bvid=BV1Qe411T7TZ&cid=833815481&p=1"
@@ -20,7 +20,7 @@
 
 文档地址：[红米 AX6000 最强 CPU 的硬路由｜解锁 SSH 安装 ShellClash 教程](https://qust.me/post/ax6000-shellclash/)
 
-### 获取stok
+### 获取 stok
 
 ``` sh
 http://192.168.31.1/cgi-bin/luci/;stok=c9d5f7d3ccfc896e9f04bea8c88d0938/web/prosetting/qos
@@ -42,7 +42,7 @@ http://192.168.31.1/cgi-bin/luci/;stok=c9d5f7d3ccfc896e9f04bea8c88d0938/api/misy
 重启后，要重新获取新的 `stok`
 :::
 
-### 设置永久开启telnet
+### 设置永久开启 telnet
 
 ``` sh
 http://192.168.31.1/cgi-bin/luci/;stok=7ce0ad34047a948b4aa800ac8d1d2989/api/misystem/set_sys_time?timezone=%20%27%20%3B%20bdata%20set%20telnet_en%3D1%20%3B%20bdata%20set%20ssh_en%3D1%20%3B%20bdata%20set%20uart_en%3D1%20%3B%20bdata%20commit%20%3B%20
@@ -54,11 +54,11 @@ http://192.168.31.1/cgi-bin/luci/;stok=7ce0ad34047a948b4aa800ac8d1d2989/api/misy
 http://192.168.31.1/cgi-bin/luci/;stok=7ce0ad34047a948b4aa800ac8d1d2989/api/misystem/set_sys_time?timezone=%20%27%20%3b%20reboot%20%3b%20
 ```
 
-### Telnet连接路由器
+### Telnet 连接路由器
 
 ![](./telnet.png)
 
-### 永久开启并固化ssh
+### 永久开启并固化 ssh
 
 ``` sh
 echo -e 'admin\nadmin' | passwd root
@@ -90,10 +90,10 @@ reboot
 
 ![](./永久开启并固化ssh.png)
 
-### SSH连接路由器
+### SSH 连接路由器
 ![](./ssh.png)
 
-## 刷入OpenWrt固件
+## 刷入 OpenWrt 固件
 
 <BilibiliPlayer
   base-src="//player.bilibili.com/player.html?isOutside=true&aid=304933810&bvid=BV1oP411F7Y2&cid=886896357&p=1"
@@ -143,11 +143,7 @@ reboot -f
 
 #### 上传过渡固件
 
-* 教程：[https://www.right.com.cn/forum/thread-8255378-1-1.html](https://www.right.com.cn/forum/thread-8255378-1-1.html)
-* 过渡固件介绍：[https://www.right.com.cn/forum/thread-212965-1-1.html](https://www.right.com.cn/forum/thread-212965-1-1.html)
-* 过渡固件下载地址:[https://downloads.x-wrt.com/rom/](https://downloads.x-wrt.com/rom/)
-* 过渡固件名称：`x-wrt-24.04-b202410201421-mediatek-filogic-xiaomi_redmi-router-ax6000-stock-initramfs-factory.ubi`
-* sysupgrade文件：`x-wrt-24.04-b202410201421-mediatek-filogic-xiaomi_redmi-router-ax6000-stock-squashfs-sysupgrade.bin`
+* sysupgrade 文件：`x-wrt-24.04-b202410201421-mediatek-filogic-xiaomi_redmi-router-ax6000-stock-squashfs-sysupgrade.bin`
 
 ``` sh
 cd /tmp
@@ -165,10 +161,10 @@ ubiformat: error!: cannot open "/dev/mtd8"
 
 ### 访问过渡固件
 ::: warning 注意
-如果没有找到OpenWrt的wifi的话，请使用网线连接路由来访问过渡固件
+如果没有找到 OpenWrt 的 wifi 的话，请使用网线连接路由来访问过渡固件
 :::
 
-#### 查看过渡固件ip
+#### 查看过渡固件 ip
 ![](./查看过渡固件ip.png)
 
 #### 浏览器访问过渡固件
@@ -179,59 +175,57 @@ http://192.168.15.1/
 
 ![](./访问过渡固件.png)
 
-#### ssh连接过渡固件
-![](./ssh过渡固件.png)
-
-执行命令
-``` sh
-fw_setenv boot_wait on
-fw_setenv uart_en 1
-fw_setenv flag_boot_rootfs 0
-fw_setenv flag_last_success 1
-fw_setenv flag_boot_success 1
-fw_setenv flag_try_sys1_failed 8
-fw_setenv flag_try_sys2_failed 8
-```
-
-#### 升级过渡固件
-执行命令
-``` sh
-sysupgrade -n /tmp/stock-sysupgrade.bin
-```
-
-### 连接Wifi
+### 连接 Wifi
 
 固件无线默认名称：X-WRT_XXXX，密码：88888888
 固件管理界面：http://192.168.15.1/
 管理界面账户密码：admin/admin
-SSH后台登录：root/admin
+SSH 后台登录：root/admin
 
 ::: warning 提示
-连接WiFi后，需要断开网线，如果连接网线，会默认优先走网线网络，导致192.168.15.1管理后台访问不了
+连接 WiFi 后，需要断开网线，如果连接网线，会默认优先走网线网络，导致 192.168.15.1 管理后台访问不了
 :::
 
 ### 刷写固件
 
 ::: warning 提示
 
-地址：[https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8379756&highlight=AX6000](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8379756&highlight=AX6000)
-
-固件下载地址(AX6000)：[https://openwrt.mpdn.fun:8443/?dir=lede/mtk/2024-10-31__03-49-41--xiaomi_redmi-ax6000.stable-daily](https://openwrt.mpdn.fun:8443/?dir=lede/mtk/2024-10-31__03-49-41--xiaomi_redmi-ax6000.stable-daily)
-
-在线体验：[https://openwrt.mpdn.fun:8443/?dir=lede/x86_64/](https://openwrt.mpdn.fun:8443/?dir=lede/x86_64/)
-
-immortalWRT下载地址：[https://mirrors.zuoyx.xyz/openwrt/releases/21.02-SNAPSHOT/targets/mediatek/mt7986/](https://mirrors.zuoyx.xyz/openwrt/releases/21.02-SNAPSHOT/targets/mediatek/mt7986/)
+immortalWRT 下载地址：[https://mirrors.zuoyx.xyz/openwrt/releases/21.02-SNAPSHOT/targets/mediatek/mt7986/](https://mirrors.zuoyx.xyz/openwrt/releases/21.02-SNAPSHOT/targets/mediatek/mt7986/)
 
 :::
 
-![](刷写固件.png)
+![](./刷写固件.png)
 
 打开系统-备份与升级，选择刷写固件。浏览里找到下载好的 openwrt 固件，选择上传。上传好后选择取消勾选保留当前配置然后选择继续。等待刷写完成自动重启，就会进入新的 openwrt 固件。
 
-![](写入固件中.png)
+![](./写入固件中.png)
 
-## 访问OpenWRT
+## 访问 OpenWRT
 
-* 后台地址：192.168.6.1
-* 用户名：root
-* 密码：password
+刷写完成并重启后，用浏览器访问管理后台：
+
+| 项目 | 说明 |
+|------|------|
+| 后台地址 | http://192.168.1.1 |
+| 用户名 | root |
+| 密码 | 首次登录一般为空，或与过渡固件一致（如 admin），建议登录后立即在「系统 → 管理权」中修改 |
+
+若无法打开 192.168.1.1，请确认电脑/手机已连接到该路由的 LAN 或 Wi-Fi，且未占用 192.168.1.x 网段。
+
+## 连接 Wi-Fi
+
+ImmortalWrt 固件默认无线信息如下，可在路由器背面或「网络 → 无线」中核对：
+
+| 项目 | 说明 |
+|------|------|
+| 2.4G 名称 | immortalWRT-2.4G |
+| 5G 名称 | immortalWRT-5G |
+| 默认密码 | 见固件说明或管理后台「无线」页，无则自行在后台设置 |
+
+![](./immortalWrt.png)
+
+连接 Wi-Fi 后即可无网线访问 192.168.1.1 进行后续配置（端口转发、科学上网插件等）。更多日常使用可参考 [OpenWRT 使用](/ops/openwrt/使用/)。
+
+::: tip 关于刷机方式
+若希望省心、减少变砖风险，可考虑在闲鱼等平台找同机型刷机服务（费用约几十元），由卖家远程或寄修完成刷机，一般更省时、稳妥。自行刷机请务必按步骤操作并确认固件与机型匹配。
+:::

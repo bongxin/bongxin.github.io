@@ -1,56 +1,28 @@
-# OpenWRT使用
+# OpenWRT 使用
 
 ## 拨号上网
 
-### WAN口配置、
+### WAN 口配置
 
 进入 `网络-接口`
 协议选择 `PPPoE` ，输入宽带账号密码
 
-![](WAN口配置.png)
+![](./WAN口配置.png)
 
-### LAN口配置
+### LAN 口配置
 
 进入 `网络-接口`
 协议选择 `静态地址`
 
-![](LAN口配置.png)
+![](./LAN口配置.png)
 
-## Wi-Fi无线网络配置
+## Wi-Fi 无线网络配置
 
 进入 `网络-无线`
 
 
 
-## 安装软件
-
-软件包对照：[https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8387547&highlight=%E8%BD%AF%E4%BB%B6%E5%8C%85](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=8387547&highlight=%E8%BD%AF%E4%BB%B6%E5%8C%85)
-
-### luci-app-DDNS(动态DNS)
-
-```
-luci-app-ddns-go
-luci-i18n-ddns-go-zh-cn
-```
-
-### luci-app-adblock(广告拦截功能)
-```
-luci-app-adblock
-luci-i18n-adblock-zh-cn
-```
-
-### luci-app-openvpn-server(VPN服务)
-```
-luci-app-openvpn-server
-luci-i18n-openvpn-server-zh-cn
-```
-
-### luci-app-openclash
-```
-luci-app-openclash
-```
-
-## 修改IP网段
+## 修改 IP 网段
 
 ``` sh
 vi /etc/config/network
@@ -118,7 +90,7 @@ config switch_vlan
 reboot
 ```
 
-## 绑定IP和Mac地址
+## 绑定 IP 和 Mac 地址
 
 进入 `网络-DHCP/DNS-静态地址分配`
 

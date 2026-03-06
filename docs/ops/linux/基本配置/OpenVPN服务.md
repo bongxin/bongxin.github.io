@@ -1,3 +1,6 @@
+---
+order: 3
+---
 # OpenVPN服务
 
 ## 配置 VPN 服务器可以通过以下步骤来实现，以 OpenVPN 为例：
