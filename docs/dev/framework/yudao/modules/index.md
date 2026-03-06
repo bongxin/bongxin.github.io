@@ -41,7 +41,7 @@ VITE_APP_CAPTCHA_ENABLE=true
 
 菜单 `[基础设置-文件管理-文件配置]`
 
-![MinIO S3 对象存储](../MinIO-S3-对象存储.jpg)
+![MinIO S3 对象存储](./MinIO-S3-对象存储.jpg)
 
 ::: danger 注意
 注意 `自定义域名` 和 `nginx配置文件` 的配合使用
