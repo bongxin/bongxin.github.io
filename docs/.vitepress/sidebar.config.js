@@ -2,19 +2,6 @@
 
 export const sidebarConfigs = [
   // --- 1. 业务 (Business) ---
-  // 对应导航栏：业务技能
-  {
-    documentRootPath: '/docs',
-    // 扫描整个 business 目录，插件会自动识别子文件夹
-    scanStartPath: 'business',
-    resolvePath: '/business/',
-    collapsed: null,
-    capitalizeFirst: false,
-    useTitleFromFileHeading: true,
-    useFolderTitleFromIndexFile: true,
-    useFolderLinkFromIndexFile: true,
-    sortMenusByFrontmatterOrder: true,
-  },
 
   // --- 2. 开发 (Development)：按子模块使用不同侧边栏 ---
   // 更具体的 resolvePath 放前面，优先匹配
