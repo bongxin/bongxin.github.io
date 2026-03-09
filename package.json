@@ -4,7 +4,8 @@
     "mermaid": "^10.9.0",
     "vitepress": "^1.0.2",
     "vitepress-plugin-mermaid": "^2.0.16",
-    "vitepress-sidebar": "^1.33.1"
+    "vitepress-sidebar": "^1.33.1",
+    "vitepress-theme-teek": "^1.5.5"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
