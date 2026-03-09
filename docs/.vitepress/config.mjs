@@ -118,16 +118,16 @@ export default withMermaid(
       vite: {
         plugins: [
           vitepressProtectPlugin({
-            disableF12: true, // 禁用F12开发者模式
-            disableCopy: true, // 禁用文本复制
-            disableSelect: true, // 禁用文本选择
-            disableRightClick: true, // 禁用右键菜单
-            disablePrint: true, // 禁用打印
-            disableSave: true, // 禁用保存
-            disableDrag: true, // 禁用拖拽
-            disableDrop: true, // 禁用拖拽
-            disablePaste: true, // 禁用粘贴
-            disableCut: true, // 禁用剪切
+            // disableF12: true, // 禁用F12开发者模式
+            // disableCopy: true, // 禁用文本复制
+            // disableSelect: true, // 禁用文本选择
+            // disableRightClick: true, // 禁用右键菜单
+            // disablePrint: true, // 禁用打印
+            // disableSave: true, // 禁用保存
+            // disableDrag: true, // 禁用拖拽
+            // disableDrop: true, // 禁用拖拽
+            // disablePaste: true, // 禁用粘贴
+            // disableCut: true, // 禁用剪切
           }),
         ],
       },

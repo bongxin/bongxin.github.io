@@ -3,24 +3,34 @@ import './style/custom.css';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import BilibiliPlayer from './components/BilibiliPlayer.vue';
+
 import { inBrowser } from 'vitepress';
-import busuanzi from 'busuanzi.pure.js';
+import busuanzi from 'busuanzi.pure.js'; // 引入不蒜子
 import DataPanel from './components/DataPanel.vue';
 
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 import { useData, useRoute } from 'vitepress';
-import { toRefs } from "vue";
+import { toRefs } from 'vue';
 
 export default {
   ...DefaultTheme,
-  if(inBrowser) {
-    router.onAfterRouteChanged = () => {
-      busuanzi.fetch();
-    };
-  },
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
     app.use(ElementPlus);
     app.component('BilibiliPlayer', BilibiliPlayer);
+    // === 🔥 不蒜子统计核心逻辑 start ===
+    if (inBrowser) {
+      // 1. 页面首次加载时执行
+      busuanzi.fetch();
+
+      // 2. 监听路由变化 (VitePress SPA 跳转)
+      // 当路由改变后，重新请求统计接口
+      router.onAfterRouteChanged = (to) => {
+        // 延迟一点点执行，确保 DOM 已经更新，虽然 fetch 主要是发请求，但习惯上放在后面
+        setTimeout(() => {
+          busuanzi.fetch();
+        }, 100);
+      };
+    }
     app.component('DataPanel', DataPanel);
   },
   setup() {
