@@ -2,10 +2,13 @@ import { defineConfig } from 'vitepress';
 import { withMermaid } from 'vitepress-plugin-mermaid';
 import { imgSize } from '@mdit/plugin-img-size';
 import { withSidebar } from 'vitepress-sidebar';
+import vitepressProtectPlugin from 'vitepress-protect-plugin';
 
 // ✅ 1. 导入独立的侧边栏配置
 import { sidebarConfigs } from './sidebar.config.js';
 import nav from './nav.config.js';
+
+import markdownItTaskCheckbox from 'markdown-it-task-checkbox';
 
 export default withMermaid(
   withSidebar(
@@ -14,6 +17,9 @@ export default withMermaid(
       description: '个人的知识库',
       themeConfig: {
         logo: '/logo.svg',
+        sitemap: {
+          hostname: 'https://docs.bongxin.com.cn',
+        },
         nav: typeof nav === 'function' ? nav() : nav,
 
         // ✅ 2. 这里不再需要定义庞大的数组，直接使用导入的变量
@@ -100,14 +106,31 @@ export default withMermaid(
             },
           },
         },
+        appearance: false,
       },
-      appearance: false,
       markdown: {
         config: (md) => {
           md.use(imgSize);
+          md.use(markdownItTaskCheckbox); //todo
         },
       },
       mermaid: {},
+      vite: {
+        plugins: [
+          vitepressProtectPlugin({
+            disableF12: true, // 禁用F12开发者模式
+            disableCopy: true, // 禁用文本复制
+            disableSelect: true, // 禁用文本选择
+            disableRightClick: true, // 禁用右键菜单
+            disablePrint: true, // 禁用打印
+            disableSave: true, // 禁用保存
+            disableDrag: true, // 禁用拖拽
+            disableDrop: true, // 禁用拖拽
+            disablePaste: true, // 禁用粘贴
+            disableCut: true, // 禁用剪切
+          }),
+        ],
+      },
     }),
     sidebarConfigs, // ✅ 3. 直接传入导入的变量
   ),
