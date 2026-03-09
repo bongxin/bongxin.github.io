@@ -106,8 +106,8 @@ export default withMermaid(
             },
           },
         },
-        appearance: false,
       },
+      appearance: false,
       markdown: {
         config: (md) => {
           md.use(imgSize);
