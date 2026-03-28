@@ -31,7 +31,11 @@ export default withMermaid(
           text: '在 GitHub 上编辑此页面',
         },
         footer: {
-          message: '个人博客',
+          // ✅ 使用 message 配合 dangerouslyUseHTMLString
+          message: '  ' +
+            '<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">' +
+              '粤ICP备2022129905号-1 ' +
+            '</a>',
           copyright: `版权所有 © 2019-${new Date().getFullYear()} BongXin`,
         },
         docFooter: { prev: '上一页', next: '下一页' },
@@ -113,6 +117,8 @@ export default withMermaid(
           md.use(imgSize);
           md.use(markdownItTaskCheckbox); //todo
         },
+        // 关键配置：允许 message 中的 HTML 生效
+        html: true, // 👈 这一行是关键
       },
       mermaid: {},
       vite: {
