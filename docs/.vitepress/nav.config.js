@@ -36,9 +36,21 @@ export default function nav() {
         {
           text: "UML画图",
           items: [
+            { text: "Excalidraw", link: "/design/excalidraw/" },
             { text: "PlantUML", link: "/design/uml/plantuml/" },
             { text: "Mermaid", link: "/design/uml/mermaid/" },
             { text: "Gravizo", link: "/design/uml/gravizo/" },
+          ],
+        },
+      ],
+    },
+    {
+      text: "AI",
+      items: [
+        {
+          text: "智能体",
+          items: [
+            { text: "Hermes Agent", link: "/ai/hermes-agent/" },
           ],
         },
       ],
@@ -135,16 +147,11 @@ export default function nav() {
       text: "其他",
       items: [
         {
-          text: "其他",
+          text: "笔记与文档",
           items: [
-            {
-              text: "Markdown",
-              link: "/others/markdown/Markdown/认识Markdown",
-            },
-            {
-              text: "AsciiDoc",
-              link: "/others/markdown/AsciiDoc/认识Markdown",
-            },
+            { text: "Obsidian", link: "/others/obsidian/" },
+            { text: "Markdown", link: "/others/markdown/Markdown/认识Markdown" },
+            { text: "AsciiDoc", link: "/others/markdown/AsciiDoc/认识Markdown" },
           ],
         },
       ],

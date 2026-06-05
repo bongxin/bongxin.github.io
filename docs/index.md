@@ -22,6 +22,11 @@ features:
     details:  Java (SpringBoot/Yudao)、PHP (WordPress) 及前端生态 (Vue3/ElementPlus/Uni-app)。
     link: /dev/web/vue/
     linkText: 浏览设计资源
+  - icon: 🤖
+    title: AI 智能体
+    details: 探索 Hermes Agent 等自进化 AI 框架，持久记忆、技能学习与多平台常驻部署。
+    link: /ai/hermes-agent/
+    linkText: 了解 AI 工具
   - icon: 🎨
     title: 界面设计
     details: 从 Figma 原型到 PS 精修，再到 UML 架构图 (Mermaid/PlantUML)，全链路设计思维。 

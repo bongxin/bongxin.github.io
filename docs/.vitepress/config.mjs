@@ -40,10 +40,12 @@ export default withMermaid(
         },
         docFooter: { prev: '上一页', next: '下一页' },
         outline: { label: '页面导航', level: [2, 3] },
-        lastUpdated: {
-          text: '最后更新于',
-          formatOptions: { dateStyle: 'short', timeStyle: 'medium' },
-        },
+        // lastUpdated 依赖 git 命令；本机未安装 Git 时会报 spawn git ENOENT
+        // 安装 Git 并加入 PATH 后，可改回下方配置以显示「最后更新于」
+        // lastUpdated: {
+        //   text: '最后更新于',
+        //   formatOptions: { dateStyle: 'short', timeStyle: 'medium' },
+        // },
         socialLinks: [
           {
             icon: 'github',

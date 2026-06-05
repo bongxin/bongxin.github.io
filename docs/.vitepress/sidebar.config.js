@@ -80,6 +80,18 @@ export const sidebarConfigs = [
   // 对应导航栏：设计技能 (包含 Figma, UML 等)
   {
     documentRootPath: '/docs',
+    scanStartPath: 'design/excalidraw',
+    resolvePath: '/design/excalidraw/',
+    collapsed: null,
+    capitalizeFirst: false,
+    useTitleFromFileHeading: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true,
+  },
+  {
+    documentRootPath: '/docs',
     scanStartPath: 'design/figma',
     resolvePath: '/design/figma/',
     collapsed: null,
@@ -114,7 +126,33 @@ export const sidebarConfigs = [
     sortMenusByFrontmatterOrder: true,
   },
 
-  // --- 4. 管理 (Management) ---
+  // --- 4. AI ---
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'ai/hermes-agent',
+    resolvePath: '/ai/hermes-agent/',
+    collapsed: null,
+    capitalizeFirst: false,
+    useTitleFromFileHeading: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true,
+  },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'ai',
+    resolvePath: '/ai/',
+    collapsed: null,
+    capitalizeFirst: false,
+    useTitleFromFileHeading: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true,
+  },
+
+  // --- 5. 管理 (Management) ---
   {
     documentRootPath: '/docs',
     scanStartPath: 'mgmt',
@@ -237,11 +275,28 @@ export const sidebarConfigs = [
   },
   
   // --- 6. 其他 (Others) ---
-  // 如果有其他散落在根目录的文档，可以加一个通配或特定路径
-  // {
-  //   documentRootPath: '/docs',
-  //   scanStartPath: 'others',
-  //   resolvePath: '/others/',
-  //   ...
-  // },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'others/obsidian',
+    resolvePath: '/others/obsidian/',
+    collapsed: null,
+    capitalizeFirst: false,
+    useTitleFromFileHeading: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true,
+  },
+  {
+    documentRootPath: '/docs',
+    scanStartPath: 'others',
+    resolvePath: '/others/',
+    collapsed: null,
+    capitalizeFirst: false,
+    useTitleFromFileHeading: true,
+    useFolderTitleFromIndexFile: true,
+    useFolderLinkFromIndexFile: true,
+    sortMenusByFrontmatterOrder: true,
+    includeRootIndexFile: true,
+  },
 ];
