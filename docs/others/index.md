@@ -9,7 +9,7 @@
 | [Obsidian](/others/obsidian/) | 本地优先的知识库与 Markdown 笔记 |
 | [Fast Note Sync](/others/obsidian/fast-note-sync/) | Obsidian 多端实时同步插件 |
 | [Markdown](/others/markdown/Markdown/认识Markdown) | Markdown 语法与用法 |
-| [AsciiDoc](/others/markdown/AsciiDoc/认识Markdown) | AsciiDoc 文档格式 |
+| [AsciiDoc](/others/markdown/AsciiDoc/认识Asciidoc) | AsciiDoc 文档格式 |
 
 ## 参考
 

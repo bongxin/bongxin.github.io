@@ -151,7 +151,7 @@ export default function nav() {
           items: [
             { text: "Obsidian", link: "/others/obsidian/" },
             { text: "Markdown", link: "/others/markdown/Markdown/认识Markdown" },
-            { text: "AsciiDoc", link: "/others/markdown/AsciiDoc/认识Markdown" },
+            { text: "AsciiDoc", link: "/others/markdown/AsciiDoc/认识Asciidoc" },
           ],
         },
       ],
