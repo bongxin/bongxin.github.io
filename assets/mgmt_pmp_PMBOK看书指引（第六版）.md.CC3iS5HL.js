@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as a}from"./chunks/framework.C8WmN7-d.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"mgmt/pmp/PMBOK看书指引（第六版）.md","filePath":"mgmt/pmp/PMBOK看书指引（第六版）.md"}'),_={name:"mgmt/pmp/PMBOK看书指引（第六版）.md"};function m(r,o,p,s,c,n){return e(),a("div")}const f=t(_,[["render",m]]);export{i as __pageData,f as default};
