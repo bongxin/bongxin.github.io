@@ -1,0 +1,188 @@
+:root {
+  --vp-c-text-1: rgba(60, 60, 67);
+  --vp-c-text-2: rgba(60, 60, 60, 0.7);
+  --vp-c-text-3: rgba(60, 60, 67, 0.56);
+
+  /* 对齐原 VitePress(base) 黑色主题 */
+  --vp-c-brand-1: #000000;
+  --vp-c-brand-2: #000000;
+  --vp-c-brand-3: #3c3c43;
+  --vp-c-brand-soft: rgba(60, 60, 67, 0.14);
+
+  --vp-c-tip-1: #3c3c43;
+  --vp-c-tip-2: #000000;
+  --vp-c-tip-3: #000000;
+  --vp-c-tip-soft: rgba(60, 60, 60, 0.14);
+  --vp-custom-block-tip-bg: rgba(60, 60, 60, 0.2);
+
+  --vp-sidebar-bg-color: #ffffff;
+
+  /* 首页标题去掉默认紫/青渐变，改为黑色系 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #3c3c43 20%, #000000 70%);
+  --vp-bg-home-hero-name: linear-gradient(315deg, #3c3c43 15%, #000000 65%, #000000 100%);
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
+}
+
+[data-theme='dark'] {
+  --vp-c-brand-1: #ffffff;
+  --vp-c-brand-2: #e8e8ed;
+  --vp-c-brand-3: #c7c7cc;
+  --vp-c-brand-soft: rgba(255, 255, 255, 0.14);
+
+  --vp-c-tip-1: #c7c7cc;
+  --vp-c-tip-2: #e8e8ed;
+  --vp-c-tip-3: #ffffff;
+  --vp-c-tip-soft: rgba(255, 255, 255, 0.14);
+
+  --vp-home-hero-name-background: linear-gradient(120deg, #c7c7cc 20%, #ffffff 70%);
+  --vp-bg-home-hero-name: linear-gradient(315deg, #c7c7cc 15%, #ffffff 65%, #ffffff 100%);
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
+}
+
+/* 首页：一屏展示；LOGO 完整显示、无背景 */
+.vp-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: calc(100dvh - var(--vp-nav-height) - var(--vp-footer-height, 0px));
+}
+
+.vp-home .vp-home-doc-hero {
+  padding: calc(var(--vp-nav-height) + 16px) 24px 12px;
+  margin-top: calc(var(--vp-nav-height) * -1);
+}
+
+.vp-home .vp-home-doc-hero .name,
+.vp-home .vp-home-doc-hero .text {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.vp-home .vp-home-doc-hero .tagline {
+  padding-top: 8px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.vp-home .vp-home-doc-hero .actions {
+  padding-top: 16px;
+}
+
+.vp-home .vp-home-doc-hero .image {
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.vp-home .vp-home-doc-hero .image-container {
+  width: 168px;
+  height: 168px;
+  transform: none;
+  overflow: visible;
+}
+
+.vp-home .vp-home-doc-hero .image-bg {
+  display: none;
+}
+
+.vp-home .vp-home-doc-hero .image-src {
+  width: 100%;
+  height: 100%;
+  max-width: 168px;
+  max-height: 168px;
+  border-radius: 0;
+  object-fit: contain;
+  background: transparent;
+  filter: none;
+  box-shadow: none;
+}
+
+.vp-home .vp-home-features.vp-home-box {
+  padding: 8px 24px 20px;
+}
+
+.vp-home .vp-home-feature .box {
+  padding: 14px;
+}
+
+.vp-home .vp-home-feature .icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.vp-home .vp-home-feature .title {
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.vp-home .vp-home-feature .details {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (min-width: 640px) {
+  .vp-home .vp-home-doc-hero {
+    padding: calc(var(--vp-nav-height) + 20px) 48px 12px;
+  }
+
+  .vp-home .vp-home-doc-hero .name,
+  .vp-home .vp-home-doc-hero .text {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .vp-home .vp-home-doc-hero .image-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .vp-home .vp-home-doc-hero .image-src {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .vp-home .vp-home-features.vp-home-box {
+    padding: 8px 48px 24px;
+  }
+}
+
+@media (min-width: 960px) {
+  .vp-home {
+    max-height: calc(100dvh - var(--vp-nav-height) - var(--vp-footer-height, 0px));
+    overflow: hidden;
+  }
+
+  .vp-home .vp-home-doc-hero {
+    padding: calc(var(--vp-nav-height) + 12px) 64px 8px;
+  }
+
+  .vp-home .vp-home-doc-hero .name,
+  .vp-home .vp-home-doc-hero .text {
+    font-size: 44px;
+    line-height: 52px;
+  }
+
+  .vp-home .vp-home-doc-hero .tagline {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .vp-home .vp-home-doc-hero .image-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .vp-home .vp-home-doc-hero .image-src {
+    max-width: 220px;
+    max-height: 220px;
+  }
+
+  .vp-home .vp-home-features.vp-home-box {
+    padding: 4px 48px 16px;
+  }
+}
