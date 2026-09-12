@@ -1,8 +1,7 @@
 ---
 order: -1
+title: Obsidian
 ---
-
-# Obsidian
 
 [Obsidian](https://obsidian.md/) 是一款以本地 Markdown 文件为核心的知识库与笔记应用，支持双向链接、关系图谱、插件扩展与多设备同步，适合个人知识管理与长期写作沉淀。
 
@@ -22,10 +21,10 @@ order: -1
 
 ### 与本文档站的关系
 
-本站基于 VitePress + Markdown 构建，Obsidian 同样以 Markdown 为底层格式，适合：
+本站基于 VuePress 2 + Plume 主题构建，Obsidian 同样以 Markdown 为底层格式，适合：
 
 - 在 Obsidian 中起草、整理碎片笔记
-- 成熟内容再迁移或同步到 VitePress 文档库发布
+- 成熟内容再迁移或同步到本站文档库发布
 
 ## 导航
 

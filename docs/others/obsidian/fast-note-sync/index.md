@@ -1,4 +1,6 @@
-# Fast Note Sync
+---
+title: Fast Note Sync
+---
 
 [Fast Note Sync](https://github.com/haierkeys/obsidian-fast-note-sync) 是 Obsidian 的多端实时同步插件，需配合自托管后端 [Fast Note Sync Service](https://github.com/haierkeys/fast-note-sync-service) 使用，支持笔记、附件与配置的跨设备同步。
 

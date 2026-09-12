@@ -1,9 +1,8 @@
 ---
-aside: 'right'
+aside: true
 order: 0
+title: PlantUML
 ---
-
-# PlantUML
 
 官网地址：[https://plantuml.com/zh/](https://plantuml.com/zh/)
 

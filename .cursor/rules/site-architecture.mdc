@@ -1,0 +1,34 @@
+---
+description: 顶栏/门户/知识库信息架构与路径约定
+alwaysApply: true
+---
+
+# 站点信息架构
+
+## 顶栏（尽量四字）
+
+顺序固定：
+
+1. 站点导航 → `/map/`
+2. 运行环境 → `/environment/`
+3. 应用访问（下拉；项目入口）
+4. 快捷入口（下拉；内网基建）
+5. 网站链接 → `/links/`
+6. 设备资产 → `/assets/`
+7. 版本号（`package.json` + badge「新」→ 下拉：**更新日志** `/changelog/` · **站点约定** `/conventions/`）
+
+**不进顶栏**：音乐、相册、关于（侧栏 / `/map/` 可进；`/about/` 正文保留）。
+
+页面 `title` 须与顶栏文案一致（如「网站链接」「设备资产」）。
+
+## 目录
+
+- **知识库**一级目录勿再套壳：`dev` `design` `ai` `mgmt` `ops` `operation` `music` `others` `about`（**勿大挪路径**，成本高）
+- **门户**在 `docs/portal/`，对外 **短 permalink**（`/map/` 等，勿暴露 `/portal/map/`）
+- 日常侧栏单一源：`daily-sidebar.ts`；外链 URL：`portal-links.ts`（供 navbar）
+- 静态资源：`docs/.vuepress/public/`（不要用 `docs/public`）
+
+## 更新日志
+
+- `/changelog/`：`## vX.Y.Z`（不要 `【】`）+ 概要 + 🚀新增 / 🔨优化 / 🐞修复
+- 发版：先改 `package.json` `version`，再在 changelog **顶部**追加一节；用户说 commit/push 时由助手按 `commit-changelog.mdc` 自动生成日志再提交

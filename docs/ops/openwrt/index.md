@@ -1,8 +1,7 @@
 ---
-aside: 'right'
+aside: true
+title: 认识 OpenWrt
 ---
-
-# 认识 OpenWrt
 
 OpenWrt 是基于 Linux 的开源路由器操作系统，常用于家用路由器、软路由及嵌入式网络设备，可替代厂商固件，实现更灵活的拨号、无线、防火墙、插件与自定义配置。
 

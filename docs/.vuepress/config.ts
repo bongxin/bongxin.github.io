@@ -37,9 +37,31 @@ export default defineUserConfig({
     editLink: true,
     contributors: false,
     changelog: false,
+    // 按 Plume 写作约定：标题走 frontmatter / 页眉 .page-title，正文从 ## 起笔
+    // https://theme-plume.vuejs.press/guide/write/
     autoFrontmatter: false,
+    // markdown 只写在此处（官方：plume.config 不支持 markdown）；改后需重启
     markdown: {
       mermaid: true,
+      markmap: true,
+      bilibili: true,
+      timeline: true,
+      table: {
+        align: 'left',
+        fullWidth: true,
+        copy: true,
+      },
+    },
+    // bilibili / table 另写 markdownPower，确保 md-power 注入
+    plugins: {
+      markdownPower: {
+        bilibili: true,
+        table: {
+          align: 'left',
+          fullWidth: true,
+          copy: true,
+        },
+      },
     },
   }),
 })

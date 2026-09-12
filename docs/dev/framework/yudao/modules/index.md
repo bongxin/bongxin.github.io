@@ -3,7 +3,6 @@ title: 模块说明
 order: 2
 ---
 
-# 拓展模块
 ``` xml
 <module>yudao-module-system</module>
 <module>yudao-module-infra</module>

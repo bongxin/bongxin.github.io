@@ -1,4 +1,6 @@
-# 芋道
+---
+title: 芋道
+---
 
 基于 Spring Boot 的芋道项目（ruoyi-vue-pro）相关文档。
 

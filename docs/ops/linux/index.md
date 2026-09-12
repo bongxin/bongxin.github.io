@@ -1,8 +1,7 @@
 ---
-aside: 'right'
+aside: true
+title: Linux 运维
 ---
-
-# Linux 运维
 
 本系列以 **Ubuntu**（含 Ubuntu Server LTS）为主要环境，记录日常运维中的基本配置、常见操作与问题排查。
 
@@ -20,10 +19,10 @@ aside: 'right'
 
 | 模块 | 说明 |
 |------|------|
-| [基本配置](/ops/linux/基本配置/基本配置) | 网络（Netplan）、静态 IP、UFW 防火墙等 |
-| [开发环境配置](/ops/linux/基本配置/开发环境配置) | Java、MySQL、Docker、GitLab 等在 Ubuntu 上的安装与配置 |
-| [OpenVPN 服务](/ops/linux/基本配置/OpenVPN服务) | 基于 Ubuntu 的 OpenVPN 服务端搭建 |
-| [常见操作](/ops/linux/常见操作/) | 端口查看、包管理、服务管理等常用命令 |
+| [基本配置](/ops/linux/基本配置/基本配置.html) | 网络（Netplan）、静态 IP、UFW 防火墙等 |
+| [开发环境配置](/ops/linux/基本配置/开发环境配置.html) | Java、MySQL、Docker、GitLab 等安装与配置 |
+| [OpenVPN 服务](/ops/linux/基本配置/OpenVPN服务.html) | Ubuntu 上搭建 OpenVPN（亦收入 [VPN](/ops/vpn/) 导航） |
+| [常见操作](/ops/linux/常见操作/) | 端口、包管理、服务管理等常用命令 |
 | [常见问题](/ops/linux/常见问题/) | 常见报错与排查思路 |
 
 ## 快速参考

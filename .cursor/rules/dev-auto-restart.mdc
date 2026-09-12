@@ -1,0 +1,24 @@
+---
+description: 改完硬刷新无效时主动 docs:clean-dev，无需用户催
+alwaysApply: true
+---
+
+# 改完自动重启
+
+本站 VuePress / Plume：**硬刷新不够时，助手改完后主动重启**，不要等用户说「没看到」。
+
+## 必须重启（优先 `npm run docs:clean-dev`）
+
+- `docs/.vuepress/navbar.ts`
+- `docs/.vuepress/config.ts`（尤其 `markdown` / `plugins`）
+- `permalink` 变更、collections 结构变更
+- 新启用 chart / bilibili / table / markmap / timeline 等
+- 顶栏仍不更新时（即使只改了 `plume.config.ts`）
+- Markmap / bilibili 仍显示成代码块或普通链接时：清 `.cache/markdown`（或 clean-dev）再起
+
+## 注意
+
+- 先释放 8080（`fuser -k 8080/tcp`），再起服务；避免 `pkill` 与 `npm` 写在同一可能误伤 shell 的命令链里
+- `plume.config.ts` 多数可 HMR；不确定是否生效时宁可 clean-dev
+- 本地入口：`http://localhost:8080/`（Node ≥ 22.18）
+- 线上：仅 `main` 分支 push 触发 Deploy（见 `.github/workflows/deploy.yml`）

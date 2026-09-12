@@ -1,4 +1,6 @@
-# OpenWrt 常用插件
+---
+title: OpenWrt 常用插件
+---
 
 本文汇总 OpenWrt 上常用第三方/额外插件的**包名**与用途，便于在「系统 → 软件包」或 SSH 下用 `opkg` 安装。不同固件（官方 OpenWrt、ImmortalWrt、自编译等）软件源可能不同，部分插件需先添加对应软件源或从 GitHub 安装。
 

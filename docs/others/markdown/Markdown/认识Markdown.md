@@ -1,6 +1,8 @@
-# 认识 Markdown
+---
+title: 认识 Markdown
+---
 
-[Markdown](https://www.markdownguide.org/) 是一种轻量级标记语言，用纯文本编写，可转为 HTML，广泛用于文档、README 与静态站点（如 VitePress）。
+[Markdown](https://www.markdownguide.org/) 是一种轻量级标记语言，用纯文本编写，可转为 HTML，广泛用于文档、README 与静态站点（如 VuePress / Plume）。
 
 ## 常用语法
 
@@ -13,4 +15,4 @@
 ## 参考
 
 - [Markdown 官方指南](https://www.markdownguide.org/)
-- [VitePress Markdown 扩展](https://vitepress.dev/guide/markdown)
+- [Plume Markdown](https://theme-plume.vuejs.press/guide/markdown/)

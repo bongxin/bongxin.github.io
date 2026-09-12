@@ -1,0 +1,22 @@
+---
+description: 用户说 commit/push 时先写更新日志再提交推送
+alwaysApply: true
+---
+
+# Commit / Push 与更新日志
+
+用户说 **commit**、**push**，或 **commit 并 push** 时，助手须按下列顺序执行（不要只提交代码）：
+
+1. **更新日志**：在 `docs/portal/changelog/index.md` **顶部**追加或改写当前版本节  
+   - 标题 `## vX.Y.Z`（不要 `【】`）  
+   - 含概要 + `🚀 新增` / `🔨 优化` / `🐞 修复`（无则省略空分类）  
+   - 归纳**本次相对上次提交的实质变更**，勿流水账堆文件名  
+2. **版本号**（有功能/约定级变更时）：同步 `package.json` 的 `version`，使顶栏版本与 changelog 最新节一致；纯文档笔误可只补 changelog 条目到当前版本节  
+3. **Commit**：按仓库 git 安全协议暂存相关文件并提交（含 changelog / version；勿提交密钥与无关缓存）  
+4. **Push**：仅当用户明确要求 push（或「commit 并 push」）时执行 `git push`
+
+## 注意
+
+- 未说 push 则只 commit  
+- changelog 与约定页本身的小改动可并入同一次提交  
+- 遵守既有 committing / pushing 用户规则（无 amend 除非符合条件等）

@@ -1,4 +1,6 @@
-# 认识 AsciiDoc
+---
+title: 认识 AsciiDoc
+---
 
 [AsciiDoc](https://asciidoc.org/) 是一种面向文档的标记语言，语法比 Markdown 更丰富，适合技术手册、书籍与复杂排版，可导出 HTML、PDF 等格式。
 

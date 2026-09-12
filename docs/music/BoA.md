@@ -1,4 +1,8 @@
-# BoA
+---
+title: BoA
+---
+
+韩国女歌手权宝儿，出道极早，同步开拓日本市场，有「K-Pop 女王」之称。舞姿与唱功并重，《Only One》等抒情现场尤其动人。
 
 ![BoA](./BoA.png){ width=640 }
 
@@ -6,6 +10,4 @@
 
 【BoA】宝儿坐着唱的《Only One》现场
 
-<BilibiliPlayer
-  base-src="//player.bilibili.com/player.html?isOutside=true&aid=676434861&bvid=BV1MU4y1g7Yd&cid=435440136&p=1"
-/>
+@[bilibili](BV1MU4y1g7Yd)

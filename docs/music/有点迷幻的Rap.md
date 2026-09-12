@@ -1,12 +1,12 @@
-# 有点迷幻的Rap
+---
+title: 有点迷幻的Rap
+---
 
 ## Runnin'
 
 【官方MV】你的男孩TT《Runnin'》
 
-<BilibiliPlayer
-  base-src="//player.bilibili.com/player.html?isOutside=true&aid=37056576&bvid=BV1Ft411X7fu&cid=65115931&p=1"
-/>
+@[bilibili](BV1Ft411X7fu)
 
 ::: details 歌曲歌词    
 作词 : TizzyT  
@@ -105,9 +105,7 @@ get it get it get it get it You know how we roll
 
 绝望与破晓！Capper GALI《礼拜日Life goes on》"他们都衣着光鲜亮丽但手很脏"
 
-<BilibiliPlayer
-  base-src="//player.bilibili.com/player.html?isOutside=true&aid=225730526&bvid=BV1Kb411f7mx&cid=1045891417&p=1"
-/>
+@[bilibili](BV1Kb411f7mx)
 
 ::: details 歌曲歌词  
 作词 : Capper/GALI  
@@ -241,9 +239,7 @@ Baby cuz that life goes on*4
 
 满舒克《荡漾》/20190912/广州巡演
 
-<BilibiliPlayer
-  base-src="//player.bilibili.com/player.html?isOutside=true&aid=67522019&bvid=BV1kJ411P7om&cid=117072824&p=1"
-/>
+@[bilibili](BV1kJ411P7om)
 
 ::: details 歌曲歌词  
 荡漾 - 满舒克  

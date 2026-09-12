@@ -1,4 +1,7 @@
-# 内网穿透
+---
+title: 内网穿透
+---
+
 在和外部系统对接时，经常需要将本地的服务，暴露到外网中。这时候，就需要使用内网穿透工具了。例如说：支付宝回调、微信支付回调、微信公众号接入、微信小程序接入等等。
 
 常见的内网穿透工具，例如说，[ngrok](https://ngrok.com/)、[frp](https://github.com/fatedier/frp)、[natapp](https://natapp.cn/)等等。

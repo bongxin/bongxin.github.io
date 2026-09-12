@@ -4,8 +4,6 @@ outline: "deep"
 order: 1
 ---
 
-# 快速启动
-
 ## 后端项目
 
 使用 [IDEA Community](https://www.jetbrains.com/zh-cn/idea/download/?section=windows) 运行后端项目
@@ -227,7 +225,6 @@ VITE_APP_CAPTCHA_ENABLE=false
 #### 访问
 
 `http://localhost/`
-
 
 
 

@@ -3,22 +3,63 @@ name: vuepress_plume_dev_memory
 description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记录结构、命令与构建坑点
 ---
 ## 开发要点
-- 仓库：https://github.com/bongxin/bongxin.github.io.git ，本地 `E:\Code\bongxin\bongxin.github.io`（与仓库同名；`E:\Code\bongxin` 为组织目录），当前开发分支 `plume`（尚未推远程）
+- 仓库：https://github.com/bongxin/bongxin.github.io.git ；Windows 本地 `E:\Code\bongxin\bongxin.github.io`，Linux 本地 `/run/media/bongxin/Data/Data/Code/bongxin/bongxin.github.io`（NTFS 挂载），当前开发分支 `plume`（已有 `origin/plume`）
 - **文档正文以 `origin/base` 为准**，不要再从 `main` 取内容；`main` 是旧结构（system/skill/...），`base` 是现行结构（dev/design/ai/ops/...）
+- NTFS 挂载下 `.git/config` 偶发被清空为 0 字节导致 `origin` 丢失；恢复：写入 remote `https://github.com/bongxin/bongxin.github.io.git` 后 `git fetch origin --prune`
 - 站点已切换为 **VuePress 2 + vuepress-theme-plume**，文档源目录仍是 `docs/`
 - 需要 **Node >= 22.18.0**（本机可用 `nvm use 22.18.0`；nvm-windows 安装目录 `D:\nvm\v22.18.0`；PowerShell 若找不到 node，可临时 `$env:Path = "D:\nvm\v22.18.0;" + $env:Path`）
 - 本地：`npm install` 后 `npm run docs:dev`；构建：`npm run docs:build`；清缓存：`npm run docs:clean-dev`
+- **改完须重启则自动重启**：以下改动硬刷新无效，助手应**主动** `npm run docs:clean-dev`（或等价清 `.temp`/`.cache` 后 `docs:dev`），无需用户催：`navbar.ts` / `config.ts` 的 `plugins`·`markdown` / `permalink` / collections 结构 / 新启用 chart·bilibili·table 等；`plume.config.ts` 多数可 HMR，但顶栏不更新时同样重启
+
 - 构建产物：`docs/.vuepress/dist`；CI 部署该目录到 `gh-pages`
 - 主题配置拆分：`docs/.vuepress/config.ts`（bundler/插件）+ `plume.config.ts`（navbar/collections，支持热更新）
-- 导航/集合对齐 `base` 的板块结构；已移除「前端生态 / Vue 3 全家桶」（原 `docs/dev/web`）、「CSMM」（原 `docs/mgmt/csmm`）、「WSL2」（原 `docs/ops/wsl2`）
-- 首页用 `docs/README.md`（`doc-hero` + `features`）；头像用 `/logo.svg`；桌面端压缩间距一屏展示；不要同时保留根级 `docs/index.md`
+- 导航/集合对齐 `base` 的板块结构；已移除「前端生态 / Vue 3 全家桶」（原 `docs/dev/web`）、「CSMM」（原 `docs/mgmt/csmm`）、「WSL2」（原 `docs/ops/wsl2`）、「NPM 包管理」（原 `docs/dev/npm`）、「写作 write」（与 `others/markdown` 重复的空壳）、「运营/水印」（原 `docs/operation/水印`）
+- **规则双写**：可提炼约定 → 同时改 `.cursor/rules/` + `/conventions/`（`rules-sync.mdc`）；流水账只进 `dev_memory`
+- **Commit / Push**：用户说 commit 或 push 时，先写/更新 `/changelog/`（必要时升 `package.json` 版本），再执行提交；明确要求 push 才推送（见 `commit-changelog.mdc`）
+- **发布分支**：GitHub Actions 仅 `main` push 时构建部署（`docs/.vuepress/dist` → `gh-pages`）；不再以 `base` 为准
+- **Cursor 规则**（alwaysApply）：`plume-first` · `content-no-meta` · `dev-auto-restart` · `site-architecture` · `rules-sync` · `commit-changelog`
+- **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
+- **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`
+- **顶栏精简（日常入口，尽量四字）**：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本号（更新日志 / 站点约定）；音乐 / 相册 / 关于不进顶栏
+- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`），当前 v1.2.0 / v1.1.0 / v1.0.0；顶栏读 `package.json` 版本 + badge「新」
+- **正文忌套话**：门户 / 日常页不要写「左侧侧栏右侧大纲」「使用主题某某组件」「写法对齐某某站」等实现说明；直接上内容。约定与配置写在 `dev_memory` / 规则里即可
+- **日常浏览页统一布局**：`/map/` `/links/` `/assets/` `/music/` `/photos/` 均为文档布局（**左侧侧栏 + 右侧 outline**）；共用 `docs/.vuepress/daily-sidebar.ts`
+- **音乐页** `/music/`：艺人 `<ImageCard>` + 曲目 `<LinkCard>`，均配 `VPCardGrid`；**已去掉** `pageClass: music-index` 与自定义方卡 CSS
+- **站点导航 `/map/`**：仅 Plume [Markmap](https://theme-plume.vuejs.press/guide/chart/markmap/)（下方不再叠 LinkCard）；依赖 `markmap-lib` `markmap-toolbar` `markmap-view`，`markdown.markmap: true`；**启用后若仍显示成代码块**，清 `docs/.vuepress/.cache/markdown` 并重启
+- **导航可视化选型（Plume chart）**：站点结构优先 Markmap；流程/关系用已启用的 Mermaid；ECharts/Chart.js 偏数据图，不适合当 sitemap；勿自造 sitemap 组件
+- **资产页** `/assets/`：页标题 **设备资产**（与顶栏一致）；顶部**总表** + 分类明细；表格用 Plume [`::: table full-width`](https://theme-plume.vuejs.press/guide/markdown/table/)；需启用 `markdown.table` **且** `plugins.markdownPower.table`（改 config 后重启 `docs:dev`）
+- **链接页** `/links/`：页标题 **网站链接**（与顶栏一致）；卡片用 `<VPCardGrid :cols="{ sm: 1, md: 2, lg: 3 }">`（桌面 3 列）。**注意**：`:::: card-grid` 容器**不传** `cols`（md-power 写死 `<VPCardGrid>`），要控列数必须用组件写法，勿再写 `:::: card-grid cols=…`
+- **LinkCard 使用范围**：仅 `/links/`（网站链接）与 `/music/` 曲目区；艺人用 `ImageCard`。**应用访问 / 快捷入口**用正文 Markdown 列表（保留日常侧栏）；**站点导航**只留 Markmap，不再叠 LinkCard
+- **markdown 配置**：只在 `config.ts` 的 `plumeTheme({ markdown, plugins.markdownPower })`（官方：`plume.config.ts` **不支持** markdown）；改后须重启。bilibili/table 仍双写 `markdownPower` 保底
+- **侧栏 auto**：`ai`、`operation` 整库 `sidebar: 'auto'`；PMP 的 ITTO / 章节练习题分组 `items: 'auto'`（启用前勿留 junk `* copy.md`）
+- **Bilibili**：正文一律 `@[bilibili]`；勿再用 `<BilibiliPlayer>` 或正文手写 iframe
+- **aside**：仅 `boolean | 'left'`，勿写 `'right'`
+- **门户侧栏**：`daily-sidebar.ts` 为日常入口单一源；`collections/portal.ts` 只追加「环境说明」分组，不再重复运行环境/应用/快捷入口
+- **public 精简**：保留 `logo.svg` / `logo-dark.svg`、`portal/{sync,router,acappella,docs}.svg`、`portal/favicons/`、`music/`、`photos/`；已删未引用旧图与重复 svg；已卸 `ogl`（首页无 prism）
+- **不要改**：知识库路径（URL/书签/外链成本高）；`others` 暂不改名 `notes`；知识库一级目录仍含 `about`（入口已藏）
+  - **知识库**（一级目录，勿再套 `kb/` 壳）：`dev` `design` `ai` `mgmt` `ops` `operation` `music` `others` `about`
+  - **门户**（统一收在 `portal/`，permalink 仍短路径）：`map` `apps` `shortcuts` `links` `assets` `environment` `changelog` `conventions`；**permalink 变更后必须重启 `docs:dev` 并清 `.temp`**
+  - **配置**：`docs/.vuepress/`；首页 `docs/README.md`
+- **配置拆分**：`collections.ts` → `collections/knowledge.ts` + `collections/portal.ts`；外链 URL 单一源 `portal-links.ts`（供 navbar）；门户图标 `docs/.vuepress/public/portal/`
+- **已删除**：`docs/.vitepress/`（旧 VitePress 残留）；`.gitignore` 仍保留该规则以防再生成
+- **网站收藏已录入**：万兴脑图、Figma、Cursor、Hermes Agent、[MiniMax API](https://platform.minimax.cn/console/plan)、Obsidian、RustDesk、微信公众平台 / 开放平台 / [客服](https://kf.weixin.qq.com/) / [企微后台](https://work.weixin.qq.com/wework_admin/loginpage_wx)、Plume
+- **快捷入口已录入**：Fast-Note-Sync → `http://192.168.31.151:9000/`；ImmortalWrt → `http://192.168.31.1/`；GitLab 等待补
+- **应用访问已录入**：BERNSINE 阿卡贝拉 → `https://acappella.bongxin.com.cn/`；芋道 / WordPress 外链仍待补；改 `navbar.ts` 后需重启 `docs:dev`（HMR 常不刷新顶栏）
+- **暂不搬**：BongAsk / Docx / PPT / 增强 Mermaid 整包（偏项目门户）
+
+- 改导航只动 `docs/.vuepress/navbar.ts` + `docs/.vuepress/collections.ts`；中文文件名页面链接多用 `.html` 后缀与现有 permalink 对齐
+- 首页用 `docs/README.md`（`doc-hero` + 两组 `features`：**日常入口**对齐顶栏六项、**知识文档**对齐 `/map/`；Iconify 与顶栏同系）；头像 `/logo.svg` + `logoDark` / hero `{ light, dark }`；**布局跟主题默认**；不要同时保留根级 `docs/index.md`
+
 - 静态资源在 `docs/.vuepress/public/`（不要再用 `docs/public`）
 - `autoFrontmatter: false`，避免改写现有 Markdown
 - Vite 8/rolldown 下必须给 `@vitejs/plugin-vue` 传入 `script.fs`，否则主题 SFC 的 `defineProps<ImportedType>()` 会报 `No fs option provided to compileScript`
-- 首页不加 `effect`（已去掉 prism 动态背景）；若再启用 prism 需依赖 `ogl`
+- 首页不加 `effect`；若再启用 prism 需加回 `ogl`
 - hostname / 备案信息沿用 `base`：`https://docs.bongxin.com.cn`，footer 含粤 ICP
-- 主题色对齐原 VitePress `base`：黑品牌色 `#000000` / 辅助 `#3c3c43`；暗色模式品牌色为白。样式在 `docs/.vuepress/styles/index.css`，由 `client.ts` 引入
-- 只保留 npm 锁文件；不要再混用 yarn/pnpm lock
+- **自定义样式只写 CSS 变量**（`docs/.vuepress/styles/index.css`，`client.ts` 引入）：brand / tip（引用 brand）/ 深色 brand 按钮黑字 / 首页 hero 渐变（`linear-gradient(... var(--vp-c-brand-*) ...)`）；**禁止**在 `:root` 写死 `--vp-c-text-*` / sidebar / bg
+- **Logo 深色模式**：Plume `logo` + `logoDark`；首页 hero `{ light, dark }`；勿用 CSS invert
+- 音乐页视频用 Plume 内置语法 `@[bilibili](bvid)` / `@[bilibili pN](bvid aid cid)`（[文档](https://theme-plume.vuejs.press/guide/embed/video/bilibili/)）
+- 改 `config.ts` 的 plugins 后需**重启** `docs:dev` 并清 `.temp`/`.cache`；`VPVideoEmbed` 包在 `ClientOnly` 内，硬刷新后才可见 iframe
+- 不要再使用旧的 `<BilibiliPlayer>` 或手写 bilibili iframe
 
 ## 改动涉及的文件
 - package.json
@@ -29,8 +70,18 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - docs/.vuepress/client.ts
 - docs/.vuepress/styles/index.css
 - docs/.vuepress/plume.config.ts
-- docs/.vuepress/navbar.ts
 - docs/.vuepress/collections.ts
-- docs/README.md
-- docs/.vuepress/public/*
-- docs/{about,ai,design,dev,mgmt,music,operation,ops,others,write}/**（来自 origin/base）
+- docs/.vuepress/daily-sidebar.ts
+- docs/.vuepress/collections/knowledge.ts
+- docs/.vuepress/collections/portal.ts
+- docs/.vuepress/portal-links.ts
+- docs/.vuepress/navbar.ts
+- docs/portal/{map,apps,shortcuts,links,assets}/**
+- package.json（markmap-lib / markmap-toolbar / markmap-view）
+- docs/.vuepress/public/portal/*
+- docs/.vuepress/public/logo.svg
+- docs/.vuepress/public/logo-dark.svg
+- docs/environment/**
+- docs/music/**
+- docs/photos/**
+

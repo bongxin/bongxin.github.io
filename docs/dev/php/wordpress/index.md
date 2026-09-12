@@ -1,7 +1,7 @@
 ---
 order: 0
+title: WordPress
 ---
-# WordPress
 
 [WordPress](https://wordpress.org/) 是使用 PHP 编写的开源 CMS，适合建站、博客与扩展开发。
 

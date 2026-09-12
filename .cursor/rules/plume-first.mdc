@@ -1,0 +1,42 @@
+---
+description: 展示与布局优先用 Plume；CSS 仅变量；禁止自造等价 UI
+alwaysApply: true
+---
+
+# Plume 优先 · 少改 CSS
+
+本站：VuePress 2 + [vuepress-theme-plume](https://theme-plume.vuejs.press/)。展示 / 布局 / 嵌入 **优先主题指南与配置**，不要自造等价 UI。
+
+查阅：[指南](https://theme-plume.vuejs.press/guide/) · [配置](https://theme-plume.vuejs.press/config/)
+
+## 能力对照
+
+| 需求 | 用 |
+|------|-----|
+| 相册瀑布流 | `::: card-masonry` |
+| 艺人图卡 | `<ImageCard>` + `VPCardGrid` |
+| 网站链接 / 音乐曲目 | `<LinkCard>` + `VPCardGrid`（**仅此两处**） |
+| 应用访问 / 快捷入口 | Markdown 链接列表（勿 LinkCard） |
+| 站点导航 | Markmap（勿再叠 LinkCard） |
+| 表格全宽 | `::: table full-width` + `markdown.table` + `markdownPower.table` |
+| 文章标题 | frontmatter `title`；正文从 `##` 起；勿 CSS 藏 H1 |
+| 视频 | `@[bilibili]`；勿 `<BilibiliPlayer>` / 正文手写 iframe |
+| 首页 | `doc-hero` + `features` |
+| 列数 | `<VPCardGrid :cols="{ sm:1, md:2, lg:3 }">`；`:::: card-grid` **不能**传 cols |
+
+## CSS（尽量不改）
+
+- **唯一**自定义样式：`docs/.vuepress/styles/index.css`（经 `client.ts` 引入）
+- **只许**覆盖 CSS 变量（品牌色 / tip / hero 渐变 / 深色 brand 按钮字色）
+- **禁止**：布局覆盖（如 `.vp-home`）、在 `:root` 写死 `--vp-c-text-*` / sidebar / bg、用 CSS invert logo（用 `logo` + `logoDark`）
+- 主题无能力时再加 CSS，并说明原因；能配置解决的不要写样式
+
+## markdown 配置
+
+- `markdown` / `plugins.markdownPower` 只写在 `config.ts`（`plume.config.ts` 不支持 markdown）
+- bilibili / table：**markdown + markdownPower 双写**保底
+
+## 其它禁止
+
+- 自造 Vue 组件重复主题已有组件
+- 首页 `effect: prism`（需 `ogl`；当前不加）

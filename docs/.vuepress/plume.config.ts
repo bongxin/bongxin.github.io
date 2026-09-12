@@ -4,6 +4,8 @@ import navbar from './navbar'
 
 export default defineThemeConfig({
   logo: '/logo.svg',
+  // https://theme-plume.vuejs.press/config/theme/ — 深色导航栏用白色 logo
+  logoDark: '/logo-dark.svg',
   appearance: true,
   profile: {
     avatar: '/logo.svg',

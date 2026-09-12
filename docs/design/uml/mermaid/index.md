@@ -1,8 +1,7 @@
 ---
 order: 1
+title: Mermaid
 ---
-
-# Mermaid
 
 官网地址：[https://mermaid.js.org/](https://mermaid.js.org/)
 

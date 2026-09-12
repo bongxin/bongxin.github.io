@@ -1,8 +1,7 @@
 ---
-aside: 'right'
+aside: true
+title: 树莓派（Raspberry Pi）
 ---
-
-# 树莓派（Raspberry Pi）
 
 树莓派是由英国树莓派基金会推出的单板计算机（SBC），价格低廉、体积小巧，广泛用于教育、DIY、家庭服务器、物联网和边缘计算等场景。
 

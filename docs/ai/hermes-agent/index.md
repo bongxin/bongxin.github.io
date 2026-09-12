@@ -1,8 +1,7 @@
 ---
 order: -1
+title: Hermes Agent
 ---
-
-# Hermes Agent
 
 [Hermes Agent](https://github.com/NousResearch/hermes-agent) 是由 [Nous Research](https://nousresearch.com) 开源的自进化 AI 智能体框架（MIT 协议）。它不只是对话窗口，而是具备**跨会话记忆**、**技能自学习**与**多平台常驻**能力的数字助手，可部署在本地、VPS 或 Serverless 环境。
 

@@ -1,4 +1,6 @@
-# OpenWRT 使用
+---
+title: OpenWRT 使用
+---
 
 ## 拨号上网
 

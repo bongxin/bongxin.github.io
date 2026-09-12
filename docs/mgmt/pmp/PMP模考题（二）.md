@@ -1,4 +1,6 @@
-# PMP模考题（二） | 错题集
+---
+title: PMP模考题（二） | 错题集
+---
 
 **9、 <font color='red'>[单选]</font> 在与项目团队成员的非正式谈话中，项目经理发现某个关键部分的供应商在执行一个已获批准的产品变更时有问题。项目经理接下来应执行下列哪一项？**  In informal conversations with project team members, the project manager found that a key part of the vendor was having problems executing an approved product change. Which of the following should the project manager do next?
 

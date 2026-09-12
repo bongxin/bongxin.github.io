@@ -3,8 +3,6 @@ title: PHP (WordPress)
 description: PHP 与 WordPress 生态笔记
 ---
 
-# PHP (WordPress)
-
 本目录整理 PHP、WordPress 及主题开发相关笔记。
 
 ## 导航

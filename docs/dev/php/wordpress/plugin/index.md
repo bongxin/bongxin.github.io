@@ -1,4 +1,6 @@
-# WordPress 插件
+---
+title: WordPress 插件
+---
 
 WordPress 插件用于扩展站点功能，可从后台安装官方/第三方插件，或自行开发。
 

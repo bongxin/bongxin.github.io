@@ -4,8 +4,6 @@ outline: "deep"
 order: 3
 ---
 
-# 基础环境准备
-
 ## Docker部署
 
 ::: tip 小贴士

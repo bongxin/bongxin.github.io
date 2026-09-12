@@ -1,116 +1,53 @@
 import { defineNavbarConfig } from 'vuepress-theme-plume'
+import { version } from '../../package.json'
+import { appNavItems, shortcutNavItems } from './portal-links'
 
+/**
+ * 顶栏日常入口（尽量四字；门户三件套固定顺序）。
+ * 顺序：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本/更新日志
+ * 音乐 / 相册 / 关于：不进顶栏（走 /map/ 与侧栏；/about/ 正文仍保留）
+ * 版本下拉对齐 Plume 官方站写法（ws_ls_doc 同栈，本身无 changelog 页）
+ */
 export default defineNavbarConfig([
+  { text: '站点导航', icon: 'material-symbols:map-outline', link: '/map/' },
   {
-    text: '开发',
+    text: '运行环境',
+    icon: 'material-symbols:cloud-outline',
+    link: '/environment/',
+  },
+  {
+    text: '应用访问',
+    icon: 'material-symbols:apps',
     items: [
-      {
-        text: '后端生态',
-        items: [
-          { text: 'Java (SpringBoot)', link: '/dev/java/spring-boot/' },
-          { text: 'PHP (WordPress)', link: '/dev/php/wordpress/' },
-        ],
-      },
-      {
-        text: '工程与工具',
-        items: [
-          { text: 'NPM 包管理', link: '/dev/npm/' },
-          { text: '通用框架/芋道(ruoyi-vue-pro)', link: '/dev/framework/yudao/' },
-        ],
-      },
+      { text: '项目总览', link: '/apps/' },
+      ...appNavItems,
     ],
   },
   {
-    text: '设计',
+    text: '快捷入口',
+    icon: 'material-symbols:bolt',
     items: [
-      {
-        text: 'UI设计',
-        items: [{ text: 'Figma', link: '/design/figma/' }],
-      },
-      {
-        text: 'UML画图',
-        items: [
-          { text: 'Excalidraw', link: '/design/excalidraw/' },
-          { text: 'PlantUML', link: '/design/uml/plantuml/' },
-          { text: 'Mermaid', link: '/design/uml/mermaid/' },
-          { text: 'Gravizo', link: '/design/uml/gravizo/' },
-        ],
-      },
+      { text: '入口总览', link: '/shortcuts/' },
+      ...shortcutNavItems,
     ],
   },
   {
-    text: 'AI',
-    items: [
-      {
-        text: '智能体',
-        items: [{ text: 'Hermes Agent', link: '/ai/hermes-agent/' }],
-      },
-    ],
+    text: '网站链接',
+    icon: 'material-symbols:link',
+    link: '/links/',
   },
   {
-    text: '管理',
-    items: [
-      {
-        text: '项目管理',
-        items: [
-          { text: 'PMP', link: '/mgmt/pmp/' },
-          { text: '高项', link: '/mgmt/ispm/' },
-        ],
-      },
-    ],
+    text: '设备资产',
+    icon: 'material-symbols:devices-outline',
+    link: '/assets/',
   },
   {
-    text: '运维',
+    text: `${version}`,
+    icon: 'codicon:versions',
+    badge: '新',
     items: [
-      {
-        text: '主机与容器',
-        items: [
-          { text: 'Linux', link: '/ops/linux/' },
-          { text: '树莓派', link: '/ops/raspberry-pi/' },
-          { text: 'Docker', link: '/ops/docker/docker-compose/' },
-        ],
-      },
-      {
-        text: '网络与安全',
-        items: [
-          { text: 'OpenWRT', link: '/ops/openwrt/' },
-          { text: 'Clash', link: '/ops/clash/' },
-          { text: '内网穿透 (Natapp)', link: '/ops/natapp/' },
-          { text: 'VPN', link: '/ops/vpn/ConfigVPN.html' },
-        ],
-      },
-      {
-        text: '应用与服务',
-        items: [
-          { text: 'DSM 群晖 NAS', link: '/ops/dsm/群晖NAS系统（DSM）的安装和使用.html' },
-          { text: '宝塔面板', link: '/ops/bt/宝塔面板/认识宝塔面板.html' },
-        ],
-      },
-      {
-        text: '工具',
-        items: [{ text: 'Fast GitHub', link: '/ops/github/fast-github/' }],
-      },
+      { text: '更新日志', link: '/changelog/', icon: 'material-symbols:history' },
+      { text: '站点约定', link: '/conventions/', icon: 'material-symbols:rule' },
     ],
   },
-  {
-    text: '运营',
-    items: [
-      { text: '草料二维码', link: '/operation/草料微信二维码生成器/' },
-    ],
-  },
-  { text: '音乐', link: '/music/KOKIA.html' },
-  {
-    text: '其他',
-    items: [
-      {
-        text: '笔记与文档',
-        items: [
-          { text: 'Obsidian', link: '/others/obsidian/' },
-          { text: 'Markdown', link: '/others/markdown/Markdown/认识Markdown.html' },
-          { text: 'AsciiDoc', link: '/others/markdown/AsciiDoc/认识Asciidoc.html' },
-        ],
-      },
-    ],
-  },
-  { text: '关于', link: '/about/' },
 ])

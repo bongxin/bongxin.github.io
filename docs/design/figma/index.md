@@ -1,4 +1,6 @@
-# Figma
+---
+title: Figma
+---
 
 [Figma](https://www.figma.com/) 是面向团队的协作式 UI 设计工具，支持界面设计、原型、开发标注与实时协作，可在浏览器或桌面端使用。
 

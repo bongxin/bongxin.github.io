@@ -1,4 +1,6 @@
-# 红米 AX6000 刷 UBoot 和 OpenWrt 固件
+---
+title: 红米 AX6000 刷 UBoot 和 OpenWrt 固件
+---
 
 * 开启 SSH
 * 刷入过渡固件
@@ -14,9 +16,7 @@
 
 ## 开启 SSH
 
-<BilibiliPlayer
-  base-src="//player.bilibili.com/player.html?isOutside=true&aid=260611365&bvid=BV1Qe411T7TZ&cid=833815481&p=1"
-/>
+@[bilibili](BV1Qe411T7TZ 260611365 833815481)
 
 文档地址：[红米 AX6000 最强 CPU 的硬路由｜解锁 SSH 安装 ShellClash 教程](https://qust.me/post/ax6000-shellclash/)
 
@@ -95,9 +95,7 @@ reboot
 
 ## 刷入 OpenWrt 固件
 
-<BilibiliPlayer
-  base-src="//player.bilibili.com/player.html?isOutside=true&aid=304933810&bvid=BV1oP411F7Y2&cid=886896357&p=1"
-/>
+@[bilibili](BV1oP411F7Y2 304933810 886896357)
 
 文档地址：[红米 ax6000 刷 openwrt 教程，终于有完善好用的 openwrt 了](https://qust.me/post/ax6000-openwrt/)
 

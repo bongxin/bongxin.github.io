@@ -1,0 +1,18 @@
+---
+description: 可提炼的约定须同步写入 .cursor/rules 与站点约定页
+alwaysApply: true
+---
+
+# 规则双写同步
+
+会话中一旦形成**可复用的站点约定**（展示方式、IA、正文规范、开发流程等），必须**同时**更新：
+
+1. `.cursor/rules/*.mdc`（给助手；可新建或改现有 alwaysApply 规则）
+2. `docs/portal/conventions/index.md`（给读者的「站点约定」页，`/conventions/`）
+
+## 要求
+
+- 两边语义一致；站点页用读者口吻，Cursor 规则可更指令化
+- 纯流水账、一次性踩坑、本机路径 → 只写 `dev_memory/`，不必上站点页
+- 改了顶栏/规则导航相关约定时，核对 `navbar.ts`、`daily-sidebar.ts`、`/map/` 是否仍对齐
+- 重大约定变更可顺带在 `/changelog/` 记一条（可选）

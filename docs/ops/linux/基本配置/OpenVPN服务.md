@@ -1,7 +1,7 @@
 ---
 order: 3
+title: OpenVPN服务
 ---
-# OpenVPN服务
 
 ## 配置 VPN 服务器可以通过以下步骤来实现，以 OpenVPN 为例：
 
@@ -201,7 +201,6 @@ openvpn --config client1.ovpn
 - 检查 OpenVPN 服务日志 (`/var/log/openvpn.log`) 以诊断潜在问题。
 
 通过这些步骤，您将成功配置并运行一个 OpenVPN 服务器，使客户端能够通过 VPN 访问内网资源。
-
 
 
 
