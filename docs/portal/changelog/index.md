@@ -11,6 +11,28 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.1
+
+### 发版顺序钉死 · 样式入口修复
+
+本版概要（2026-09-13）：
+
+- 约定发版必须先检查再提交；修复 CSS `@import` 导致开发服 ENOENT。
+
+### 🚀 新增
+
+- 【新增】站点约定「分支与发版」：先 `docs:check:build` → `plume` 提交 → 合 `main` → 再 push
+
+### 🔨 优化
+
+- 【优化】`client.ts` 直接引入样式片段，去掉 CSS 内 `@import`
+
+### 🐞 修复
+
+- 【修复】postcss 将 `./brand.css` 解析到仓库根导致本地打开报错
+
+---
+
 ## v1.4.0
 
 ### 资源与首页收口 · 构建加固

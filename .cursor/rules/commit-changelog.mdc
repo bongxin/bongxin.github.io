@@ -1,29 +1,31 @@
 ---
-description: 用户说 commit/push 时先写更新日志再提交推送
+description: commit/push 固定顺序：先检查，再 plume 写日志提交，合 main，最后 push
 alwaysApply: true
 ---
 
 # Commit / Push 与更新日志
 
-用户说 **commit**、**push**，或 **commit 并 push** 时，助手须按下列顺序执行（不要只提交代码）：
+用户说 **commit**、**push**，或 **commit 并 push** 时，助手必须按下列顺序执行（**不得颠倒**；不要先提交再检查、不要在 `main` 上直接改）：
 
-1. **更新日志**：在 `docs/portal/changelog/index.md` **顶部**追加或改写当前版本节  
-   - 标题 `## vX.Y.Z`（不要 `【】`）  
-   - 含概要 + `🚀 新增` / `🔨 优化` / `🐞 修复`（无则省略空分类）  
-   - 归纳**本次相对上次提交的实质变更**，勿流水账堆文件名  
-2. **版本号与 Git Tag**（有功能/约定级变更时）：  
-   - `package.json` 的 `version` = changelog 最新节 `## vX.Y.Z` 中的 `X.Y.Z`（无 `v` 前缀）  
-   - 提交后打 **annotated** tag：`vX.Y.Z`（与 changelog 标题完全一致，含 `v`）  
-3. **Commit**：在 **`plume`** 上按仓库 git 安全协议暂存并提交（含 changelog / version；勿提交密钥与无关缓存）  
-4. **Push 前**：将 `plume` **合并进 `main`**，在 `main` 上执行 `npm run docs:check:build`，通过后再 push  
-5. **Push**：仅当用户明确要求 push（或「commit 并 push」）时执行；推送 `main` 与对应 tag（CI 只听 `main`）
+## 固定顺序（硬约束）
+
+1. **检查**：在 **`plume`** 工作区跑通 `npm run docs:check:build`  
+   - 未通过 → **禁止**写 changelog / commit / merge / push  
+   - 含改样式 / `client.ts` 时：确认无 CSS `@import './…'`（会 postcss ENOENT）；必要时先 `docs:clean-dev` 看一眼首页  
+2. **更新日志 + 版本**（在 `plume`）：  
+   - `docs/portal/changelog/index.md` **顶部**追加 `## vX.Y.Z`（不要 `【】`）+ 概要 + `🚀 新增` / `🔨 优化` / `🐞 修复`  
+   - 功能/约定级变更：同步 `package.json` 的 `version` = `X.Y.Z`  
+3. **Commit（仅 `plume`）**：暂存相关文件并提交（含 changelog / version；勿提交密钥与无关缓存）  
+4. **Tag（本地）**：`git tag -a vX.Y.Z`（与 changelog 标题一致）  
+5. **合并**：`plume` → **`main`**（仅此时改 `main`）  
+6. **Push**：仅当用户明确要求 push（或「commit 并 push」）时：推送 `main`、对应 tag；建议同步推 `plume`。CI 只监听 `main`
+
+未说 push → 做到步骤 3（或 4）即可，停在 `plume`。
 
 ## 注意
 
-- **日常开发只在 `plume`**：改文件 / commit 都在 `plume`；不要把 WIP 直接做在 `main` 上  
-- 若发现 `plume` 落后于 `main`，先把 `main` 合回 `plume` 再继续改  
-- 未说 push 则只在 `plume` 上 commit（tag 可本地先打，随 push 一起推）  
-- changelog 与约定页本身的小改动可并入同一次提交  
-- 可选本地钩子：`git config core.hooksPath .githooks`（会在每次 push 自动跑门禁）  
-- GitHub Releases / tag 名称必须与更新日志版本节一致，勿另起一套编号  
-- 遵守既有 committing / pushing 用户规则（无 amend 除非符合条件等）
+- **日常开发只在 `plume`**：所有 WIP / commit 都在 `plume`；发现落后先把 `main` 合回 `plume`  
+- **禁止**：先 commit 再 `docs:check:build`；先 merge/`push` 再检查；在 `main` 上直接改功能  
+- changelog 与约定页小改可并入同一次提交  
+- 可选：`git config core.hooksPath .githooks`（push 时再跑门禁，**不能代替**步骤 1）  
+- GitHub tag 名与更新日志 `## vX.Y.Z` 一致；遵守既有 git 安全协议（无 amend 除非符合条件）

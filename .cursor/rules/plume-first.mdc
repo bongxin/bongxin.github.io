@@ -26,7 +26,7 @@ alwaysApply: true
 
 ## CSS（尽量不改）
 
-- **入口**：`docs/.vuepress/styles/index.css`（经 `client.ts` 引入）；按职责拆分 `brand.css` / `home-hero.css` / `dark-button.css`，新变量进对应文件，勿堆回单文件
+- **入口**：`docs/.vuepress/client.ts` 分别 `import` `styles/brand.css` · `home-hero.css` · `dark-button.css`（**禁止**在 CSS 里 `@import './…'`，postcss 会解析到仓库根导致 ENOENT）
 - **只许**覆盖 CSS 变量（品牌色 / tip / hero 渐变 / 深色 brand 按钮字色）；首页与顶栏间距用 `--home-doc-hero-offset`（见 `home-hero.css`，主题无变量时的例外）
 - **禁止**：大范围布局覆盖（如改 `.vp-home` 栅格）、在 `:root` 写死 `--vp-c-text-*` / sidebar / bg、用 CSS invert logo（用 `logo` + `logoDark`）
 - 主题无能力时再加 CSS，并说明原因；能配置解决的不要写样式

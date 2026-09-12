@@ -1,7 +1,0 @@
-/*
- * 全站自定义样式入口：只 @import 变量片段。
- * 约定：只许覆盖主题 CSS 变量；勿写布局选择器；勿在 :root 写死 text / sidebar / bg。
- */
-@import './brand.css';
-@import './home-hero.css';
-@import './dark-button.css';

@@ -30,7 +30,7 @@ editLink: false
 | 首页 | `doc-hero` + `features` |
 | 卡片列数 | `<VPCardGrid :cols="{ sm:1, md:2, lg:3 }">` |
 
-自定义样式入口为 `docs/.vuepress/styles/index.css`（再拆 `brand` / `home-hero` / `dark-button`），且只覆盖 CSS 变量（品牌色等）；不用 CSS 改布局或藏标题。
+自定义样式由 `client.ts` 引入 `docs/.vuepress/styles/` 下的 `brand` / `home-hero` / `dark-button`（只覆盖 CSS 变量）；**不要**在 CSS 里 `@import` 同目录文件。不用 CSS 改布局或藏标题。
 
 ## 正文忌套话
 
@@ -65,23 +65,26 @@ editLink: false
 - **PMP 等教材 PDF 暂保留并参与构建**；日后若要减部署体积再单独迁出。
 - `npm run docs:check` 会拦截：死链、缺资源、裸相对资源路径，并对过大图片告警。
 
-更新日志：`## vX.Y.Z` + 新增 / 优化 / 修复；发版先改版本号再在日志顶部追加。
+## 分支与发版
 
-GitHub tag 与更新日志统一：tag 名即为 `vX.Y.Z`（与章节标题一致），与 `package.json` 的 `version` 对应（tag 多一个 `v` 前缀）。
+- **日常开发 / commit：只在 `plume`**，不要在 `main` 上直接改。
+- **发版顺序（固定，勿颠倒）**：
+  1. `npm run docs:check:build` 通过  
+  2. 在 `plume` 写 [更新日志](/changelog/)、升版本（如需）、提交并打 tag `vX.Y.Z`  
+  3. 将 `plume` 合并进 `main`  
+  4. 再 `git push`（推 `main` 与 tag；建议同时推 `plume`）
+- 线上以 **main** 为准：推送到 `main` 后 GitHub Actions 先 `docs:check` 再构建部署到 `gh-pages`。
+- 可选：`git config core.hooksPath .githooks`，push 时自动跑门禁（不能代替发版前的完整检查）。
+
+更新日志：`## vX.Y.Z` + 新增 / 优化 / 修复；与 `package.json` version、GitHub tag 一致（tag 带 `v` 前缀）。
 
 ## 约定维护
 
 可复用的约定变更时，同步更新本页与仓库 `.cursor/rules/`（助手规则与站点约定保持一致）。一次性踩坑写开发记忆即可，不必上本页。
-
-发版提交：在说 commit / push 时，先在 [更新日志](/changelog/) 顶部记一笔（必要时升版本号），再提交；**push 前**跑 `npm run docs:check:build`（死链/缺资源扫描 + 完整构建），通过后再推送。
-
-可选：`git config core.hooksPath .githooks`，使每次 push 自动执行门禁。
 
 ## 本地开发
 
 改顶栏、`config.ts` 的 markdown/plugins、permalink、collections，或新启用图表 / Bilibili / 表格等之后，硬刷新往往无效，需 `npm run docs:clean-dev`（Node ≥ 22.18）。
 
 - 快速检查：`npm run docs:check`
-- 对齐 CI：`npm run docs:check:build`
-
-线上发布以 **main** 为准：推送到 `main` 后由 GitHub Actions 先 `docs:check` 再构建部署到 `gh-pages`。
+- 对齐 CI / 发版前：`npm run docs:check:build`

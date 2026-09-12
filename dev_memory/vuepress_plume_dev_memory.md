@@ -4,7 +4,8 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 ---
 ## 开发要点
 - 仓库：https://github.com/bongxin/bongxin.github.io.git ；Windows 本地 `E:\Code\bongxin\bongxin.github.io`，Linux 本地 `/run/media/bongxin/Data/Data/Code/bongxin/bongxin.github.io`（NTFS 挂载）
-- **分支约定**：日常开发 / commit 一律在 **`plume`**；**push 发布前**再 `plume` → merge → **`main`**，只 push `main`（及 tag）。勿在 `main` 上直接改 WIP
+- **分支约定**：日常开发 / commit 一律在 **`plume`**；勿在 `main` 上改 WIP
+- **发版硬顺序（勿颠倒）**：① `docs:check:build` 通过 → ② `plume` 写 changelog/升版本/commit/tag → ③ merge 进 `main` → ④ 再 push（`main`+tag，建议兼推 `plume`）。**禁止先 commit 再检查、禁止先合 main/push 再检查**
 - **文档正文以 `origin/base` 为准**，不要再从旧 `main` 结构取内容；现行结构为 `dev/design/ai/ops/...`
 - NTFS 挂载下 `.git/config` 偶发被清空为 0 字节导致 `origin` 丢失；恢复：写入 remote `https://github.com/bongxin/bongxin.github.io.git` 后 `git fetch origin --prune`；`git stash -u` 也可能 SIGSEGV，大改动切分支时慎用
 - 站点已切换为 **VuePress 2 + vuepress-theme-plume**，文档源目录仍是 `docs/`
@@ -17,13 +18,13 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - 导航/集合对齐 `base` 的板块结构；已移除「前端生态 / Vue 3 全家桶」（原 `docs/dev/web`）、「CSMM」（原 `docs/mgmt/csmm`）、「WSL2」（原 `docs/ops/wsl2`）、「NPM 包管理」（原 `docs/dev/npm`）、「写作 write」（与 `others/markdown` 重复的空壳）、「运营/水印」（原 `docs/operation/水印`）
 - **规则双写**：可提炼约定 → 同时改 `.cursor/rules/` + `/conventions/`（`rules-sync.mdc`）；流水账只进 `dev_memory`
 - **Git Tag**：与 changelog / 顶栏版本统一，格式 `vX.Y.Z`；发版提交后打 annotated tag 并随 push 推送
-- **Commit / Push**：在 **`plume`** 写 changelog（必要时升版本）并 commit；**push 前** `plume` → merge → `main`，再 `docs:check:build` 后只 push `main`（及 tag）
+- **Commit / Push**：严格按 `commit-changelog.mdc`：先 `docs:check:build`，再 `plume` 日志/提交/tag，再合 `main`，最后才 push
 - **发布分支**：GitHub Actions 仅 `main` push：先 `docs:check` 再 `docs:build` → `gh-pages`；若 `plume` 落后于 `main`，先合回再继续开发
 - **Cursor 规则**（alwaysApply）：`plume-first` · `content-no-meta` · `dev-auto-restart` · `site-architecture` · `rules-sync` · `commit-changelog`
 - **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
 - **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`
 - **顶栏精简（日常入口，尽量四字）**：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本号（更新日志 / 站点约定）；音乐 / 相册 / 关于不进顶栏
-- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`），当前最新 **v1.4.0**；顶栏读 `package.json` 版本 + badge「新」
+- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`），当前最新 **v1.4.1**；顶栏读 `package.json` 版本 + badge「新」
 - **正文忌套话**：门户 / 日常页不要写「左侧侧栏右侧大纲」「使用主题某某组件」「写法对齐某某站」等实现说明；直接上内容。约定与配置写在 `dev_memory` / 规则里即可
 - **日常浏览页统一布局**：`/map/` `/links/` `/assets/` `/music/` `/photos/` 均为文档布局（**左侧侧栏 + 右侧 outline**）；共用 `docs/.vuepress/daily-sidebar.ts`
 - **音乐页** `/music/`：艺人 `<ImageCard>` + 曲目 `<LinkCard>`，均配 `VPCardGrid`；**已去掉** `pageClass: music-index` 与自定义方卡 CSS
@@ -61,7 +62,7 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **压图**：大图用 Pillow 缩放重编码（目录图 60MB→~0.16MB；思维导图/光环笔记/DSM/OpenWrt/music 封面等）；光环笔记大 PNG 已转 JPG 并改引用
 - 首页不加 `effect`；若再启用 prism 需加回 `ogl`
 - hostname / 备案信息沿用 `base`：`https://docs.bongxin.com.cn`，footer 含粤 ICP
-- **自定义样式只写 CSS 变量**：入口 `docs/.vuepress/styles/index.css`（`@import`）→ `brand.css`（品牌+tip）/ `home-hero.css`（渐变 + `--home-doc-hero-offset` 顶栏间距）/ `dark-button.css`；`client.ts` 只引入口；**禁止**在 `:root` 写死 `--vp-c-text-*` / sidebar / bg
+- **自定义样式只写 CSS 变量**：`client.ts` 分别引入 `styles/brand.css` · `home-hero.css` · `dark-button.css`（**禁止** CSS `@import './…'`，会 ENOENT）；**禁止**在 `:root` 写死 `--vp-c-text-*` / sidebar / bg
 - **Logo 深色模式**：Plume `logo` + `logoDark`；首页 hero `{ light, dark }`；勿用 CSS invert
 - 音乐页视频用 Plume 内置语法 `@[bilibili](bvid)` / `@[bilibili pN](bvid aid cid)`（[文档](https://theme-plume.vuejs.press/guide/embed/video/bilibili/)）
 - 改 `config.ts` 的 plugins 后需**重启** `docs:dev` 并清 `.temp`/`.cache`；`VPVideoEmbed` 包在 `ClientOnly` 内，硬刷新后才可见 iframe
@@ -74,10 +75,10 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - .github/workflows/deploy.yml
 - docs/.vuepress/config.ts
 - docs/.vuepress/client.ts
-- docs/.vuepress/styles/index.css
 - docs/.vuepress/styles/brand.css
 - docs/.vuepress/styles/home-hero.css
 - docs/.vuepress/styles/dark-button.css
+- docs/.vuepress/client.ts
 - docs/.vuepress/plume.config.ts
 - docs/.vuepress/collections.ts
 - docs/.vuepress/daily-sidebar.ts
