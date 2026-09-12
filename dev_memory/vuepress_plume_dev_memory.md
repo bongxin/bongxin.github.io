@@ -15,8 +15,9 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - 主题配置拆分：`docs/.vuepress/config.ts`（bundler/插件）+ `plume.config.ts`（navbar/collections，支持热更新）
 - 导航/集合对齐 `base` 的板块结构；已移除「前端生态 / Vue 3 全家桶」（原 `docs/dev/web`）、「CSMM」（原 `docs/mgmt/csmm`）、「WSL2」（原 `docs/ops/wsl2`）、「NPM 包管理」（原 `docs/dev/npm`）、「写作 write」（与 `others/markdown` 重复的空壳）、「运营/水印」（原 `docs/operation/水印`）
 - **规则双写**：可提炼约定 → 同时改 `.cursor/rules/` + `/conventions/`（`rules-sync.mdc`）；流水账只进 `dev_memory`
-- **Commit / Push**：用户说 commit 或 push 时，先写/更新 `/changelog/`（必要时升 `package.json` 版本），再执行提交；明确要求 push 才推送（见 `commit-changelog.mdc`）
-- **发布分支**：GitHub Actions 仅 `main` push 时构建部署（`docs/.vuepress/dist` → `gh-pages`）；不再以 `base` 为准
+- **Git Tag**：与 changelog / 顶栏版本统一，格式 `vX.Y.Z`；发版提交后打 annotated tag 并随 push 推送
+- **Commit / Push**：先写 changelog（必要时升版本），commit；push 前 `npm run docs:check:build`；push 时带上对应 tag
+- **发布分支**：GitHub Actions 仅 `main` push：先 `docs:check` 再 `docs:build` → `gh-pages`
 - **Cursor 规则**（alwaysApply）：`plume-first` · `content-no-meta` · `dev-auto-restart` · `site-architecture` · `rules-sync` · `commit-changelog`
 - **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
 - **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`

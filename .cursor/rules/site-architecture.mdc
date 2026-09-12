@@ -31,4 +31,5 @@ alwaysApply: true
 ## 更新日志
 
 - `/changelog/`：`## vX.Y.Z`（不要 `【】`）+ 概要 + 🚀新增 / 🔨优化 / 🐞修复
-- 发版：先改 `package.json` `version`，再在 changelog **顶部**追加一节；用户说 commit/push 时由助手按 `commit-changelog.mdc` 自动生成日志再提交
+- GitHub **tag** 必须与 changelog 节标题一致（`vX.Y.Z`）；`package.json` version 为无 `v` 的 `X.Y.Z`
+- 发版：改 version → 写 changelog → commit → `git tag -a vX.Y.Z` → check → push 分支与 tag（见 `commit-changelog.mdc`）

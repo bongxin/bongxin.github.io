@@ -10,7 +10,9 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:clean-dev": "vuepress dev docs --clean-cache"
+    "docs:clean-dev": "vuepress dev docs --clean-cache",
+    "docs:check": "node scripts/prepush-check.mjs",
+    "docs:check:build": "npm run docs:check && npm run docs:build"
   },
   "devDependencies": {
     "@vuepress/bundler-vite": "^2.0.0-rc.31",

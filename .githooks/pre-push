@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# Optional: git config core.hooksPath .githooks
+# Mirrors CI gate before push (asset/link scan + full VuePress build).
+set -e
+cd "$(dirname "$0")/.."
+npm run docs:check:build

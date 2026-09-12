@@ -24,6 +24,8 @@ editLink: false
 
 - 【新增】站点约定 `/conventions/`（顶栏版本下拉与更新日志同级）
 - 【新增】`.cursor/rules/`：Plume 优先、忌套话、自动重启、信息架构、规则双写、commit 写日志
+- 【新增】push 前门禁：`npm run docs:check` / `docs:check:build`（死链与缺资源扫描 + 完整构建）；CI 同步先 check 再 build
+- 【新增】Git tag 与更新日志版本统一（`v1.0.0` … `v1.3.0`）
 
 ### 🔨 优化
 

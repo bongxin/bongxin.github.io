@@ -56,14 +56,21 @@ editLink: false
 
 更新日志：`## vX.Y.Z` + 新增 / 优化 / 修复；发版先改版本号再在日志顶部追加。
 
+GitHub tag 与更新日志统一：tag 名即为 `vX.Y.Z`（与章节标题一致），与 `package.json` 的 `version` 对应（tag 多一个 `v` 前缀）。
+
 ## 约定维护
 
 可复用的约定变更时，同步更新本页与仓库 `.cursor/rules/`（助手规则与站点约定保持一致）。一次性踩坑写开发记忆即可，不必上本页。
 
-发版提交：在说 commit / push 时，先在 [更新日志](/changelog/) 顶部记一笔（必要时升版本号），再提交并推送。
+发版提交：在说 commit / push 时，先在 [更新日志](/changelog/) 顶部记一笔（必要时升版本号），再提交；**push 前**跑 `npm run docs:check:build`（死链/缺资源扫描 + 完整构建），通过后再推送。
+
+可选：`git config core.hooksPath .githooks`，使每次 push 自动执行门禁。
 
 ## 本地开发
 
 改顶栏、`config.ts` 的 markdown/plugins、permalink、collections，或新启用图表 / Bilibili / 表格等之后，硬刷新往往无效，需 `npm run docs:clean-dev`（Node ≥ 22.18）。
 
-线上发布以 **main** 为准：推送到 `main` 后由 GitHub Actions 构建并部署到 `gh-pages`。
+- 快速检查：`npm run docs:check`
+- 对齐 CI：`npm run docs:check:build`
+
+线上发布以 **main** 为准：推送到 `main` 后由 GitHub Actions 先 `docs:check` 再构建部署到 `gh-pages`。

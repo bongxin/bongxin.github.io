@@ -21,8 +21,14 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Install
+        run: npm install
+
+      - name: Precheck links and assets
+        run: npm run docs:check
+
       - name: Build
-        run: npm install && npm run docs:build
+        run: npm run docs:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.2
