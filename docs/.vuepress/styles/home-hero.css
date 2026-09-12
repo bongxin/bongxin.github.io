@@ -1,0 +1,28 @@
+/* 首页 hero：标题渐变 + 与顶栏的额外间距（主题无对应变量，仅调 padding-top） */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    var(--vp-c-brand-3) 20%,
+    var(--vp-c-brand-1) 70%
+  );
+
+  /* 叠在主题默认 48px / 80px 之上 */
+  --home-doc-hero-offset: 40px;
+}
+
+.vp-home-doc-hero {
+  padding-top: calc(
+    var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 48px +
+      var(--home-doc-hero-offset)
+  );
+}
+
+@media (min-width: 640px) {
+  .vp-home-doc-hero {
+    padding-top: calc(
+      var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 80px +
+        var(--home-doc-hero-offset)
+    );
+  }
+}

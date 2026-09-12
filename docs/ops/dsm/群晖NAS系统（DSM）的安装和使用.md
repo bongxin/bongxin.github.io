@@ -4,7 +4,7 @@ title: 群晖NAS系统（DSM）的安装和使用
 
 ## NAS系统有哪些核心功能
 
-![alt text](image-5.png)
+![alt text](./image-5.png)
 
 ### 文件共享
 
@@ -20,7 +20,7 @@ NAS设备允许通过网络在多台计算机之间共享文件，很多都内�
 
 ## 群晖NAS系统（DSM）的安装
 
-![alt text](image-2.png)
+![alt text](./image-2.png)
 
 ### 准备工作
 
@@ -35,37 +35,37 @@ NAS设备允许通过网络在多台计算机之间共享文件，很多都内�
 
 解压 `DS3622xs+7.2-64561(懒人包).7z` 后，打开 `DS3622xs+7.2.0-64561.vmx`
 
-![alt text](下载黑群晖虚拟机文件和引导文件.jpg)
+![alt text](./下载黑群晖虚拟机文件和引导文件.jpg)
 
-![alt text](VMware打开vmx文件.jpg)
+![alt text](./VMware打开vmx文件.jpg)
 
 #### 配置添加硬盘
 
-![alt text](添加硬盘.png)
+![alt text](./添加硬盘.png)
 
 ### 搜索黑群晖
 
 使用 `Synology Assistant` 搜索运行的黑群晖
 
-![alt text](群晖助手.jpg)
+![alt text](./群晖助手.jpg)
 
 ::: warning 提示
 `群晖助手（Synology Assistant）`可能搜索不到，使用浏览器访问 `find.synology.com`
 :::
 
-![alt text](find.synology.com.png)
+![alt text](./find.synology.com.png)
 
 ### 安装
 
-![alt text](image-3.png)
+![alt text](./image-3.png)
 
-![alt text](image-4.png)
+![alt text](./image-4.jpg)
 
 ## 群晖NAS系统（DSM）的使用
 
 ### 核心功能
 
-![alt text](image-6.png)
+![alt text](./image-6.png)
 
 #### 用户管理
 
@@ -87,92 +87,92 @@ WebDav、Video、Container、Drive
 
 #### 管理账号
 
-![alt text](image-7.png)
+![alt text](./image-7.png)
 
 #### 配置权限
 
-![alt text](image-8.png)
+![alt text](./image-8.png)
 
 ### 网络配置
 
 #### 配置访问端口
 
-![alt text](image-9.png)
+![alt text](./image-9.png)
 
 #### 配置IP地址
 
-![alt text](image-10.png)
-![alt text](image-11.png)
+![alt text](./image-10.png)
+![alt text](./image-11.png)
 
 #### 配置SSL证书
 
-![alt text](image-12.png)
+![alt text](./image-12.png)
 
 #### 配置SSH访问
 
-![alt text](image-13.png)
+![alt text](./image-13.png)
 
 #### 软路由配置端口转发
 
-![alt text](image-14.png)
+![alt text](./image-14.png)
 
 ### 文件服务
 
-![alt text](image-15.png)
+![alt text](./image-15.png)
 
 #### File Station（类似Windows资源管理器）
 
-![alt text](image-16.png)
+![alt text](./image-16.png)
 
 #### 共享文件夹
 
-![alt text](image-17.png)
+![alt text](./image-17.png)
 
 #### 文件服务
 
-![alt text](image-18.png)
+![alt text](./image-18.png)
 
 ### 套件中心
 
 支持配置套件来源，实现使用第三方套件
 
-![alt text](image-19.png)
+![alt text](./image-19.png)
 
 ## 群晖NAS套件分享和演示
 
-![alt text](image-20.png)
+![alt text](./image-20.png)
 
 ### WebDav Server
 
-![alt text](image-21.png)
+![alt text](./image-21.png)
 
-![alt text](image-22.png)
+![alt text](./image-22.png)
 
 #### Raidrive通过WebDAV实现群晖硬盘本地化
 
-![alt text](image-23.png)
+![alt text](./image-23.png)
 
-![alt text](image-24.png)
+![alt text](./image-24.png)
 
 #### 小米电视网络连接（WebDav）
 
-![alt text](image-25.png)
+![alt text](./image-25.png)
 
 ### Video Station
 
-![alt text](image-26.png)
+![alt text](./image-26.png)
 
 #### 利用豆瓣刮削器获取视频信息
 
-![alt text](image-27.png)
+![alt text](./image-27.png)
 
-![alt text](image-28.png)
+![alt text](./image-28.jpg)
 
 ### Synology Drive
 
-![alt text](image-29.png)
+![alt text](./image-29.png)
 
-![alt text](image-30.png)
+![alt text](./image-30.png)
 
 #### 功能
 
@@ -183,15 +183,15 @@ WebDav、Video、Container、Drive
 * 支持回收站
 * 支持多种客户端
 
-![alt text](image-31.png)
+![alt text](./image-31.png)
 
 ### Container Manager（DSM低版本上叫Docker）
 
-![alt text](image-32.png)
+![alt text](./image-32.png)
 
 #### 注册表设置支持配置注册表镜像
 
-![alt text](image-33.png)
+![alt text](./image-33.png)
 
 #### 功能
 
@@ -201,7 +201,7 @@ WebDav、Video、Container、Drive
 * 配置镜像源
 * 查看日志
 
-![alt text](image-34.png)
+![alt text](./image-34.png)
 
 ## NAS在企业和家庭中的应用
 
@@ -229,13 +229,13 @@ WebDav、Video、Container、Drive
 * 必须挂在共享文件夹
 * 必须使用http协议
 
-![alt text](image-35.png)
+![alt text](./image-35.png)
 
-![alt text](image-36.png)
+![alt text](./image-36.png)
 
 ### 移动端套件
 
-![alt text](image-37.png)
-![alt text](image-38.png)
-![alt text](image-39.png)
-![alt text](image-40.png)
+![alt text](./image-37.png)
+![alt text](./image-38.png)
+![alt text](./image-39.png)
+![alt text](./image-40.png)

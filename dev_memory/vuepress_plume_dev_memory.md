@@ -3,9 +3,10 @@ name: vuepress_plume_dev_memory
 description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记录结构、命令与构建坑点
 ---
 ## 开发要点
-- 仓库：https://github.com/bongxin/bongxin.github.io.git ；Windows 本地 `E:\Code\bongxin\bongxin.github.io`，Linux 本地 `/run/media/bongxin/Data/Data/Code/bongxin/bongxin.github.io`（NTFS 挂载），当前开发分支 `plume`（已有 `origin/plume`）
-- **文档正文以 `origin/base` 为准**，不要再从 `main` 取内容；`main` 是旧结构（system/skill/...），`base` 是现行结构（dev/design/ai/ops/...）
-- NTFS 挂载下 `.git/config` 偶发被清空为 0 字节导致 `origin` 丢失；恢复：写入 remote `https://github.com/bongxin/bongxin.github.io.git` 后 `git fetch origin --prune`
+- 仓库：https://github.com/bongxin/bongxin.github.io.git ；Windows 本地 `E:\Code\bongxin\bongxin.github.io`，Linux 本地 `/run/media/bongxin/Data/Data/Code/bongxin/bongxin.github.io`（NTFS 挂载）
+- **分支约定**：日常开发 / commit 一律在 **`plume`**；**push 发布前**再 `plume` → merge → **`main`**，只 push `main`（及 tag）。勿在 `main` 上直接改 WIP
+- **文档正文以 `origin/base` 为准**，不要再从旧 `main` 结构取内容；现行结构为 `dev/design/ai/ops/...`
+- NTFS 挂载下 `.git/config` 偶发被清空为 0 字节导致 `origin` 丢失；恢复：写入 remote `https://github.com/bongxin/bongxin.github.io.git` 后 `git fetch origin --prune`；`git stash -u` 也可能 SIGSEGV，大改动切分支时慎用
 - 站点已切换为 **VuePress 2 + vuepress-theme-plume**，文档源目录仍是 `docs/`
 - 需要 **Node >= 22.18.0**（本机可用 `nvm use 22.18.0`；nvm-windows 安装目录 `D:\nvm\v22.18.0`；PowerShell 若找不到 node，可临时 `$env:Path = "D:\nvm\v22.18.0;" + $env:Path`）
 - 本地：`npm install` 后 `npm run docs:dev`；构建：`npm run docs:build`；清缓存：`npm run docs:clean-dev`
@@ -16,13 +17,13 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - 导航/集合对齐 `base` 的板块结构；已移除「前端生态 / Vue 3 全家桶」（原 `docs/dev/web`）、「CSMM」（原 `docs/mgmt/csmm`）、「WSL2」（原 `docs/ops/wsl2`）、「NPM 包管理」（原 `docs/dev/npm`）、「写作 write」（与 `others/markdown` 重复的空壳）、「运营/水印」（原 `docs/operation/水印`）
 - **规则双写**：可提炼约定 → 同时改 `.cursor/rules/` + `/conventions/`（`rules-sync.mdc`）；流水账只进 `dev_memory`
 - **Git Tag**：与 changelog / 顶栏版本统一，格式 `vX.Y.Z`；发版提交后打 annotated tag 并随 push 推送
-- **Commit / Push**：先写 changelog（必要时升版本），commit；push 前 `npm run docs:check:build`；push 时带上对应 tag
-- **发布分支**：GitHub Actions 仅 `main` push：先 `docs:check` 再 `docs:build` → `gh-pages`
+- **Commit / Push**：在 **`plume`** 写 changelog（必要时升版本）并 commit；**push 前** `plume` → merge → `main`，再 `docs:check:build` 后只 push `main`（及 tag）
+- **发布分支**：GitHub Actions 仅 `main` push：先 `docs:check` 再 `docs:build` → `gh-pages`；若 `plume` 落后于 `main`，先合回再继续开发
 - **Cursor 规则**（alwaysApply）：`plume-first` · `content-no-meta` · `dev-auto-restart` · `site-architecture` · `rules-sync` · `commit-changelog`
 - **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
 - **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`
 - **顶栏精简（日常入口，尽量四字）**：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本号（更新日志 / 站点约定）；音乐 / 相册 / 关于不进顶栏
-- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`），当前 v1.2.0 / v1.1.0 / v1.0.0；顶栏读 `package.json` 版本 + badge「新」
+- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`），当前最新 **v1.4.0**；顶栏读 `package.json` 版本 + badge「新」
 - **正文忌套话**：门户 / 日常页不要写「左侧侧栏右侧大纲」「使用主题某某组件」「写法对齐某某站」等实现说明；直接上内容。约定与配置写在 `dev_memory` / 规则里即可
 - **日常浏览页统一布局**：`/map/` `/links/` `/assets/` `/music/` `/photos/` 均为文档布局（**左侧侧栏 + 右侧 outline**）；共用 `docs/.vuepress/daily-sidebar.ts`
 - **音乐页** `/music/`：艺人 `<ImageCard>` + 曲目 `<LinkCard>`，均配 `VPCardGrid`；**已去掉** `pageClass: music-index` 与自定义方卡 CSS
@@ -49,14 +50,18 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **暂不搬**：BongAsk / Docx / PPT / 增强 Mermaid 整包（偏项目门户）
 
 - 改导航只动 `docs/.vuepress/navbar.ts` + `docs/.vuepress/collections.ts`；中文文件名页面链接多用 `.html` 后缀与现有 permalink 对齐
-- 首页用 `docs/README.md`（`doc-hero` + 两组 `features`：**日常入口**对齐顶栏六项、**知识文档**对齐 `/map/`；Iconify 与顶栏同系）；头像 `/logo.svg` + `logoDark` / hero `{ light, dark }`；**布局跟主题默认**；不要同时保留根级 `docs/index.md`
+- 首页用 `docs/README.md`（`doc-hero` + 无标题 `features` 共 8 项：开发/设计/AI/管理/运维/运营/笔记/音乐；相册仍走侧栏/`/map/`，不进首页；日常入口只走顶栏）；头像 `/logo.svg` + `logoDark` / hero `{ light, dark }`；**布局跟主题默认**；不要同时保留根级 `docs/index.md`
 
 - 静态资源在 `docs/.vuepress/public/`（不要再用 `docs/public`）
 - `autoFrontmatter: false`，避免改写现有 Markdown
 - Vite 8/rolldown 下必须给 `@vitejs/plugin-vue` 传入 `script.fs`，否则主题 SFC 的 `defineProps<ImportedType>()` 会报 `No fs option provided to compileScript`
+- **Markdown 同目录图片必须写 `./xxx.png`**：裸写 `image-5.png` 会被 Vite/Rolldown 当 npm 包解析 → CI `docs:build` 失败；`docs:check` 已拦截此类 bare relative asset；DSM 安装文已批量加 `./`
+- **静态资源双轨（已定）**：跨页 → `docs/.vuepress/public/` + `/path`；单篇配图 → 文旁 + `./path`。音乐封面只留 public，艺人页用 `/music/…`，勿在 `docs/music/` 再放一份
+- **图片体积**：网页图建议 ≤500KB；`docs:check` 对 >500KB 告警、>1.5MB 失败；PMP **PDF 暂保留并参与构建**（用户决定），未迁出
+- **压图**：大图用 Pillow 缩放重编码（目录图 60MB→~0.16MB；思维导图/光环笔记/DSM/OpenWrt/music 封面等）；光环笔记大 PNG 已转 JPG 并改引用
 - 首页不加 `effect`；若再启用 prism 需加回 `ogl`
 - hostname / 备案信息沿用 `base`：`https://docs.bongxin.com.cn`，footer 含粤 ICP
-- **自定义样式只写 CSS 变量**（`docs/.vuepress/styles/index.css`，`client.ts` 引入）：brand / tip（引用 brand）/ 深色 brand 按钮黑字 / 首页 hero 渐变（`linear-gradient(... var(--vp-c-brand-*) ...)`）；**禁止**在 `:root` 写死 `--vp-c-text-*` / sidebar / bg
+- **自定义样式只写 CSS 变量**：入口 `docs/.vuepress/styles/index.css`（`@import`）→ `brand.css`（品牌+tip）/ `home-hero.css`（渐变 + `--home-doc-hero-offset` 顶栏间距）/ `dark-button.css`；`client.ts` 只引入口；**禁止**在 `:root` 写死 `--vp-c-text-*` / sidebar / bg
 - **Logo 深色模式**：Plume `logo` + `logoDark`；首页 hero `{ light, dark }`；勿用 CSS invert
 - 音乐页视频用 Plume 内置语法 `@[bilibili](bvid)` / `@[bilibili pN](bvid aid cid)`（[文档](https://theme-plume.vuejs.press/guide/embed/video/bilibili/)）
 - 改 `config.ts` 的 plugins 后需**重启** `docs:dev` 并清 `.temp`/`.cache`；`VPVideoEmbed` 包在 `ClientOnly` 内，硬刷新后才可见 iframe
@@ -70,6 +75,9 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - docs/.vuepress/config.ts
 - docs/.vuepress/client.ts
 - docs/.vuepress/styles/index.css
+- docs/.vuepress/styles/brand.css
+- docs/.vuepress/styles/home-hero.css
+- docs/.vuepress/styles/dark-button.css
 - docs/.vuepress/plume.config.ts
 - docs/.vuepress/collections.ts
 - docs/.vuepress/daily-sidebar.ts

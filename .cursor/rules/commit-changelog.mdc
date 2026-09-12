@@ -14,14 +14,15 @@ alwaysApply: true
 2. **版本号与 Git Tag**（有功能/约定级变更时）：  
    - `package.json` 的 `version` = changelog 最新节 `## vX.Y.Z` 中的 `X.Y.Z`（无 `v` 前缀）  
    - 提交后打 **annotated** tag：`vX.Y.Z`（与 changelog 标题完全一致，含 `v`）  
-   - push 时带上 tag：`git push origin <branch>` 且 `git push origin vX.Y.Z`（或 `git push origin --tags` 仅推送本次相关 tag）  
-3. **Commit**：按仓库 git 安全协议暂存相关文件并提交（含 changelog / version；勿提交密钥与无关缓存）  
-4. **Push 前检查**：执行 `npm run docs:check:build`（链接/资源扫描 + 与 CI 相同的 `docs:build`），通过后再 `git push`  
-5. **Push**：仅当用户明确要求 push（或「commit 并 push」）时执行；**同步推送与 changelog 一致的 git tag**
+3. **Commit**：在 **`plume`** 上按仓库 git 安全协议暂存并提交（含 changelog / version；勿提交密钥与无关缓存）  
+4. **Push 前**：将 `plume` **合并进 `main`**，在 `main` 上执行 `npm run docs:check:build`，通过后再 push  
+5. **Push**：仅当用户明确要求 push（或「commit 并 push」）时执行；推送 `main` 与对应 tag（CI 只听 `main`）
 
 ## 注意
 
-- 未说 push 则只 commit（tag 可在本地先打好，随 push 一起推）  
+- **日常开发只在 `plume`**：改文件 / commit 都在 `plume`；不要把 WIP 直接做在 `main` 上  
+- 若发现 `plume` 落后于 `main`，先把 `main` 合回 `plume` 再继续改  
+- 未说 push 则只在 `plume` 上 commit（tag 可本地先打，随 push 一起推）  
 - changelog 与约定页本身的小改动可并入同一次提交  
 - 可选本地钩子：`git config core.hooksPath .githooks`（会在每次 push 自动跑门禁）  
 - GitHub Releases / tag 名称必须与更新日志版本节一致，勿另起一套编号  

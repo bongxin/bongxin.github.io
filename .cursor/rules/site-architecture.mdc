@@ -26,7 +26,10 @@ alwaysApply: true
 - **知识库**一级目录勿再套壳：`dev` `design` `ai` `mgmt` `ops` `operation` `music` `others` `about`（**勿大挪路径**，成本高）
 - **门户**在 `docs/portal/`，对外 **短 permalink**（`/map/` 等，勿暴露 `/portal/map/`）
 - 日常侧栏单一源：`daily-sidebar.ts`；外链 URL：`portal-links.ts`（供 navbar）
-- 静态资源：`docs/.vuepress/public/`（不要用 `docs/public`）
+- 静态资源双轨：
+  - **跨页**：`docs/.vuepress/public/`（勿用 `docs/public`），引用 `/…`
+  - **单篇配图**：与 `.md` 同目录，引用必须 `./…`（禁止裸 `image.png`，Vite 会当包解析）
+  - 网页图建议 ≤500KB；PMP PDF 暂保留并参与构建
 
 ## 更新日志
 

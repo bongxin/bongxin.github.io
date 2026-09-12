@@ -110,9 +110,19 @@ export const knowledgeCollections: ThemeCollectionItem[] = [
           { text: '模考题（二）', link: '/mgmt/pmp/PMP模考题（二）.html' },
           {
             text: 'ITTO 知识领域',
-            prefix: 'pmp/ITTO图',
             collapsed: true,
-            items: 'auto',
+            items: [
+              { text: '4. 项目整合管理', link: '/mgmt/pmp/ITTO图/4. 项目整合管理.html' },
+              { text: '5. 项目范围管理', link: '/mgmt/pmp/ITTO图/5. 项目范围管理.html' },
+              { text: '6. 项目进度管理', link: '/mgmt/pmp/ITTO图/6. 项目进度管理.html' },
+              { text: '7. 项目成本管理', link: '/mgmt/pmp/ITTO图/7. 项目成本管理.html' },
+              { text: '8. 项目质量管理', link: '/mgmt/pmp/ITTO图/8. 项目质量管理.html' },
+              { text: '9. 项目资源管理', link: '/mgmt/pmp/ITTO图/9. 项目资源管理.html' },
+              { text: '10. 项目沟通管理', link: '/mgmt/pmp/ITTO图/10. 项目沟通管理.html' },
+              { text: '11. 项目风险管理', link: '/mgmt/pmp/ITTO图/11. 项目风险管理.html' },
+              { text: '12. 项目采购管理', link: '/mgmt/pmp/ITTO图/12. 项目采购管理.html' },
+              { text: '13. 项目相关方管理', link: '/mgmt/pmp/ITTO图/13. 项目相关方管理.html' },
+            ],
           },
           {
             text: '光环复习资料',
@@ -134,9 +144,12 @@ export const knowledgeCollections: ThemeCollectionItem[] = [
           },
           {
             text: '章节练习题',
-            prefix: 'pmp/光环国际PMP章节练习题',
             collapsed: true,
-            items: 'auto',
+            items: [
+              { text: '引论 + 环境', link: '/mgmt/pmp/光环国际PMP章节练习题/引论+环境.html' },
+              { text: '人员', link: '/mgmt/pmp/光环国际PMP章节练习题/人员.html' },
+              { text: '过程', link: '/mgmt/pmp/光环国际PMP章节练习题/过程.html' },
+            ],
           },
           {
             text: '思维导图',

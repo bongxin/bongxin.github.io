@@ -30,7 +30,7 @@ editLink: false
 | 首页 | `doc-hero` + `features` |
 | 卡片列数 | `<VPCardGrid :cols="{ sm:1, md:2, lg:3 }">` |
 
-自定义样式只放在 `docs/.vuepress/styles/index.css`，且只覆盖 CSS 变量（品牌色等）；不用 CSS 改布局或藏标题。
+自定义样式入口为 `docs/.vuepress/styles/index.css`（再拆 `brand` / `home-hero` / `dark-button`），且只覆盖 CSS 变量（品牌色等）；不用 CSS 改布局或藏标题。
 
 ## 正文忌套话
 
@@ -53,6 +53,17 @@ editLink: false
 音乐、相册、关于不进顶栏。页面标题与顶栏文案一致。
 
 知识库保持一级目录，不大挪路径。门户在 `docs/portal/`，对外用短路径（如 `/map/`）。
+
+## 静态资源（双轨）
+
+| 类型 | 放哪 | 怎么写 |
+|------|------|--------|
+| Logo、门户图标、音乐/相册封面等跨页资源 | `docs/.vuepress/public/`（勿用 `docs/public`） | 绝对路径 `/music/…`、`/portal/…` |
+| 单篇教程截图、配图 | 与 `.md` 同目录（或旁路 `images/`） | **必须** `./xxx.png`（裸写 `xxx.png` 会导致 Vite 构建失败） |
+
+- 网页用图建议单张 ≤ 500KB；封面可更严。
+- **PMP 等教材 PDF 暂保留并参与构建**；日后若要减部署体积再单独迁出。
+- `npm run docs:check` 会拦截：死链、缺资源、裸相对资源路径，并对过大图片告警。
 
 更新日志：`## vX.Y.Z` + 新增 / 优化 / 修复；发版先改版本号再在日志顶部追加。
 

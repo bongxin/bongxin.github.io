@@ -11,6 +11,36 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.0
+
+### 资源与首页收口 · 构建加固
+
+本版概要（2026-09-13）：
+
+- 修复 CI 裸相对图片导致的 Vite 构建失败；压缩站点大图并去重音乐封面。
+- 首页精简；样式拆分；PMP 侧栏与配图引用整理；开发分支约定为 `plume`。
+
+### 🚀 新增
+
+- 【新增】静态资源双轨约定（`public` 跨页 / 文旁 `./` 配图）写入 `/conventions/`
+- 【新增】`docs:check` 拦截裸相对资源路径，并对过大图片告警 / 超限失败
+- 【新增】样式拆分：`brand.css` / `home-hero.css` / `dark-button.css`
+
+### 🔨 优化
+
+- 【优化】首页去掉日常入口与套话，知识入口补齐 8 项（含音乐）
+- 【优化】首页 hero 与顶栏间距（`--home-doc-hero-offset`）
+- 【优化】大批量压缩 PMP / DSM / OpenWrt / 音乐等图片；音乐封面只保留 `public`
+- 【优化】PMP 侧栏：ITTO 按 4–13 排序；章节练习题显式三项（去掉 junk auto）
+- 【优化】日常开发在 `plume`，push 前再合并 `main`
+
+### 🐞 修复
+
+- 【修复】DSM 等 `![…](image.png)` 被 Rolldown 当包解析导致 CI `docs:build` 失败
+- 【修复】光环课程笔记等含空格文件名的图片引用（URL 编码）
+
+---
+
 ## v1.3.0
 
 ### 约定上站 · 以 main 发布

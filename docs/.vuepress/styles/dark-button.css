@@ -1,0 +1,6 @@
+/* 深色品牌为浅色时，brand 按钮默认白字对比不足 */
+[data-theme='dark'] {
+  --vp-button-brand-text: var(--vp-c-black);
+  --vp-button-brand-hover-text: var(--vp-c-black);
+  --vp-button-brand-active-text: var(--vp-c-black);
+}

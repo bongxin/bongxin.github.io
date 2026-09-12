@@ -4,7 +4,7 @@ title: Aimer
 
 日本女歌手，以略带沙哑的低音区和情绪张力著称。大量动画主题曲（《Fate》系列、《紫罗兰永恒花园》等）让她进入更广听众视野；现场往往 lit、克制与爆发并存。
 
-![Aimer](./Aimer.webp){ width=640 }
+![Aimer](/music/aimer.webp){ width=640 }
 
 ## 2015（Live）
 

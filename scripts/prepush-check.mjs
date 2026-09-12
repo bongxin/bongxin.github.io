@@ -188,6 +188,18 @@ for (const file of mdFiles) {
       continue
     }
 
+    // Vite/Rolldown: bare "image.png"（无 ./ 或 ../）会当 npm 包解析而构建失败
+    if (
+      isAssetPath(href) &&
+      !href.startsWith('./') &&
+      !href.startsWith('../')
+    ) {
+      errors.push(
+        `${rel}: bare relative asset "${href}" (use "./${href}" for Vite)`,
+      )
+      continue
+    }
+
     const target = resolveRelative(file, href)
     if (!target.startsWith(docsRoot) && !target.startsWith(publicRoot)) continue
     if (existsSync(target)) continue
@@ -201,7 +213,49 @@ for (const must of ['/logo.svg', '/logo-dark.svg']) {
   if (!assetExists(must)) errors.push(`public: missing required ${must}`)
 }
 
+/** 图片体积：告警 >500KB；失败 >1.5MB（PDF 不限制，PMP 资料暂保留） */
+const IMAGE_WARN = 500 * 1024
+const IMAGE_FAIL = 1.5 * 1024 * 1024
+const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp'])
+const warnings = []
+
+function walkFiles(dir, out = []) {
+  if (!existsSync(dir)) return out
+  for (const name of readdirSync(dir)) {
+    if (name === 'node_modules' || name === '.vitepress') continue
+    const p = join(dir, name)
+    const st = statSync(p)
+    if (st.isDirectory()) {
+      if (name === '.vuepress' && dir === docsRoot) {
+        walkFiles(join(p, 'public'), out)
+        continue
+      }
+      if (name === '.vuepress') continue
+      walkFiles(p, out)
+    } else out.push(p)
+  }
+  return out
+}
+
+for (const file of walkFiles(docsRoot)) {
+  const ext = extname(file).toLowerCase()
+  if (!IMAGE_EXTS.has(ext)) continue
+  const size = statSync(file).size
+  const rel = relative(root, file)
+  if (size > IMAGE_FAIL) {
+    errors.push(`${rel}: image too large (${(size / 1024 / 1024).toFixed(2)}MB > 1.5MB)`)
+  } else if (size > IMAGE_WARN) {
+    warnings.push(`${rel}: ${(size / 1024).toFixed(0)}KB (prefer ≤500KB)`)
+  }
+}
+
 console.log(`Checked ${mdFiles.length} markdown files, ${routes.size} route aliases.`)
+
+if (warnings.length) {
+  console.warn(`\nWarnings: ${warnings.length} large image(s)`)
+  for (const w of warnings.slice(0, 30)) console.warn(`  - ${w}`)
+  if (warnings.length > 30) console.warn(`  … and ${warnings.length - 30} more`)
+}
 
 if (errors.length) {
   console.error(`\nFailed: ${errors.length} issue(s)`)

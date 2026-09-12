@@ -8,7 +8,7 @@ NAS（Network Attached Storage：网络附属存储）按字面简单说就是�
 
 ## 物理设备长什么样？
 
-![alt text](image-1.png)
+![alt text](./image-1.png)
 
 ## NAS（网络附加存储）和服务器的区别_功能
 

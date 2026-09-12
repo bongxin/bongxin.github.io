@@ -1,53 +1,7 @@
 /*
- * 全站自定义样式：仅覆盖主题 CSS 变量（品牌色 / tip / 首页 hero 派生）。
- * 勿在 :root 写死 text / sidebar / bg（会盖掉深色主题字色）。
- * 首页布局跟主题默认，不再另写 .vp-home 选择器。
+ * 全站自定义样式入口：只 @import 变量片段。
+ * 约定：只许覆盖主题 CSS 变量；勿写布局选择器；勿在 :root 写死 text / sidebar / bg。
  */
-:root {
-  /* 品牌色（对齐原 VitePress base 黑系） */
-  --vp-c-brand-1: #000000;
-  --vp-c-brand-2: #000000;
-  --vp-c-brand-3: #3c3c43;
-  --vp-c-brand-soft: rgba(60, 60, 67, 0.14);
-
-  /* tip 跟随品牌 */
-  --vp-c-tip-1: var(--vp-c-brand-3);
-  --vp-c-tip-2: var(--vp-c-brand-1);
-  --vp-c-tip-3: var(--vp-c-brand-1);
-  --vp-c-tip-soft: var(--vp-c-brand-soft);
-  --vp-custom-block-tip-bg: rgba(60, 60, 60, 0.2);
-
-  /* 首页 hero 标题：用品牌色做渐变字（clip） */
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(
-    120deg,
-    var(--vp-c-brand-3) 20%,
-    var(--vp-c-brand-1) 70%
-  );
-}
-
-[data-theme='dark'] {
-  --vp-c-brand-1: #ffffff;
-  --vp-c-brand-2: #e8e8ed;
-  --vp-c-brand-3: #c7c7cc;
-  --vp-c-brand-soft: rgba(255, 255, 255, 0.14);
-
-  --vp-c-tip-1: var(--vp-c-brand-3);
-  --vp-c-tip-2: var(--vp-c-brand-2);
-  --vp-c-tip-3: var(--vp-c-brand-1);
-  --vp-c-tip-soft: var(--vp-c-brand-soft);
-  --vp-custom-block-tip-bg: rgba(255, 255, 255, 0.12);
-
-  /* 深色品牌为浅色，brand 按钮默认白字对比不足 */
-  --vp-button-brand-text: var(--vp-c-black);
-  --vp-button-brand-hover-text: var(--vp-c-black);
-  --vp-button-brand-active-text: var(--vp-c-black);
-
-  /* 渐变同样引用品牌变量，随上面 brand-* 自动切换 */
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(
-    120deg,
-    var(--vp-c-brand-3) 20%,
-    var(--vp-c-brand-1) 70%
-  );
-}
+@import './brand.css';
+@import './home-hero.css';
+@import './dark-button.css';
