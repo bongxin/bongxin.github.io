@@ -11,6 +11,26 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.2
+
+### 文档凭据脱敏 · CI 装包
+
+本版概要（2026-09-13）：
+
+- 响应 GitGuardian 告警：文档与 SQL 样例去掉真实库主机/口令；补充禁止真实凭据约定。
+- 修复 Actions `npm install` 因 lock 指向 npmmirror/CDN 而失败。
+
+### 🚀 新增
+
+- 【新增】约定与规则：文档禁止真实 JDBC/Redis/口令（`no-secrets-in-docs`）
+
+### 🐞 修复
+
+- 【修复】公开仓中的数据库连接示例与积木报表外网数据源记录（改为占位主机与 `<your-password>`）
+- 【修复】`package-lock` / `.npmrc` 统一 `registry.npmjs.org`；CI 改用 `npm ci`
+
+---
+
 ## v1.4.1
 
 ### 发版顺序钉死 · 样式入口修复

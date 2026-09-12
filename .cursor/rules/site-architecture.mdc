@@ -33,6 +33,6 @@ alwaysApply: true
 
 ## 更新日志
 
-- `/changelog/`：`## vX.Y.Z`（不要 `【】`）+ 概要 + 🚀新增 / 🔨优化 / 🐞修复
+- `/changelog/`：`## vX.Y.Z`（不要 `【】`）+ 概要；🚀新增 / 🔨优化 / 🐞修复按实际选用，不必三项都有
 - GitHub **tag** 必须与 changelog 节标题一致（`vX.Y.Z`）；`package.json` version 为无 `v` 的 `X.Y.Z`
 - 发版：见 `commit-changelog.mdc`（**先** `docs:check:build` → `plume` 写日志/commit/tag → 合 `main` → 再 push）

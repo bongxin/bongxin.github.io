@@ -26,14 +26,14 @@ order: 1
 ···
 datasource:
 master:
-    url: jdbc:mysql://192.168.6.181:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+    url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
     username: root
-    password: 123456
+    password: <your-password>
 slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据自己需要修改
     lazy: true # 开启懒加载，保证启动速度
-    url: jdbc:mysql://192.168.6.181:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+    url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
     username: root
-    password: 123456
+    password: <your-password>
 ···          
 ```
 

@@ -14,14 +14,14 @@ order: 4
 ···
 datasource:
 master:
-    url: jdbc:mysql://bongxin.cn:33306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+    url: jdbc:mysql://db.example.com:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
     username: root
-    password: 123456
+    password: <your-password>
 slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据自己需要修改
     lazy: true # 开启懒加载，保证启动速度
-    url: jdbc:mysql://bongxin.cn:33306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
+    url: jdbc:mysql://db.example.com:3306/ruoyi-vue-pro?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true # MySQL Connector/J 8.X 连接的示例
     username: root
-    password: 123456
+    password: <your-password>
 ···          
 ```
 
@@ -33,7 +33,7 @@ slave: # 模拟从库，可根据自己需要修改 # 模拟从库，可根据�
 # Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
 data:
 redis:
-    host: bongxin.cn # 地址
+    host: redis.example.com # 地址
     port: 36379 # 端口
     database: 1 # 数据库索引
 ···
@@ -357,7 +357,7 @@ server {
 
     # 配置反向代理到 HTTP 服务器
     location /yudaoyuanma/ {
-        proxy_pass http://bongxin.cn:39000;
+        proxy_pass http://app.example.com:39000;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -419,7 +419,7 @@ server {
 
     # 配置反向代理到 MinIO 服务器
     location /yudaoyuanma/ {
-        proxy_pass http://bongxin.cn:39000;
+        proxy_pass http://app.example.com:39000;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -446,7 +446,7 @@ server {
 
 ## MinIO配置
 
-（1） 访问 `http://bongxin.cn:39001/`
+（1） 访问 `http://app.example.com:39001/`
 
 （2） 配置 `Buckets`，创建名为 `yudaoyuanma`
 
@@ -459,7 +459,7 @@ server {
 
 （1）上传图片 `tmp_db206877393365b29ccf8c960b1b0d9b.jpg`
 
-（2）访问 `http://bongxin.cn:39000/yudaoyuanma/tmp_db206877393365b29ccf8c960b1b0d9b.jpg`
+（2）访问 `http://app.example.com:39000/yudaoyuanma/tmp_db206877393365b29ccf8c960b1b0d9b.jpg`
 
 ### 获取Access Key
 
@@ -478,7 +478,7 @@ server {
 ···
 # 配置反向代理到 HTTP 服务器
 location /yudaoyuanma/ {
-    proxy_pass http://bongxin.cn:39000;
+    proxy_pass http://app.example.com:39000;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -495,7 +495,7 @@ location /yudaoyuanma/ {
 
 * 配置名: `MinIO存储`
 * 存储器: `S3 对象存储`
-* 节点地址: `http://bongxin.cn:39000`
+* 节点地址: `http://app.example.com:39000`
 * 节点地址: `yudaoyuanma`
 * accessKey: `******`
 * accessSecret: `******`

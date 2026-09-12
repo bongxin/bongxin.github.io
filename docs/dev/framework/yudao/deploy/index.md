@@ -24,14 +24,14 @@ mkdir /work/mysql
 
 ```
 docker run -v /work/mysql/:/var/lib/mysql \
--p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 \
+-p 3306:3306 -e MYSQL_ROOT_PASSWORD=<your-password> \
 --restart=always --name yudao-mysql -d mysql
 ```
 
 ##### 国内加速
 ```
 docker run -v /work/mysql/:/var/lib/mysql \
--p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 \
+-p 3306:3306 -e MYSQL_ROOT_PASSWORD=<your-password> \
 --restart=always --name yudao-mysql -d -P m.daocloud.io/docker.io/library/mysql 
 ```
 
