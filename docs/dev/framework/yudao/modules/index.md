@@ -49,7 +49,7 @@ VITE_APP_CAPTCHA_ENABLE=true
 ```
 # 配置反向代理到 HTTP 服务器
 location /yudaoyuanma/ {
-    proxy_pass http://bongxin.cn:39000;
+    proxy_pass http://app.example.com:39000;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

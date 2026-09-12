@@ -22,3 +22,4 @@ docs/.vuepress/dist/
 
 # VitePress leftover (migrated to VuePress)
 docs/.vitepress/
+_nm_trash_*/

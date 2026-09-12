@@ -13,7 +13,7 @@ alwaysApply: true
    - 未通过 → **禁止**写 changelog / commit / merge / push  
    - 含改样式 / `client.ts` 时：确认无 CSS `@import './…'`（会 postcss ENOENT）；必要时先 `docs:clean-dev` 看一眼首页  
 2. **更新日志 + 版本**（在 `plume`）：  
-   - `docs/portal/changelog/index.md` **顶部**追加 `## vX.Y.Z`（不要 `【】`）+ 概要 + `🚀 新增` / `🔨 优化` / `🐞 修复`  
+   - `docs/portal/changelog/index.md` **顶部**追加 `## vX.Y.Z`（不要 `【】`）+ 概要；按实际改动写 `🚀 新增` / `🔨 优化` / `🐞 修复`（**有哪类写哪类，不必三项凑齐**）  
    - 功能/约定级变更：同步 `package.json` 的 `version` = `X.Y.Z`  
 3. **Commit（仅 `plume`）**：暂存相关文件并提交（含 changelog / version；勿提交密钥与无关缓存）  
 4. **Tag（本地）**：`git tag -a vX.Y.Z`（与 changelog 标题一致）  

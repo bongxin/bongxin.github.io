@@ -3,8 +3,9 @@ name: vuepress_plume_dev_memory
 description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记录结构、命令与构建坑点
 ---
 ## 开发要点
-- 仓库：https://github.com/bongxin/bongxin.github.io.git ；Windows 本地 `E:\Code\bongxin\bongxin.github.io`，Linux 本地 `/run/media/bongxin/Data/Data/Code/bongxin/bongxin.github.io`（NTFS 挂载）
+- 仓库：https://github.com/bongxin/bongxin.github.io.git ；`origin` 本地用 **SSH** `git@github.com:bongxin/bongxin.github.io.git`（密钥 `~/.ssh/id_ed25519`）；Windows 本地 `E:\Code\bongxin\bongxin.github.io`，Linux 本地 `/run/media/bongxin/Data/Data/Code/bongxin/bongxin.github.io`（NTFS 挂载）
 - **分支约定**：日常开发 / commit 一律在 **`plume`**；勿在 `main` 上改 WIP
+- **禁止文档真实凭据**：示例用占位符；公开仓误推后先脱敏再轮换线上口令（见 `no-secrets-in-docs.mdc` / `/conventions/`）
 - **发版硬顺序（勿颠倒）**：① `docs:check:build` 通过 → ② `plume` 写 changelog/升版本/commit/tag → ③ merge 进 `main` → ④ 再 push（`main`+tag，建议兼推 `plume`）。**禁止先 commit 再检查、禁止先合 main/push 再检查**
 - **文档正文以 `origin/base` 为准**，不要再从旧 `main` 结构取内容；现行结构为 `dev/design/ai/ops/...`
 - NTFS 挂载下 `.git/config` 偶发被清空为 0 字节导致 `origin` 丢失；恢复：写入 remote `https://github.com/bongxin/bongxin.github.io.git` 后 `git fetch origin --prune`；`git stash -u` 也可能 SIGSEGV，大改动切分支时慎用
@@ -20,11 +21,13 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **Git Tag**：与 changelog / 顶栏版本统一，格式 `vX.Y.Z`；发版提交后打 annotated tag 并随 push 推送
 - **Commit / Push**：严格按 `commit-changelog.mdc`：先 `docs:check:build`，再 `plume` 日志/提交/tag，再合 `main`，最后才 push
 - **发布分支**：GitHub Actions 仅 `main` push：先 `docs:check` 再 `docs:build` → `gh-pages`；若 `plume` 落后于 `main`，先合回再继续开发
-- **Cursor 规则**（alwaysApply）：`plume-first` · `content-no-meta` · `dev-auto-restart` · `site-architecture` · `rules-sync` · `commit-changelog`
+- **Cursor 规则**（alwaysApply）：`plume-first` · `content-no-meta` · `dev-auto-restart` · `site-architecture` · `rules-sync` · `commit-changelog` · `no-secrets-in-docs`
 - **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
 - **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`
 - **顶栏精简（日常入口，尽量四字）**：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本号（更新日志 / 站点约定）；音乐 / 相册 / 关于不进顶栏
-- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`），当前最新 **v1.4.1**；顶栏读 `package.json` 版本 + badge「新」
+- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.2**；顶栏读 `package.json` 版本 + badge「新」
+- **CI 装包**：`package-lock.json` / 仓库 `.npmrc` 必须用 `registry.npmjs.org`（勿把 npmmirror/`cdn.npmmirror.com` 写进 lock，GHA 会装包失败）；本地可临时 `--registry=npmmirror --replace-registry-host=always`，但勿回写 lock；CI 用 `npm ci`
+- NTFS 上勿在仓内直接 `rm -rf node_modules`（极慢）；可用家目录缓存 + symlink
 - **正文忌套话**：门户 / 日常页不要写「左侧侧栏右侧大纲」「使用主题某某组件」「写法对齐某某站」等实现说明；直接上内容。约定与配置写在 `dev_memory` / 规则里即可
 - **日常浏览页统一布局**：`/map/` `/links/` `/assets/` `/music/` `/photos/` 均为文档布局（**左侧侧栏 + 右侧 outline**）；共用 `docs/.vuepress/daily-sidebar.ts`
 - **音乐页** `/music/`：艺人 `<ImageCard>` + 曲目 `<LinkCard>`，均配 `VPCardGrid`；**已去掉** `pageClass: music-index` 与自定义方卡 CSS

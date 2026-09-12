@@ -64,6 +64,7 @@ editLink: false
 - 网页用图建议单张 ≤ 500KB；封面可更严。
 - **PMP 等教材 PDF 暂保留并参与构建**；日后若要减部署体积再单独迁出。
 - `npm run docs:check` 会拦截：死链、缺资源、裸相对资源路径，并对过大图片告警。
+- **禁止写入真实凭据**：文档示例用 `db.example.com` / `<your-password>` 等占位；勿提交真实 JDBC、Redis、云密钥。若已误推，先改文档再**轮换**线上口令。
 
 ## 分支与发版
 
@@ -76,7 +77,7 @@ editLink: false
 - 线上以 **main** 为准：推送到 `main` 后 GitHub Actions 先 `docs:check` 再构建部署到 `gh-pages`。
 - 可选：`git config core.hooksPath .githooks`，push 时自动跑门禁（不能代替发版前的完整检查）。
 
-更新日志：`## vX.Y.Z` + 新增 / 优化 / 修复；与 `package.json` version、GitHub tag 一致（tag 带 `v` 前缀）。
+更新日志：`## vX.Y.Z` + 按实际写新增 / 优化 / 修复（不必三项都有）；与 `package.json` version、GitHub tag 一致（tag 带 `v` 前缀）。
 
 ## 约定维护
 

@@ -4470,7 +4470,7 @@ services:
       # 让容器的时钟与宿主机时钟同步，避免时间的问题，ro是read only的意思，就是只读。
       - E:/data/docker/mysql/etc/localtime:/etc/localtime:ro
     environment:
-      - MYSQL_ROOT_PASSWORD=123456  # 设置root用户密码
+      - MYSQL_ROOT_PASSWORD=<your-password>  # 设置root用户密码
       - TZ=Asia/Shanghai
     privileged: true
 

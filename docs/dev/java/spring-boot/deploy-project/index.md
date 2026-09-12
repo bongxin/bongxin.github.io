@@ -20,11 +20,11 @@ spring:
                 # 开发环境
                 # url: jdbc:mysql://localhost:3306/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
                 # username: root
-                # password: 123456
+                # password: <your-password>
                 # 测试环境
-                url: jdbc:mysql://192.168.3.119:3306/ruoyi-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+                url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
                 username: ruoyi-vue
-                password: 123456
+                password: <your-password>
             # 从库数据源
             slave:
             ...
@@ -49,13 +49,13 @@ spring:
 
     # 测试环境
     # 地址
-    host: 192.168.3.119
+    host: 127.0.0.1
     # 端口，默认为6379
     port: 6379
     # 数据库索引
     database: 0
     # 密码
-    password: 123456
+    password: <your-password>
     # 连接超时时间
     timeout: 10s
     ...

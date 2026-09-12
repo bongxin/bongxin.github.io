@@ -22,7 +22,7 @@ jobs:
           cache: npm
 
       - name: Install
-        run: npm install
+        run: npm ci
 
       - name: Precheck links and assets
         run: npm run docs:check
