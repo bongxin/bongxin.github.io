@@ -25,8 +25,8 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
 - **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`
 - **顶栏精简（日常入口，尽量四字）**：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本号（更新日志 / 站点约定）；音乐 / 相册 / 关于不进顶栏
-- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.2**；顶栏读 `package.json` 版本 + badge「新」
-- **CI 装包**：`package-lock.json` / 仓库 `.npmrc` 必须用 `registry.npmjs.org`（勿把 npmmirror/`cdn.npmmirror.com` 写进 lock，GHA 会装包失败）；本地可临时 `--registry=npmmirror --replace-registry-host=always`，但勿回写 lock；CI 用 `npm ci`
+- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.3**；顶栏读 `package.json` 版本 + badge「新」
+- **CI 装包**：`package-lock.json` / 仓库 `.npmrc` 必须用 `registry.npmjs.org`（勿把 npmmirror/`cdn.npmmirror.com` 写进 lock，GHA 会装包失败）；**改依赖后必须 `npm install` 重生成完整 lock**（勿只改 resolved URL），否则 `npm ci` 会 Missing peer 嵌套包（如 `markdown-it@15`）；本地可临时 `--registry=npmmirror --replace-registry-host=always`，但勿回写 lock；CI 用 `npm ci`
 - NTFS 上勿在仓内直接 `rm -rf node_modules`（极慢）；可用家目录缓存 + symlink
 - **正文忌套话**：门户 / 日常页不要写「左侧侧栏右侧大纲」「使用主题某某组件」「写法对齐某某站」等实现说明；直接上内容。约定与配置写在 `dev_memory` / 规则里即可
 - **日常浏览页统一布局**：`/map/` `/links/` `/assets/` `/music/` `/photos/` 均为文档布局（**左侧侧栏 + 右侧 outline**）；共用 `docs/.vuepress/daily-sidebar.ts`
