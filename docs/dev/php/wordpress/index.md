@@ -5,6 +5,8 @@ title: WordPress
 
 [WordPress](https://wordpress.org/) 是使用 PHP 编写的开源 CMS，适合建站、博客与扩展开发。
 
+运行环境与部署关系：[WordPress · 运行环境](/environment/wordpress/)
+
 ## 安装
 
 1. **下载**：从 [wordpress.org 下载](https://wordpress.org/download/) 压缩包，或使用 WP-CLI：

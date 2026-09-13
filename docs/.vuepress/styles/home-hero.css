@@ -1,11 +1,8 @@
-/* 首页 hero：标题渐变 + 与顶栏的额外间距（主题无对应变量，仅调 padding-top） */
+/* 首页 hero：品牌名 + 与顶栏间距 + 标题防裁切（主题无对应变量） */
 :root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(
-    120deg,
-    var(--vp-c-brand-3) 20%,
-    var(--vp-c-brand-1) 70%
-  );
+  /* 实色品牌字：避免 transparent + background-clip 裁切字形下缘 */
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+  --vp-home-hero-name-background: transparent;
 
   /* 叠在主题默认 48px / 80px 之上 */
   --home-doc-hero-offset: 40px;
@@ -24,5 +21,33 @@
       var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 80px +
         var(--home-doc-hero-offset)
     );
+  }
+}
+
+/* 标题行高略松，name / text 间距更清晰 */
+.vp-home-doc-hero .heading {
+  gap: 0.12em;
+}
+
+.vp-home-doc-hero .name,
+.vp-home-doc-hero .text {
+  line-height: 1.25;
+  padding-bottom: 0.06em;
+  overflow: visible;
+}
+
+/*
+ * 桌面端头像：主题 scoped 为
+ * .image-container[data-v-…] { transform: translate(-32px, -32px) }
+ * 需更高优先级才能盖掉
+ */
+@media (min-width: 960px) {
+  .vp-home-doc-hero .image .image-container {
+    transform: none !important;
+  }
+
+  .vp-home-doc-hero .image .image-src {
+    max-width: 300px;
+    max-height: 300px;
   }
 }

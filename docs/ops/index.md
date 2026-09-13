@@ -22,6 +22,7 @@ title: 运维
 
 | 文档 | 说明 |
 |------|------|
+| [家庭网络](/ops/network/) | 工作室拓扑总览（与设备资产交叉链接） |
 | [OpenWrt](/ops/openwrt/) | 开源路由固件、插件、拨号与刷机 |
 | [Clash](/ops/clash/) | 代理客户端使用 |
 | [内网穿透 · Natapp](/ops/natapp/) | 本地服务暴露到公网 |

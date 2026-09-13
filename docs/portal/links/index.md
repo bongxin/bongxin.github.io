@@ -30,6 +30,8 @@ lastUpdated: false
 
 <LinkCard icon="/portal/favicons/minimax.png" title="MiniMax API" href="https://platform.minimax.cn/console/plan" description="MiniMax 开放平台 · 套餐与控制台" />
 
+<LinkCard icon="/portal/favicons/navicat.png" title="Navicat Premium Lite" href="https://www.navicat.com.cn/download/navicat-premium-lite" description="免费多数据库客户端（Win / macOS / Linux）" />
+
 </VPCardGrid>
 
 ## 效率与远程
@@ -87,6 +89,10 @@ lastUpdated: false
 ## 运维安全
 
 <VPCardGrid :cols="{ sm: 1, md: 2, lg: 3 }">
+
+<LinkCard icon="/portal/favicons/langlangy.png" title="浪浪云" href="https://www.langlangy.cn/" description="云服务器 · CDN · 物理机租用" />
+
+<LinkCard icon="/portal/favicons/matomo.png" title="Matomo" href="https://matomo.org/free-software/" description="开源网站分析（FOSS · 可自建）" />
 
 <LinkCard icon="/portal/favicons/jumpserver.png" title="JumpServer" href="https://www.jumpserver.org/" description="开源堡垒机官网" />
 

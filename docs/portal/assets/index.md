@@ -12,7 +12,7 @@ lastUpdated: false
 
 ## 总表
 
-::: table title="资产总览" full-width
+::: table full-width
 
 | 名称 | 类别 | 关键规格 | 用途 | 详情 |
 |------|------|----------|------|------|
@@ -24,14 +24,14 @@ lastUpdated: false
 :::
 
 ::: tip
-新增设备时：先在总表加一行，再在对应分类下补明细表。
+网络拓扑见 [家庭网络](/ops/network/)。新增设备时：先在总表加一行，再在对应分类下补明细表，并视情况更新拓扑图。
 :::
 
 ## 主机
 
 ### Apple Mac mini {#mac-mini}
 
-::: table title="Apple Mac mini" full-width
+::: table full-width
 
 | 项 | 内容 |
 |------|------|
@@ -46,7 +46,7 @@ lastUpdated: false
 
 ### 零刻 SER6 Pro VEST {#ser6-pro}
 
-::: table title="零刻 SER6 Pro VEST" full-width
+::: table full-width
 
 | 项 | 内容 |
 |------|------|
@@ -67,7 +67,7 @@ lastUpdated: false
 
 ### 小米 Redmi 路由器 AX6000 {#redmi-ax6000}
 
-::: table title="Redmi AX6000" full-width
+::: table full-width
 
 | 项 | 内容 |
 |------|------|
@@ -84,7 +84,7 @@ lastUpdated: false
 
 ### 小米（MI）路由器 AX3000 {#mi-ax3000}
 
-::: table title="小米 AX3000" full-width
+::: table full-width
 
 | 项 | 内容 |
 |------|------|

@@ -5,6 +5,35 @@ title: WordPress · 运行环境
 
 对应开发文档：[WordPress](/dev/php/wordpress/)
 
+## 部署架构
+
+典型站点栈（地址确定后补到下表）。插件与主题见开发文档。
+
+```mermaid
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#f5f5f7"
+    primaryTextColor: "#1d1d1f"
+    primaryBorderColor: "#3c3c43"
+    secondaryColor: "#ebebf0"
+    tertiaryColor: "#ffffff"
+    lineColor: "#6e6e73"
+    mainBkg: "#f5f5f7"
+  flowchart:
+    useMaxWidth: true
+    padding: 10
+    nodeSpacing: 24
+    rankSpacing: 36
+---
+flowchart LR
+  user((访客 / 管理员)) --> web[Nginx / Apache]
+  web --> php[PHP · WordPress]
+  php --> db[(MySQL / MariaDB)]
+  php -.-> cdn[(对象存储 / CDN)]
+```
+
 ## 环境地址
 
 | 环境 | 站点 | 后台 (`/wp-admin`) | 备注 |

@@ -40,6 +40,7 @@ markmap:
 - [快捷入口](/shortcuts/)
 - [网站链接](/links/)
 - [设备资产](/assets/)
+- [家庭网络](/ops/network/)
 - [更新日志](/changelog/)
 - [站点约定](/conventions/)
 ````

@@ -11,6 +11,33 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.4
+
+### 架构图 · 链接 · 首页 hero
+
+本版概要（2026-09-14）：
+
+- 新增家庭网络拓扑与芋道 / WordPress 部署、模块架构图；统一 Mermaid flowchart 配色与自适应。
+- 网站链接补充浪浪云、Matomo、Navicat；首页 hero 修复标题裁切并取消头像偏移。
+
+### 🚀 新增
+
+- 【新增】家庭网络 `/ops/network/`：工作室拓扑总览，链设备资产 / 快捷入口
+- 【新增】芋道 / WordPress 环境页部署架构、芋道介绍页模块架构（Mermaid）
+- 【新增】网站链接：浪浪云、Matomo、Navicat Premium Lite
+
+### 🔨 优化
+
+- 【优化】Mermaid：`useMaxWidth` + 黑白灰 `theme: base`；`mermaid.css` 约束 SVG 宽度
+- 【优化】首页 hero：实色品牌名防裁切；取消主题头像 `translate(-32px,-32px)`
+- 【优化】设备资产表格去掉重复 `title=` 文案；约定页补充架构图落点
+
+### 🐞 修复
+
+- 【修复】`architecture` 短语法易 Syntax error，改回 flowchart 同款写法
+
+---
+
 ## v1.4.3
 
 ### 补全 package-lock peer 依赖

@@ -25,7 +25,7 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
 - **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`
 - **顶栏精简（日常入口，尽量四字）**：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本号（更新日志 / 站点约定）；音乐 / 相册 / 关于不进顶栏
-- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.3**；顶栏读 `package.json` 版本 + badge「新」
+- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.4**；顶栏读 `package.json` 版本 + badge「新」
 - **CI 装包**：`package-lock.json` / 仓库 `.npmrc` 必须用 `registry.npmjs.org`（勿把 npmmirror/`cdn.npmmirror.com` 写进 lock，GHA 会装包失败）；**改依赖后必须 `npm install` 重生成完整 lock**（勿只改 resolved URL），否则 `npm ci` 会 Missing peer 嵌套包（如 `markdown-it@15`）；本地可临时 `--registry=npmmirror --replace-registry-host=always`，但勿回写 lock；CI 用 `npm ci`
 - NTFS 上勿在仓内直接 `rm -rf node_modules`（极慢）；可用家目录缓存 + symlink
 - **正文忌套话**：门户 / 日常页不要写「左侧侧栏右侧大纲」「使用主题某某组件」「写法对齐某某站」等实现说明；直接上内容。约定与配置写在 `dev_memory` / 规则里即可
@@ -33,7 +33,8 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **音乐页** `/music/`：艺人 `<ImageCard>` + 曲目 `<LinkCard>`，均配 `VPCardGrid`；**已去掉** `pageClass: music-index` 与自定义方卡 CSS
 - **站点导航 `/map/`**：仅 Plume [Markmap](https://theme-plume.vuejs.press/guide/chart/markmap/)（下方不再叠 LinkCard）；依赖 `markmap-lib` `markmap-toolbar` `markmap-view`，`markdown.markmap: true`；**启用后若仍显示成代码块**，清 `docs/.vuepress/.cache/markdown` 并重启
 - **导航可视化选型（Plume chart）**：站点结构优先 Markmap；流程/关系用已启用的 Mermaid；ECharts/Chart.js 偏数据图，不适合当 sitemap；勿自造 sitemap 组件
-- **资产页** `/assets/`：页标题 **设备资产**（与顶栏一致）；顶部**总表** + 分类明细；表格用 Plume [`::: table full-width`](https://theme-plume.vuejs.press/guide/markdown/table/)；需启用 `markdown.table` **且** `plugins.markdownPower.table`（改 config 后重启 `docs:dev`）
+- **资产页** `/assets/`：页标题 **设备资产**（与顶栏一致）；顶部**总表** + 分类明细；表格用 Plume [`::: table full-width`](https://theme-plume.vuejs.press/guide/markdown/table/)；**勿**给 table 加 `title=`（会在表下再出一截标题文案，与上方 `##`/`###` 重复）；需启用 `markdown.table` **且** `plugins.markdownPower.table`（改 config 后重启 `docs:dev`）
+- **架构图落点**：家庭网络 `/ops/network/`；项目部署图 `/environment/<项目>/`；模块图 `/dev/...`；统一 `flowchart` + 图内 `theme: base` 黑白灰（勿用 `architecture` 短语法，易 Syntax error）；自适应：`styles/mermaid.css` + `useMaxWidth`；`client.ts` 的 `defineMermaidConfig` 作全局兜底；勿 ECharts/Chart.js 画架构
 - **链接页** `/links/`：页标题 **网站链接**（与顶栏一致）；卡片用 `<VPCardGrid :cols="{ sm: 1, md: 2, lg: 3 }">`（桌面 3 列）。**注意**：`:::: card-grid` 容器**不传** `cols`（md-power 写死 `<VPCardGrid>`），要控列数必须用组件写法，勿再写 `:::: card-grid cols=…`
 - **LinkCard 使用范围**：仅 `/links/`（网站链接）与 `/music/` 曲目区；艺人用 `ImageCard`。**应用访问 / 快捷入口**用正文 Markdown 列表（保留日常侧栏）；**站点导航**只留 Markmap，不再叠 LinkCard
 - **markdown 配置**：只在 `config.ts` 的 `plumeTheme({ markdown, plugins.markdownPower })`（官方：`plume.config.ts` **不支持** markdown）；改后须重启。bilibili/table 仍双写 `markdownPower` 保底
@@ -48,7 +49,7 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
   - **配置**：`docs/.vuepress/`；首页 `docs/README.md`
 - **配置拆分**：`collections.ts` → `collections/knowledge.ts` + `collections/portal.ts`；外链 URL 单一源 `portal-links.ts`（供 navbar）；门户图标 `docs/.vuepress/public/portal/`
 - **已删除**：`docs/.vitepress/`（旧 VitePress 残留）；`.gitignore` 仍保留该规则以防再生成
-- **网站收藏已录入**：万兴脑图、Figma、Cursor、Hermes Agent、[MiniMax API](https://platform.minimax.cn/console/plan)、Obsidian、RustDesk、微信公众平台 / 开放平台 / [客服](https://kf.weixin.qq.com/) / [企微后台](https://work.weixin.qq.com/wework_admin/loginpage_wx)、Plume
+- **网站收藏已录入**：万兴脑图、Figma、Cursor、Hermes Agent、[MiniMax API](https://platform.minimax.cn/console/plan)、[Navicat Premium Lite](https://www.navicat.com.cn/download/navicat-premium-lite)、Obsidian、RustDesk、微信公众平台 / 开放平台 / [客服](https://kf.weixin.qq.com/) / [企微后台](https://work.weixin.qq.com/wework_admin/loginpage_wx)、[浪浪云](https://www.langlangy.cn/)、[Matomo](https://matomo.org/free-software/)、Plume
 - **快捷入口已录入**：Fast-Note-Sync → `http://192.168.31.151:9000/`；ImmortalWrt → `http://192.168.31.1/`；GitLab 等待补
 - **应用访问已录入**：BERNSINE 阿卡贝拉 → `https://acappella.bongxin.com.cn/`；芋道 / WordPress 外链仍待补；改 `navbar.ts` 后需重启 `docs:dev`（HMR 常不刷新顶栏）
 - **暂不搬**：BongAsk / Docx / PPT / 增强 Mermaid 整包（偏项目门户）
@@ -65,7 +66,8 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **压图**：大图用 Pillow 缩放重编码（目录图 60MB→~0.16MB；思维导图/光环笔记/DSM/OpenWrt/music 封面等）；光环笔记大 PNG 已转 JPG 并改引用
 - 首页不加 `effect`；若再启用 prism 需加回 `ogl`
 - hostname / 备案信息沿用 `base`：`https://docs.bongxin.com.cn`，footer 含粤 ICP
-- **自定义样式只写 CSS 变量**：`client.ts` 分别引入 `styles/brand.css` · `home-hero.css` · `dark-button.css`（**禁止** CSS `@import './…'`，会 ENOENT）；**禁止**在 `:root` 写死 `--vp-c-text-*` / sidebar / bg
+- **自定义样式只写 CSS 变量**：`client.ts` 分别引入 `styles/brand.css` · `home-hero.css` · `dark-button.css` · `mermaid.css`（**禁止** CSS `@import './…'`，会 ENOENT）；**禁止**在 `:root` 写死 `--vp-c-text-*` / sidebar / bg
+- **首页 hero**：`--vp-home-hero-name-color` 用实色品牌色（勿 `transparent`+渐变 clip，Inter 会裁切 BongXin 下缘）；`home-hero.css` 可调 `--home-doc-hero-offset`、标题 `line-height`、桌面头像 max 尺寸；取消主题 `.image-container` 的 `translate(-32px,-32px)` 用 `.vp-home-doc-hero .image .image-container { transform: none !important }`。若改 CSS「无效」：先查 Vite 是否把该文件编成空串（HMR 卡死），`docs:clean-dev` 重启；CSS 文件尽量 LF 勿 CRLF
 - **Logo 深色模式**：Plume `logo` + `logoDark`；首页 hero `{ light, dark }`；勿用 CSS invert
 - 音乐页视频用 Plume 内置语法 `@[bilibili](bvid)` / `@[bilibili pN](bvid aid cid)`（[文档](https://theme-plume.vuejs.press/guide/embed/video/bilibili/)）
 - 改 `config.ts` 的 plugins 后需**重启** `docs:dev` 并清 `.temp`/`.cache`；`VPVideoEmbed` 包在 `ClientOnly` 内，硬刷新后才可见 iframe

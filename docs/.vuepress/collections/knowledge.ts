@@ -239,6 +239,7 @@ export const knowledgeCollections: ThemeCollectionItem[] = [
         text: '路由与网络',
         collapsed: false,
         items: [
+          { text: '家庭网络', link: '/ops/network/' },
           {
             text: 'OpenWrt',
             collapsed: true,
