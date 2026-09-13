@@ -1,0 +1,3 @@
+Sitemap: https://docs.bongxin.com.cn/sitemap.xml
+User-agent:*
+Disallow:
