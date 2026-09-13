@@ -5,6 +5,37 @@ title: 芋道 · 运行环境
 
 对应开发文档：[芋道 (ruoyi-vue-pro)](/dev/framework/yudao/)
 
+## 部署架构
+
+运行时依赖关系（地址确定后补到下表）。模块拆分见 [芋道介绍](/dev/framework/yudao/)。
+
+```mermaid
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: "#f5f5f7"
+    primaryTextColor: "#1d1d1f"
+    primaryBorderColor: "#3c3c43"
+    secondaryColor: "#ebebf0"
+    tertiaryColor: "#ffffff"
+    lineColor: "#6e6e73"
+    mainBkg: "#f5f5f7"
+  flowchart:
+    useMaxWidth: true
+    padding: 10
+    nodeSpacing: 24
+    rankSpacing: 36
+---
+flowchart LR
+  user((用户 / 管理端)) --> nginx[Nginx]
+  nginx --> admin[管理前端 Vue3]
+  nginx --> api[后端 API]
+  api --> mysql[(MySQL)]
+  api --> redis[(Redis)]
+  api --> minio[(MinIO)]
+```
+
 ## 环境地址
 
 | 环境 | Web | 管理后台 | API / Swagger | 备注 |

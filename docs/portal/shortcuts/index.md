@@ -14,3 +14,5 @@ lastUpdated: false
 
 - [Fast-Note-Sync](http://192.168.31.151:9000/) — Obsidian 多端同步服务端
 - [ImmortalWrt](http://192.168.31.1/) — 路由管理后台
+
+拓扑关系见 [家庭网络](/ops/network/)。
