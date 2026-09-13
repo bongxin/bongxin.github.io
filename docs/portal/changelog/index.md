@@ -11,6 +11,20 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.3
+
+### 补全 package-lock peer 依赖
+
+本版概要（2026-09-13）：
+
+- 修复 Actions `npm ci` 报 Missing `markdown-it@15` / `entities@8` 等（lock 不完整）。
+
+### 🐞 修复
+
+- 【修复】完整重生成 `package-lock.json`，写入 peer 所需嵌套依赖后再供 `npm ci`
+
+---
+
 ## v1.4.2
 
 ### 文档凭据脱敏 · CI 装包
