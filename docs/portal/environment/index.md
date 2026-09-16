@@ -14,4 +14,6 @@ title: 运行环境
 
 | 主机 | 说明 | 环境页 |
 |------|------|--------|
-| [Ubuntu Server 26.04](/environment/ubuntu-server/) | 内网 `192.168.31.129` | 主机信息 · SSH |
+| [Ubuntu Server 26.04](/environment/ubuntu-server/) | PVE VM `101` · 内网 `192.168.31.129` | 主机信息 · SSH |
+| Proxmox VE（SER6） | 宿主机 · `192.168.31.2:8006` | [创建总览](/ops/proxmox/) |
+| 飞牛 fnOS | PVE VM `100` · `192.168.31.186:5666` | [创建文档](/ops/proxmox/fnos/) |

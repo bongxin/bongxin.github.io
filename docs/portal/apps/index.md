@@ -16,8 +16,10 @@ lastUpdated: false
 
 ## 芋道
 
-Web / API 地址待补；可先看 [环境说明](/environment/yudao/)。
-
+- [开发 · 管理后台](http://192.168.31.103:8080) — LXC `dev-yudao`
+- [开发 · API](http://192.168.31.103:48080) — 后端端口
+- 测试预留：`http://192.168.31.104:8080` / `:48080`
+- 说明见 [环境页](/environment/yudao/)
 ## WordPress
 
 站点 / 后台地址待补；可先看 [环境说明](/environment/wordpress/)。
