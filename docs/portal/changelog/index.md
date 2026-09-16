@@ -11,6 +11,28 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.5
+
+### Proxmox 创建文档 · 运行环境 · 入口补全
+
+本版概要（2026-09-16）：
+
+- 运维新增 PVE 客户机创建文档（飞牛 fnOS / Ubuntu Server / dev-yudao）。
+- 补全 Ubuntu Server 运行环境页，以及快捷入口、网站链接与家庭网络节点交叉链接。
+
+### 🚀 新增
+
+- 【新增】`/ops/proxmox/`：总览 + 创建飞牛 fnOS、Ubuntu Server、dev-yudao（LXC）
+- 【新增】运行环境：Ubuntu Server 26.04（`192.168.31.129`）；口令仅占位
+- 【新增】快捷入口：Proxmox VE、飞牛fnOS；网站链接：清华开源镜像站
+
+### 🔨 优化
+
+- 【优化】家庭网络关键节点补 `.101` / 创建文档链接；芋道环境页挂开发 LXC
+- 【优化】运维侧栏「主机运维」下增加 Proxmox VE 分组
+
+---
+
 ## v1.4.4
 
 ### 架构图 · 链接 · 首页 hero

@@ -12,6 +12,7 @@ const portalSidebar = [
     items: [
       { text: '芋道', link: '/environment/yudao/' },
       { text: 'WordPress', link: '/environment/wordpress/' },
+      { text: 'Ubuntu Server', link: '/environment/ubuntu-server/' },
     ],
   },
 ]

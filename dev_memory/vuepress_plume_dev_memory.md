@@ -25,7 +25,7 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
 - **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`
 - **顶栏精简（日常入口，尽量四字）**：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本号（更新日志 / 站点约定）；音乐 / 相册 / 关于不进顶栏
-- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.4**；顶栏读 `package.json` 版本 + badge「新」
+- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.5**；顶栏读 `package.json` 版本 + badge「新」
 - **CI 装包**：`package-lock.json` / 仓库 `.npmrc` 必须用 `registry.npmjs.org`（勿把 npmmirror/`cdn.npmmirror.com` 写进 lock，GHA 会装包失败）；**改依赖后必须 `npm install` 重生成完整 lock**（勿只改 resolved URL），否则 `npm ci` 会 Missing peer 嵌套包（如 `markdown-it@15`）；本地可临时 `--registry=npmmirror --replace-registry-host=always`，但勿回写 lock；CI 用 `npm ci`
 - NTFS 上勿在仓内直接 `rm -rf node_modules`（极慢）；可用家目录缓存 + symlink
 - **正文忌套话**：门户 / 日常页不要写「左侧侧栏右侧大纲」「使用主题某某组件」「写法对齐某某站」等实现说明；直接上内容。约定与配置写在 `dev_memory` / 规则里即可
@@ -49,8 +49,10 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
   - **配置**：`docs/.vuepress/`；首页 `docs/README.md`
 - **配置拆分**：`collections.ts` → `collections/knowledge.ts` + `collections/portal.ts`；外链 URL 单一源 `portal-links.ts`（供 navbar）；门户图标 `docs/.vuepress/public/portal/`
 - **已删除**：`docs/.vitepress/`（旧 VitePress 残留）；`.gitignore` 仍保留该规则以防再生成
-- **网站收藏已录入**：万兴脑图、Figma、Cursor、Hermes Agent、[MiniMax API](https://platform.minimax.cn/console/plan)、[Navicat Premium Lite](https://www.navicat.com.cn/download/navicat-premium-lite)、Obsidian、RustDesk、微信公众平台 / 开放平台 / [客服](https://kf.weixin.qq.com/) / [企微后台](https://work.weixin.qq.com/wework_admin/loginpage_wx)、[浪浪云](https://www.langlangy.cn/)、[Matomo](https://matomo.org/free-software/)、Plume
-- **快捷入口已录入**：Fast-Note-Sync → `http://192.168.31.151:9000/`；ImmortalWrt → `http://192.168.31.1/`；GitLab 等待补
+- **网站收藏已录入**：万兴脑图、Figma、Cursor、Hermes Agent、[MiniMax API](https://platform.minimax.cn/console/plan)、[Navicat Premium Lite](https://www.navicat.com.cn/download/navicat-premium-lite)、Obsidian、RustDesk、微信公众平台 / 开放平台 / [客服](https://kf.weixin.qq.com/) / [企微后台](https://work.weixin.qq.com/wework_admin/loginpage_wx)、[浪浪云](https://www.langlangy.cn/)、[Matomo](https://matomo.org/free-software/)、[清华开源镜像站](https://mirrors.tuna.tsinghua.edu.cn/)、Plume
+- **快捷入口已录入**：Fast-Note-Sync → `http://192.168.31.151:9000/`；ImmortalWrt → `http://192.168.31.1/`；Proxmox VE → `https://192.168.31.2:8006/`；飞牛fnOS → `http://192.168.31.186:5666/`；GitLab 等待补
+- **运行环境主机**：Ubuntu Server 26.04 → `/environment/ubuntu-server/`（`192.168.31.129` · 用户 `bongxin`；口令仅占位 `<your-password>`，禁止写入公开仓）
+- **PVE 客户机创建文档**（运维）：`/ops/proxmox/` 总览；`/ops/proxmox/fnos/`（飞牛 · `.186:5666`）；`/ops/proxmox/ubuntu-server/`（KVM · `.129`）；`/ops/proxmox/dev-yudao/`（LXC · `.101` · Nesting+Docker）；ISO→`local`，磁盘→`local-zfs`（raw）；侧栏在 `knowledge.ts`「主机运维」
 - **应用访问已录入**：BERNSINE 阿卡贝拉 → `https://acappella.bongxin.com.cn/`；芋道 / WordPress 外链仍待补；改 `navbar.ts` 后需重启 `docs:dev`（HMR 常不刷新顶栏）
 - **暂不搬**：BongAsk / Docx / PPT / 增强 Mermaid 整包（偏项目门户）
 
@@ -74,6 +76,10 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - 不要再使用旧的 `<BilibiliPlayer>` 或手写 bilibili iframe
 
 ## 改动涉及的文件
+- docs/ops/proxmox/**
+- docs/ops/index.md
+- docs/ops/network/index.md
+- docs/portal/environment/ubuntu-server/**
 - package.json
 - .nvmrc
 - .gitignore

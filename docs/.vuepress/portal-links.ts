@@ -13,6 +13,16 @@ export const shortcutNavItems = [
     link: 'http://192.168.31.1/',
     target: '_blank' as const,
   },
+  {
+    text: 'Proxmox VE',
+    link: 'https://192.168.31.2:8006/',
+    target: '_blank' as const,
+  },
+  {
+    text: '飞牛fnOS',
+    link: 'http://192.168.31.186:5666/',
+    target: '_blank' as const,
+  },
 ]
 
 export const appNavItems = [
