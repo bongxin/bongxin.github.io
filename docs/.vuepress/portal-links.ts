@@ -31,4 +31,9 @@ export const appNavItems = [
     link: 'https://acappella.bongxin.com.cn/',
     target: '_blank' as const,
   },
+  {
+    text: '芋道 · 开发',
+    link: 'http://192.168.31.103:8080/',
+    target: '_blank' as const,
+  },
 ]

@@ -47,10 +47,12 @@ flowchart TB
 | 小米 AX3000 | 待确认（AP / 旁路等） | 见 [设备资产](/assets/#mi-ax3000) |
 | Mac mini / 零刻 SER6 | 主机 | 见 [设备资产](/assets/) |
 | `192.168.31.151` | 内网服务主机 | [Fast-Note-Sync](http://192.168.31.151:9000/) |
-| `192.168.31.129` | Ubuntu Server 26.04 | [运行环境](/environment/ubuntu-server/) · [PVE 创建](/ops/proxmox/ubuntu-server/) · `ssh bongxin@192.168.31.129` |
-| `192.168.31.101` | dev-yudao（LXC） | [PVE 创建](/ops/proxmox/dev-yudao/) · 芋道开发 |
-| `192.168.31.2` | Proxmox VE | [管理后台](https://192.168.31.2:8006/) · [创建总览](/ops/proxmox/) |
-| `192.168.31.186` | 飞牛 fnOS | [管理后台](http://192.168.31.186:5666/) · [PVE 创建](/ops/proxmox/fnos/) |
+| `192.168.31.2` | Proxmox VE（SER6） | [管理后台](https://192.168.31.2:8006/) · [创建总览](/ops/proxmox/) |
+| `192.168.31.186` | 飞牛 fnOS（VM `100`） | [管理后台](http://192.168.31.186:5666/) · [PVE 创建](/ops/proxmox/fnos/) |
+| `192.168.31.129` | Ubuntu Server 26.04（VM `101`） | [运行环境](/environment/ubuntu-server/) · [PVE 创建](/ops/proxmox/ubuntu-server/) |
+| `192.168.31.102` | tpl-yudao（LXC 模板） | [芋道 LXC](/ops/proxmox/dev-yudao/) |
+| `192.168.31.103` | dev-yudao（LXC） | [环境页](/environment/yudao/) · [创建文档](/ops/proxmox/dev-yudao/) |
+| `192.168.31.104` | test-yudao（LXC） | 芋道测试 · 待部署 |
 
 ## 相关文档
 

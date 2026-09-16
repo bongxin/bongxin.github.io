@@ -4,39 +4,48 @@ aside: true
 outline: [2, 3]
 ---
 
-芋道开发用 LXC 容器。宿主机：[PVE](https://192.168.31.2:8006/) · 芋道文档：[芋道](/dev/framework/yudao/) · 环境说明：[芋道 · 运行环境](/environment/yudao/)。
+芋道开发用 LXC。宿主机：[PVE](https://192.168.31.2:8006/) · 环境：[芋道 · 运行环境](/environment/yudao/)。
+
+实装路径：先建模板 **`tpl-yudao`（VMID 102）**，再链接克隆出 **`dev-yudao`（103）** / **`test-yudao`（104）**。IP 末段 = VMID。
 
 ## 下载 CT 模板
 
 1. PVE → **local (pve)** → **CT Templates** → **Templates**。
 2. 搜索并下载 Ubuntu 模板（实装可用 `ubuntu-26.04-standard`；若求稳可改用 **24.04 LTS**）。
 
-## 创建容器
+## 创建模板容器（tpl-yudao）
 
 右上角 **Create CT**，建议参数：
 
 | 项 | 建议 |
 |----|------|
-| Hostname | `dev-yudao` |
+| VMID / Hostname | `102` / `tpl-yudao` |
 | Password | root 口令自管，勿写入公开仓 |
-| Template | 上一步下载的 Ubuntu 模板 |
+| Template | 上一步 Ubuntu 模板 |
 | Root Disk | **local-zfs**，约 **15GB** |
 | CPU | **2** Cores |
 | Memory | **4096 MB** |
-| Network | 桥接 **vmbr0**；建议静态 IP，实装示例 **`192.168.31.101`** |
-| Features | 勾选 **Nesting**（`nesting=1`），便于容器内跑 Docker；按需 Keyctl |
+| Network | 桥接 **vmbr0**；静态 **`192.168.31.102/24`**，网关 `.1` |
+| Features | 勾选 **Nesting**（`nesting=1`） |
 
-确认后 **完成**，可勾选创建后启动。
+创建后可转为模板，或保持为「母本 CT」供链接克隆。
 
-## 系统初始化
+## 链接克隆开发 / 测试
 
-进入容器 Shell 或 SSH 后：
+| 目标 | VMID | Hostname | IP |
+|------|------|----------|-----|
+| 开发 | 103 | `dev-yudao` | `192.168.31.103/24` |
+| 测试 | 104 | `test-yudao` | `192.168.31.104/24` |
+
+克隆时同样开启 Nesting；磁盘落在 **local-zfs**。
+
+## 系统初始化（每个 CT）
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-国内源可按本机习惯改为 TUNA / 阿里云等（以系统实际 `sources` 文件为准）。
+国内源可按本机习惯改为 TUNA / 阿里云等。
 
 ### 安装 Docker
 
@@ -46,44 +55,28 @@ sudo usermod -aG docker "$USER"
 # 重新登录或重启容器后再免 sudo 使用 docker
 ```
 
-创建时务必已开 Nesting，否则 Docker 易异常。
+务必已开 Nesting，否则 Docker 易异常。开发机建议内存升到 **8GB**、磁盘 **≥40GB** 再跑完整 Compose 构建。
 
-### MySQL / Redis（开发用）
+### 应用部署（开发）
 
-口令请换成自己的，勿把真实口令写进公开文档：
+代码可从本机 `bernsine` 同步；后端官方 Compose：`ruoyi-vue-pro/script/docker`。
 
-```bash
-mkdir -p ~/docker-data/{mysql,redis}
+| 服务 | 端口（宿主机映射） |
+|------|-------------------|
+| 管理前端 | `8080` |
+| API | `48080` |
+| MySQL | `3306` |
+| Redis | `6379` |
 
-docker run -d --name yudao-mysql \
-  -p 3306:3306 \
-  -e MYSQL_ROOT_PASSWORD='<your-password>' \
-  -v ~/docker-data/mysql:/var/lib/mysql \
-  mysql:8.0 \
-  --character-set-server=utf8mb4 \
-  --collation-server=utf8mb4_unicode_ci
-
-docker run -d --name yudao-redis \
-  -p 6379:6379 \
-  redis:7-alpine
-```
-
-### JDK
-
-芋道常用 JDK 17，以项目 `pom.xml` 为准：
-
-```bash
-sudo apt install -y openjdk-17-jdk
-java -version
-```
+口令仅本地保管；公开文档写 `<your-password>`。
 
 ## 实装记录
 
 | 项 | 内容 |
 |----|------|
-| Hostname | dev-yudao（以创建时为准） |
-| IP | `192.168.31.101` |
-| 规格 | 2 核 / 4GB / 15GB · Nesting |
-| 角色 | 芋道开发调试 |
+| 模板 | `tpl-yudao` · VMID `102` · `192.168.31.102` |
+| 开发 | `dev-yudao` · VMID `103` · `192.168.31.103` · 2 核 / 4GB / 15GB · Nesting |
+| 测试 | `test-yudao` · VMID `104` · `192.168.31.104` · 同规格 |
+| 状态 | CT 已建；Docker / 应用部署进行中 |
 
-测试环境 LXC、生产应用 / 数据 KVM 规划见 [Proxmox VE 总览](/ops/proxmox/)。
+总览见 [Proxmox VE](/ops/proxmox/)。
