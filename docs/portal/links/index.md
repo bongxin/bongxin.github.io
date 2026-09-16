@@ -84,6 +84,8 @@ lastUpdated: false
 
 <LinkCard icon="/portal/favicons/yishimei.png" title="DragonKMS 神龙版" href="https://www.yishimei.cn/network/319.html" description="亦是美网络 · Win / Office KMS" />
 
+<LinkCard icon="/portal/favicons/tuna.png" title="清华开源镜像站" href="https://mirrors.tuna.tsinghua.edu.cn/" description="清华大学开源软件镜像站（TUNA）" />
+
 </VPCardGrid>
 
 ## 运维安全

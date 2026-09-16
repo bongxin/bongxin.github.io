@@ -207,6 +207,16 @@ export const knowledgeCollections: ThemeCollectionItem[] = [
         collapsed: false,
         items: [
           {
+            text: 'Proxmox VE',
+            collapsed: false,
+            items: [
+              { text: '总览', link: '/ops/proxmox/' },
+              { text: '创建飞牛 fnOS', link: '/ops/proxmox/fnos/' },
+              { text: '创建 Ubuntu Server', link: '/ops/proxmox/ubuntu-server/' },
+              { text: '创建 dev-yudao', link: '/ops/proxmox/dev-yudao/' },
+            ],
+          },
+          {
             text: 'Linux (Ubuntu)',
             collapsed: false,
             items: [

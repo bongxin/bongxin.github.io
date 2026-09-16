@@ -47,11 +47,16 @@ flowchart TB
 | 小米 AX3000 | 待确认（AP / 旁路等） | 见 [设备资产](/assets/#mi-ax3000) |
 | Mac mini / 零刻 SER6 | 主机 | 见 [设备资产](/assets/) |
 | `192.168.31.151` | 内网服务主机 | [Fast-Note-Sync](http://192.168.31.151:9000/) |
+| `192.168.31.129` | Ubuntu Server 26.04 | [运行环境](/environment/ubuntu-server/) · [PVE 创建](/ops/proxmox/ubuntu-server/) · `ssh bongxin@192.168.31.129` |
+| `192.168.31.101` | dev-yudao（LXC） | [PVE 创建](/ops/proxmox/dev-yudao/) · 芋道开发 |
+| `192.168.31.2` | Proxmox VE | [管理后台](https://192.168.31.2:8006/) · [创建总览](/ops/proxmox/) |
+| `192.168.31.186` | 飞牛 fnOS | [管理后台](http://192.168.31.186:5666/) · [PVE 创建](/ops/proxmox/fnos/) |
 
 ## 相关文档
 
 | 文档 | 说明 |
 |------|------|
+| [Proxmox VE](/ops/proxmox/) | 虚拟机 / LXC 创建实操 |
 | [设备资产](/assets/) | 硬件台账与规格明细 |
 | [OpenWrt](/ops/openwrt/) | 路由固件与使用 |
 | [Clash](/ops/clash/) | 代理客户端 |
