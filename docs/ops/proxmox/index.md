@@ -28,6 +28,7 @@ outline: [2, 3]
 |------|------|------|------|--------------|------|
 | 100 | fnOS | KVM | 飞牛 fnOS | `192.168.31.186` | [创建飞牛 fnOS](/ops/proxmox/fnos/) |
 | 101 | Ubuntu-Server | KVM | Ubuntu Server 26.04 | `192.168.31.129` | [创建 Ubuntu Server](/ops/proxmox/ubuntu-server/) |
+| — | wireguard | LXC（TurnKey） | WireGuard | `192.168.31.101` | [创建 WireGuard](/ops/proxmox/wireguard/) |
 | 102 | tpl-yudao | LXC 模板 | Ubuntu | `192.168.31.102` | Nesting；供链接克隆 |
 | 103 | dev-yudao | LXC | Ubuntu | `192.168.31.103` | [创建 / 实装](/ops/proxmox/dev-yudao/) |
 | 104 | test-yudao | LXC | Ubuntu | `192.168.31.104` | 自 `tpl-yudao` 链接克隆；待装 Docker / 部署 |
@@ -43,3 +44,15 @@ outline: [2, 3]
 | 生产 · 数据 | KVM | 建议 ≥4 核 / 16GB | MySQL / Redis / MinIO（待建） |
 
 拓扑与其它节点见 [家庭网络](/ops/network/)。
+
+## 基建顺序（备忘）
+
+| 优先级 | 项 | 状态 |
+|--------|-----|------|
+| 1 | WireGuard 外网回家 | 见 [WireGuard](/ops/proxmox/wireguard/) |
+| 2 | 内网反代（Nginx Proxy Manager） | 待建 CT `npm` |
+| 3 | VPS 中继（公网域名给外人） | 待做 |
+| 4 | Headscale | 须在反代 + HTTPS 之后 |
+
+反代解决的是子域名入口与证书集中，不是「多台 VM 抢同一操作系统的 80 端口」（每台本就有独立 IP）。
+

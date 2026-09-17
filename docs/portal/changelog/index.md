@@ -11,6 +11,25 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.8
+
+### WireGuard 创建文档
+
+本版概要（2026-09-18）：
+
+- 运维新增 PVE TurnKey WireGuard 创建与联调排障文档。
+- 同步家庭网络节点、基建顺序与侧栏入口。
+
+### 🚀 新增
+
+- 【新增】`/ops/proxmox/wireguard/`：TurnKey CT 创建、客户端、UDP 51820、DDNS 仅 IPv4 与排障
+
+### 🔨 优化
+
+- 【优化】Proxmox 客户机一览与基建顺序备忘；家庭网络 / VPN 目录交叉链接
+
+---
+
 ## v1.4.7
 
 ### OpenClaw 快捷入口 · Karing 链接

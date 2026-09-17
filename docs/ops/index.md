@@ -8,7 +8,7 @@ title: 运维
 
 | 文档 | 说明 |
 |------|------|
-| [Proxmox VE](/ops/proxmox/) | 虚拟机 / LXC 创建（fnOS · Ubuntu Server · dev-yudao） |
+| [Proxmox VE](/ops/proxmox/) | 虚拟机 / LXC 创建（fnOS · Ubuntu Server · WireGuard · dev-yudao） |
 | [Linux](/ops/linux/) | Ubuntu 基本配置、常见操作与排错 |
 | [树莓派](/ops/raspberry-pi/) | Raspberry Pi 单板机 |
 | [宝塔面板](/ops/bt/宝塔面板/认识宝塔面板.html) | 服务器可视化管理面板 |
