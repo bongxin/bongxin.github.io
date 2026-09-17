@@ -213,6 +213,7 @@ export const knowledgeCollections: ThemeCollectionItem[] = [
               { text: '总览', link: '/ops/proxmox/' },
               { text: '创建飞牛 fnOS', link: '/ops/proxmox/fnos/' },
               { text: '创建 Ubuntu Server', link: '/ops/proxmox/ubuntu-server/' },
+              { text: '创建 WireGuard', link: '/ops/proxmox/wireguard/' },
               { text: '创建 dev-yudao', link: '/ops/proxmox/dev-yudao/' },
             ],
           },

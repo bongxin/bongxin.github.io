@@ -8,6 +8,7 @@ title: VPN
 
 | 文档 | 说明 |
 |------|------|
+| [WireGuard（PVE TurnKey）](/ops/proxmox/wireguard/) | 家庭 VPN 入口 · UDP 51820 |
 | [ConfigVPN](/ops/vpn/ConfigVPN.html) | VPN 配置备忘 |
 | [SoftEther VPN](/ops/vpn/SoftEtherVPN.html) | SoftEther 服务端 |
 | [OpenVPN 服务](/ops/linux/基本配置/OpenVPN服务.html) | 基于 Ubuntu 的 OpenVPN（归在 Linux 基本配置） |
