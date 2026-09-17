@@ -102,6 +102,8 @@ lastUpdated: false
 
 <LinkCard icon="/portal/favicons/openclash.svg" title="OpenClash" href="https://openclash.org/" description="OpenWrt Clash 插件教程站" />
 
+<LinkCard icon="/portal/favicons/karing.png" title="Karing" href="https://github.com/KaringX/karing/releases" description="跨平台代理客户端 · GitHub Releases" />
+
 </VPCardGrid>
 
 ## 认证学习
