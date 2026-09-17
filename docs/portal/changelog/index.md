@@ -11,6 +11,22 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.7
+
+### OpenClaw 快捷入口 · Karing 链接
+
+本版概要（2026-09-17）：
+
+- 快捷入口增加飞牛 OpenClaw 聊天。
+- 网站链接「运维安全」增加 Karing Releases。
+
+### 🚀 新增
+
+- 【新增】快捷入口：OpenClaw（`192.168.31.186:5666` · trim-openclaw）
+- 【新增】网站链接：Karing → GitHub Releases
+
+---
+
 ## v1.4.6
 
 ### 运行环境对齐 SER6 实装

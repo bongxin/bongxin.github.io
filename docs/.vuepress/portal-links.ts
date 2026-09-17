@@ -23,6 +23,11 @@ export const shortcutNavItems = [
     link: 'http://192.168.31.186:5666/',
     target: '_blank' as const,
   },
+  {
+    text: 'OpenClaw',
+    link: 'http://192.168.31.186:5666/app/trim-openclaw/default/chat?session=main',
+    target: '_blank' as const,
+  },
 ]
 
 export const appNavItems = [
