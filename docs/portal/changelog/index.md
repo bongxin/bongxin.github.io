@@ -11,6 +11,20 @@ lastUpdated: false
 editLink: false
 ---
 
+## v1.4.9
+
+### 芋道开发环境访问说明
+
+本版概要（2026-09-19）：
+
+- 芋道运行环境页按访问清单整理开发环境（SSH、MySQL、Redis、管理后台、接口）。
+
+### 🔨 优化
+
+- 【优化】`/environment/yudao/`：开发环境改为地址清单；口令不写入公开页
+
+---
+
 ## v1.4.8
 
 ### WireGuard 创建文档
