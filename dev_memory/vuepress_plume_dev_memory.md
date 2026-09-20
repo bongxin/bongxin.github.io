@@ -25,7 +25,7 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **站点约定** `/conventions/`：与更新日志同级（顶栏版本下拉 + 侧栏）；读者版规则正文
 - **文章标题（Plume 约定）**：文档布局由主题 `.page-title` 显示 `frontmatter.title`；**正文不要写 `#`，从 `##` 起笔**；禁止用 CSS 藏标题；`autoFrontmatter: false`
 - **顶栏精简（日常入口，尽量四字）**：站点导航 · 运行环境 · 应用访问 · 快捷入口 · 网站链接 · 设备资产 · 版本号（更新日志 / 站点约定）；音乐 / 相册 / 关于不进顶栏
-- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.9**；顶栏读 `package.json` 版本 + badge「新」
+- **更新日志** `/changelog/`：芋道式分节（`## vX.Y.Z`，不要 `【】`）；🚀新增 / 🔨优化 / 🐞修复**有哪类写哪类，不必三项凑齐**；当前最新 **v1.4.10**；顶栏读 `package.json` 版本 + badge「新」
 - **CI 装包**：`package-lock.json` / 仓库 `.npmrc` 必须用 `registry.npmjs.org`（勿把 npmmirror/`cdn.npmmirror.com` 写进 lock，GHA 会装包失败）；**改依赖后必须 `npm install` 重生成完整 lock**（勿只改 resolved URL），否则 `npm ci` 会 Missing peer 嵌套包（如 `markdown-it@15`）；本地可临时 `--registry=npmmirror --replace-registry-host=always`，但勿回写 lock；CI 用 `npm ci`
 - NTFS 上勿在仓内直接 `rm -rf node_modules`（极慢）；可用家目录缓存 + symlink
 - **正文忌套话**：门户 / 日常页不要写「左侧侧栏右侧大纲」「使用主题某某组件」「写法对齐某某站」等实现说明；直接上内容。约定与配置写在 `dev_memory` / 规则里即可
@@ -53,9 +53,9 @@ description: bongxin.github.io 已从 VitePress 迁到 VuePress 2 + Plume，记�
 - **WireGuard（PVE TurnKey）**：文档 `/ops/proxmox/wireguard/`；CT `wireguard` · `.101`；隧道 `10.99.0.0/24`（服务端 `.1` / 客户端从 `.2`）；ImmortalWrt **UDP 51820→.101**（仅 IPv4）；DDNS 域名勿带 AAAA，否则客户端优先 IPv6 导致无握手；勿公开 profiles 下载 URL / 私钥
 - **快捷入口已录入**：Fast-Note-Sync → `http://192.168.31.151:9000/`；ImmortalWrt → `http://192.168.31.1/`；Proxmox VE → `https://192.168.31.2:8006/`；飞牛fnOS → `http://192.168.31.186:5666/`；OpenClaw → `http://192.168.31.186:5666/app/trim-openclaw/default/chat?session=main`；GitLab 等待补
 - **运行环境主机**：Ubuntu Server 26.04 → `/environment/ubuntu-server/`（`192.168.31.129` · 用户 `bongxin`；口令仅占位 `<your-password>`，禁止写入公开仓）
-- **芋道运行环境**：`/environment/yudao/` 开发节为访问清单（SSH / MySQL / Redis / HTTP / 接口）；`.103`；口令不写入公开页；测试 `.104` 未部署
+- **芋道运行环境**：概览 `/environment/yudao/`；子页 **开发** `/dev/` · **测试** `/test/` · **生产** `/prod/`；开发实装 `dev-yudao` · `.103` · Vben `:8080`、移动管理 H5 `:8081`、商城 H5 `:8082`、API `:48080`、MySQL、Redis；口令一律 `<your-password>`
 - **PVE 客户机创建文档**（运维）：`/ops/proxmox/` 总览；`/ops/proxmox/fnos/`（飞牛 · `.186:5666`）；`/ops/proxmox/ubuntu-server/`（KVM · `.129`）；`/ops/proxmox/dev-yudao/`（LXC · `.103` · Nesting+Docker）；`/ops/proxmox/wireguard/`（TurnKey · `.101`）；ISO→`local`，磁盘→`local-zfs`（raw）；侧栏在 `knowledge.ts`「主机运维」
-- **应用访问已录入**：BERNSINE 阿卡贝拉 → `https://acappella.bongxin.com.cn/`；芋道 / WordPress 外链仍待补；改 `navbar.ts` 后需重启 `docs:dev`（HMR 常不刷新顶栏）
+- **应用访问已录入**：BERNSINE 阿卡贝拉 → `https://acappella.bongxin.com.cn/`；芋道管理后台 → `http://192.168.31.103:8080/`；芋道移动管理 → `:8081`；芋道商城 → `:8082`；WordPress 外链仍待补；入口写在 `portal-links.ts` 与 `docs/portal/apps/index.md`；改 `navbar.ts` / `portal-links.ts` 后需重启 `docs:dev`（HMR 常不刷新顶栏）
 - **暂不搬**：BongAsk / Docx / PPT / 增强 Mermaid 整包（偏项目门户）
 
 - 改导航只动 `docs/.vuepress/navbar.ts` + `docs/.vuepress/collections.ts`；中文文件名页面链接多用 `.html` 后缀与现有 permalink 对齐

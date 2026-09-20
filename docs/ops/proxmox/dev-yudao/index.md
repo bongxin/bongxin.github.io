@@ -77,6 +77,6 @@ sudo usermod -aG docker "$USER"
 | 模板 | `tpl-yudao` · VMID `102` · `192.168.31.102` |
 | 开发 | `dev-yudao` · VMID `103` · `192.168.31.103` · 2 核 / 4GB / 15GB · Nesting |
 | 测试 | `test-yudao` · VMID `104` · `192.168.31.104` · 同规格 |
-| 状态 | CT 已建；Docker / 应用部署进行中 |
+| 状态 | 开发已通：Vben 管理后台、移动管理 H5、商城 H5、API、MySQL、Redis（见 [开发环境](/environment/yudao/dev/)） |
 
 总览见 [Proxmox VE](/ops/proxmox/)。

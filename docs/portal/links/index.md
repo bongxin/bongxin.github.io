@@ -32,6 +32,8 @@ lastUpdated: false
 
 <LinkCard icon="/portal/favicons/navicat.png" title="Navicat Premium Lite" href="https://www.navicat.com.cn/download/navicat-premium-lite" description="免费多数据库客户端（Win / macOS / Linux）" />
 
+<LinkCard icon="/portal/favicons/marvis.png" title="Marvis 马维斯" href="https://marvis.qq.com/" description="腾讯 Marvis · 端侧 AI 助手官网" />
+
 </VPCardGrid>
 
 ## 效率与远程
