@@ -26,7 +26,8 @@ alwaysApply: true
 - **知识库**一级目录勿再套壳：`dev` `design` `ai` `mgmt` `ops` `operation` `music` `others` `about`（**勿大挪路径**，成本高）
 - **门户**在 `docs/portal/`，对外 **短 permalink**（`/map/` 等，勿暴露 `/portal/map/`）
 - 日常侧栏单一源：`daily-sidebar.ts`；外链 URL：`portal-links.ts`（供 navbar）
-- **架构图落点**（Mermaid，已启用）：家庭工作室网络 → `/ops/network/`（链 `/assets/` · `/shortcuts/`）；项目**部署关系** → `/environment/<项目>/`；项目**模块/分层** → `/dev/...` 对应介绍页；统一 `flowchart` + 图内 `theme: base` / 黑白灰（同家庭网络）；**勿**用 ` ```architecture `（易 Syntax error）；自适应靠 `styles/mermaid.css` + `useMaxWidth`；勿为架构单独加顶栏；勿用 ECharts/Chart.js 画架构
+- 集合侧栏按 `linkPrefix` 匹配 URL。门户短路径（`/map/`、`/environment/` 等）对不上 `/portal/`，须在 `plume.config.ts` 的 `sidebar` 用 `portalSidebarPaths` 再挂同一份侧栏，否则左侧栏不出现
+- **架构图落点**（Mermaid，已启用）：家庭工作室网络 → `/ops/network/`（链 `/assets/` · `/shortcuts/`）；项目**部署关系** → `/environment/<项目>/`（可再分 `dev`/`test`/`prod` 子页写 SSH/库/应用访问）；项目**模块/分层** → `/dev/...` 对应介绍页；统一 `flowchart` + 图内 `theme: base` / 黑白灰（同家庭网络）；**勿**用 ` ```architecture `（易 Syntax error）；自适应靠 `styles/mermaid.css` + `useMaxWidth`；勿为架构单独加顶栏；勿用 ECharts/Chart.js 画架构
 - 静态资源双轨：
   - **跨页**：`docs/.vuepress/public/`（勿用 `docs/public`），引用 `/…`
   - **单篇配图**：与 `.md` 同目录，引用必须 `./…`（禁止裸 `image.png`，Vite 会当包解析）

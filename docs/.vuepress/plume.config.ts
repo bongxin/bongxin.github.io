@@ -1,5 +1,6 @@
 import { defineThemeConfig } from 'vuepress-theme-plume'
 import collections from './collections'
+import { portalSidebar, portalSidebarPaths } from './collections/portal'
 import navbar from './navbar'
 
 export default defineThemeConfig({
@@ -15,6 +16,7 @@ export default defineThemeConfig({
   },
   navbar,
   collections,
+  sidebar: Object.fromEntries(portalSidebarPaths.map((path) => [path, portalSidebar])),
   social: [
     { icon: 'github', link: 'https://github.com/bongxin/bongxin.github.io' },
   ],

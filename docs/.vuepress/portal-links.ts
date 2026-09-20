@@ -41,4 +41,14 @@ export const appNavItems = [
     link: 'http://192.168.31.103:8080/',
     target: '_blank' as const,
   },
+  {
+    text: '芋道 · 移动管理',
+    link: 'http://192.168.31.103:8081/',
+    target: '_blank' as const,
+  },
+  {
+    text: '芋道 · 商城',
+    link: 'http://192.168.31.103:8082/',
+    target: '_blank' as const,
+  },
 ]
